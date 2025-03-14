@@ -2,7 +2,6 @@ import "../assets/styles/footer.css";
 import { AiFillInstagram } from "react-icons/ai";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { FaWhatsapp } from "react-icons/fa";
-import { SiCalendly } from "react-icons/si";
 
 export const Footer = () => {
   return (
@@ -20,7 +19,6 @@ export const Footer = () => {
           <div className="flex space-x-5">
             <a href="https://www.linkedin.com/in/ivan-levy/" target="_blank" className="text-2xl hover:text-gray-700 icon"><TbBrandLinkedinFilled /></a>
             <a href="https://www.instagram.com/ivo.levy/" target="_blank" className="text-2xl hover:text-gray-700 icon"><AiFillInstagram /></a>
-            <a href="https://calendly.com/solutionsdota/30min" target="_blank" className="text-2xl hover:text-gray-700 icon"><SiCalendly /></a>
             <a href="https://wa.me/1138240929" className="text-2xl hover:text-gray-700 icon"><FaWhatsapp /></a>
           </div>
           {/* Correo Electrónico */}

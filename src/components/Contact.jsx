@@ -90,15 +90,6 @@ export const Contact = () => {
             <a href="mailto:ivo.levy03@gmail.com" className="text-white contactEmail">ivo.levy03@gmail.com</a>
           </p>
 
-          {/* Book a Call */}
-          <a 
-            href="https://calendly.com/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center text-gray-600 font-semibold"
-          >
-            Book a call
-          </a>
         </div>
 
         {/* Right Side: Contact Form */}
