@@ -23,12 +23,12 @@ export const Projects = () => {
     },
     {
       id: 3,
-      title: "Premios +Gidital",
+      title: "Premios +Digital",
       img: "/images/proyecto3.jpg",
       textColor: "text-white",
       bgColor: "bg-gray-900",
       url: "https://premiomasdigital.com",
-      altText: "Project image: Premios +Gidital",
+      altText: "Project image: Premios +Digital",
     },
     {
       id: 4,
