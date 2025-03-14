@@ -31,10 +31,10 @@ export const Contact = () => {
 
     emailjs
       .send(
-        "service_7fd63b9", // Service ID
-        "template_8aqoq0a", // Template ID
+        "service_3hpiy2n", // Service ID
+        "template_gvukjc5", // Template ID
         templateParams,
-        "H1IHW-mp6NDoe6BDv" // Public Key
+        "E4xuiiz13SZoQSqQf" // Public Key
       )
       .then(
         () => {
