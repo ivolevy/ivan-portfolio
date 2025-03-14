@@ -1,0 +1,40 @@
+.header{
+    height: 100vh;
+    border-radius: 0 0 15px 15px; /* Radio solo para las esquinas inferiores */
+    overflow-x: hidden; 
+    background-color: #fafafa; /* Fondo negro */
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, #FAFAFA 100%),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><rect width="100%" height="100%" fill="white"/><path d="M 50 0 L 0 0 0 50" fill="none" stroke="black" stroke-opacity="0.1" stroke-width="1"/></svg>');
+    background-repeat: repeat;
+}
+
+.headerButton {
+  border-radius: 35px;
+  padding: 12px 17px;
+  color: #fff !important;
+  background: linear-gradient(to bottom, #ff80bf, #ea9c9c) !important;
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.headerButton:hover {
+  color: #000 !important; /* Cambia a un color diferente */
+}
+
+@media (max-width: 768px){
+  .hero{
+    padding: 0 20px 0 20px;
+  }
+  .heroTitle{
+      font-size: 2.2rem !important;
+  }
+}

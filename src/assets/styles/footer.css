@@ -1,0 +1,44 @@
+.footer{
+    width: 98%;
+    background-color: #fff;
+    border-radius: 35px 35px 0px 0px;
+    height: auto;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+.email{
+    text-decoration: none;
+    color: #3a3a3a;
+}
+
+.icon{
+    color: #000000;
+}
+
+.legalLinks {
+    color: #ff80bf !important;
+    text-decoration: none !important;
+}
+
+.legalLinks:hover {
+    text-decoration: underline !important;
+}
+
+
+@media screen and (min-width: 1025px) {
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .footer{
+      padding-right: 3%;
+      width: 90%;
+      padding-left: 3%;
+    }
+    .footerImg{
+        width: 65px !important;
+    }
+  }
+  
