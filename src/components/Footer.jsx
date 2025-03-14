@@ -10,7 +10,7 @@ export const Footer = () => {
         
         {/* Sección Izquierda */}
         <div className="w-full md:w-1/3 text-center md:text-left text-sm font-medium text-black hidden md:block">
-          Let´s grow together! Just hire me :)
+          LET´S GROW TOGETHER - JUST HIRE ME :)
         </div>
 
         {/* Sección de Iconos y Correo (Centrada en Mobile) */}
