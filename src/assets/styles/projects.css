@@ -5,3 +5,7 @@
 .projectClouds{
     border-radius: 35px;
 }
+
+.projectsImg{
+    opacity: 0.4 !important;
+}

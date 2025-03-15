@@ -1,59 +1,65 @@
 import { motion } from "framer-motion";
 import "../assets/styles/projects.css";
+import etcheverry from '../assets/images/projects/etcheverry.webp';
+import crujinola from '../assets/images/projects/crujinola.webp';
+import premios from '../assets/images/projects/premios.webp';
+import cencopay from '../assets/images/projects/cencopay.webp';
+import bellacenter from '../assets/images/projects/bellacenter.webp';
+import england from '../assets/images/projects/england.webp';
 
 export const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Estudio Jurídico Etcheverry García",
-      img: "/images/proyecto1.jpg",
-      textColor: "text-yellow-400",
-      bgColor: "bg-black",
+      title: "Law firm Etcheverry-Garcia",
+      img: etcheverry,
+      textColor: "text-white",
+      bgColor: "bg-gray-900 bg-opacity-80",
       url: "https://etcheberry.devuocloud.com",
       altText: "Project image: Estudio Jurídico Etcheverry García",
     },
     {
       id: 2,
       title: "Crujinola",
-      img: "/images/proyecto2.jpg",
-      textColor: "text-black",
-      bgColor: "bg-[#F5F1E5]",
+      img: crujinola,
+      textColor: "text-white",
+      bgColor: "bg-gray-900 bg-opacity-80",
       url: "https://crujinola.com",
       altText: "Project image: Crujinola",
     },
     {
       id: 3,
       title: "Premios +Digital",
-      img: "/images/proyecto3.jpg",
+      img: premios,
       textColor: "text-white",
-      bgColor: "bg-gray-900",
+      bgColor: "bg-gray-900 bg-opacity-80",
       url: "https://premiomasdigital.com",
       altText: "Project image: Premios +Digital",
     },
     {
       id: 4,
       title: "CencoPay",
-      img: "/images/proyecto4.jpg",
+      img: cencopay,
       textColor: "text-white",
-      bgColor: "bg-blue-900",
+      bgColor: "bg-gray-900 bg-opacity-80",
       url: "https://desa.cencopay.ar",
       altText: "Project image: CencoPay",
     },
     {
       id: 5,
       title: "Bellacenter",
-      img: "/images/proyecto5.jpg",
-      textColor: "text-black",
-      bgColor: "bg-[#FFE4E1]",
+      img: bellacenter,
+      textColor: "text-white",
+      bgColor: "bg-gray-900 bg-opacity-80",
       url: "https://www.bellacenter.com.ar",
       altText: "Project image: Bellacenter",
     },
     {
       id: 6,
       title: "New England Oil",
-      img: "/images/proyecto6.jpg", // Asegúrate de tener la imagen adecuada
+      img: england,
       textColor: "text-white",
-      bgColor: "bg-green-700",
+      bgColor: "bg-gray-900 bg-opacity-80",
       url: "https://newenglandoildelivered.com",
       altText: "Project image: New England Oil",
     },
@@ -75,25 +81,26 @@ export const Projects = () => {
             viewport={{ once: true, amount: 0.2 }}
             aria-labelledby={`project-title-${project.id}`}
           >
+            {/* Título del proyecto fuera del bloque de imagen */}
+            <h3 
+              id={`project-title-${project.id}`} 
+              className={`text-2xl font-bold ${project.textColor} text-center mb-2 px-4`}
+            >
+              {project.title}
+            </h3>
+
             <a href={project.url} target="_blank" rel="noopener noreferrer" className="no-underline">
-              <div
-                className="relative flex items-center justify-center h-52 bg-cover bg-center rounded-lg group-hover:bg-opacity-80 transition-all duration-300"
-                style={{ backgroundImage: `url(${project.img})` }}
-              >
-                <h3 
-                  id={`project-title-${project.id}`} 
-                  className={`text-2xl font-bold ${project.textColor} bg-opacity-70 p-2 rounded-lg transition-all duration-300 group-hover:text-opacity-90`}
-                >
-                  {project.title}
-                </h3>
+              <div className="relative w-full h-52 rounded-lg overflow-hidden">
+                <motion.img
+                  src={project.img}
+                  alt={project.altText}
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                />
               </div>
             </a>
-            <img
-              src={project.img}
-              alt={project.altText}
-              className="hidden"  // Improves accessibility without displaying the image twice
-              loading="lazy"
-            />
+
           </motion.article>
         ))}
       </div>
