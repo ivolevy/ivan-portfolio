@@ -84,17 +84,17 @@ export const Projects = () => {
             {/* Título del proyecto fuera del bloque de imagen */}
             <h3 
               id={`project-title-${project.id}`} 
-              className={`text-2xl font-bold ${project.textColor} text-center mb-2 px-4`}
+              className={`text-lg font-bold ${project.textColor} text-center mb-2 px-4`}
             >
               {project.title}
             </h3>
 
             <a href={project.url} target="_blank" rel="noopener noreferrer" className="no-underline">
-              <div className="relative w-full h-52 rounded-lg overflow-hidden">
+              <div className="relative w-full h-52 roundedBox overflow-hidden">
                 <motion.img
                   src={project.img}
                   alt={project.altText}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover projectImg"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 />
