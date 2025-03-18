@@ -89,7 +89,7 @@ export const Contact = () => {
 
           <textarea
             name="message"
-            placeholder="Tell us about your case"
+            placeholder="Wanna work together?"
             required
             rows="4"
             className="w-full p-3 border border-gray-300 roundedForm focus:outline-none focus:ring-2 focus:ring-blue-500"
