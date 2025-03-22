@@ -1,19 +1,20 @@
-.projects{
-   height: auto;
-}
-
-.projectClouds{
-    border-radius: 35px;
-}
-
-.projectsImg{
-    opacity: 0.4 !important;
-}
-
-.roundedBox{
-    border-radius: 35px;
-}
-
-.projectImg{
-    border-radius: 35px;
-}
+.project-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-card img {
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+  
+  .project-card:hover img {
+    opacity: 0.9;
+    filter: brightness(1.1);
+  }
+  
