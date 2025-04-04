@@ -22,8 +22,8 @@ const SkillCard = ({ title, skills }) => (
 export default function Skills() {
   return (
     <section className="p-8 rounded-lg servicesSection pt-0 pb-20" id="skills">
-      <h2 className="servicesTitle text-center mb-5">
-        My <span className="underline">Skills & Expertise</span>
+      <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">
+        My <span className="border-b-4 border-black pb-1">Skills & Expertise</span>
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
         <SkillCard
@@ -34,6 +34,15 @@ export default function Skills() {
             "Vercel, Git, FileZilla",
             "Adobe Suite, Figma, XAMPP",
             "Google Ads",
+            "Artificial Intelligence for Web Development and ERP/CRM Systems",
+            "Next.js & React Ecosystem",
+            "PostgreSQL & Database Design",
+            "AI/ML Integration",
+            "API Development & Integration",
+            "Cloud Services (AWS/Vercel)",
+            "DevOps & CI/CD",
+            "TypeScript",
+            "RESTful APIs"
           ]}
         />
         <SkillCard
@@ -44,6 +53,15 @@ export default function Skills() {
             "Leadership",
             "Problem-Solving",
             "Creativity",
+            "Team Leadership & Management",
+            "Strategic Planning",
+            "Innovation & AI Integration",
+            "Client Relationship Management",
+            "Project Management",
+            "Business Analysis",
+            "Resource Optimization",
+            "Technical Documentation",
+            "Cross-functional Team Collaboration"
           ]}
         />
         <SkillCard
@@ -53,7 +71,7 @@ export default function Skills() {
         <SkillCard
           title="Education & Certifications"
           skills={[
-            "Bachelor's in Economics - Scholem Aleijem (2016-2020)",
+            "Bachelor's in Economics - Scholem Aleijem High School (2016-2020)",
             "Full Stack Web Development - Digital House (2021-2022)",
             "Bachelor's in IT Management - UADE (2022-Present)",
             "Google Display Certification (ID: 225423675)",

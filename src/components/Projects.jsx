@@ -22,6 +22,7 @@ export const Projects = () => {
       <h2 className="text-3xl font-bold text-gray-800 mb-10">
         <span className="border-b-4 border-black pb-1">Recent</span> Projects
       </h2>
+      <p className="text-gray-600 mb-8">Feel free to click them, they won't bite!</p>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {projects.map((project, index) => (

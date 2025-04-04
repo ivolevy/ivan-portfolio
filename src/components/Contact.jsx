@@ -33,11 +33,13 @@ export const Contact = () => {
 
   return (
     <>
-      <h2 className="servicesTitle text-center mb-5">Contact</h2>
+      <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">
+        <span className="border-b-4 border-black pb-1">Contact</span>
+      </h2>
       <div className="flex flex-col items-center lg:flex-row mx-auto text-center contactContainer" id="contact">
         {/* Izquierda: Información + Redes Sociales */}
         <div className="lg:w-1/2 flex flex-col items-start justify-center text-left p-6 responsiveData">
-          <h3 className="text-3xl font-bold text-white contactSubtitle">Don’t be shy, let’s talk!</h3>
+          <h3 className="text-3xl font-bold text-white contactSubtitle">Don't be shy, let's talk!</h3>
 
           {/* Redes Sociales */}
           <div className="flex items-center space-x-4 mb-4">

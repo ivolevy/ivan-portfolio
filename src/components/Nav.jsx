@@ -3,7 +3,7 @@ import "../assets/styles/nav.css";
 import "../assets/styles/contact.css";
 
 const menuItems = [
-  { id: "services", label: "Abilities", title: "What i can do" },
+  { id: "skills", label: "Abilities", title: "What i can do" },
   { id: "projects", label: "Projects", title: "Recent projects" },
   { id: "contact", label: "Let´s talk", title: "Let´s work together", className: "navButton" },
 ];
