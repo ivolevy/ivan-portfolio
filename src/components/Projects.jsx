@@ -23,11 +23,11 @@ export const Projects = () => {
   ];
 
   const aiProjects = [
-    { id: 7, title: "Stock Project", img: stock, description: "Stock management for construction company (Supabase integrated)", img: "", url: "https://v0-construction-management-site.vercel.app/" },
-    { id: 8, title: "Travel Agency", img:travel, description: "AI-powered travel agency prototype", img: "", url: "https://kzmgoqtm1oedtwx22hyn.lite.vusercontent.net/" },
-    { id: 9, title: "Image Editor", img:editor, description: "Centralized image editor with AI capabilities", img: "", url: "https://v0-centralized-image-editor.vercel.app/" },
-    { id: 10, title: "Human vs AI (Student)", image: ia1, description: "AI detector in file uploads – student view", img: "", url: "https://text-human-detector.lovable.app/" },
-    { id: 11, title: "Human vs AI (Admin)", image: ia2, description: "AI detector in file uploads – admin view", img: "", url: "https://text-truth-teller-ai.lovable.app/" },
+    { id: 7, title: "Stock Project", img: stock, description: "Stock management for construction company (Supabase integrated)", url: "https://v0-construction-management-site.vercel.app/" },
+    { id: 8, title: "Travel Agency", img:travel, description: "AI-powered travel agency prototype", url: "https://kzmgoqtm1oedtwx22hyn.lite.vusercontent.net/" },
+    { id: 9, title: "Image Editor", img:editor, description: "Centralized image editor with AI capabilities", url: "https://v0-centralized-image-editor.vercel.app/" },
+    { id: 10, title: "Human vs AI (Student)", img: ia1, description: "AI detector in file uploads – student view", url: "https://text-human-detector.lovable.app/" },
+    { id: 11, title: "Human vs AI (Admin)", img: ia2, description: "AI detector in file uploads – admin view", url: "https://text-truth-teller-ai.lovable.app/" },
   ];
 
   const renderSection = (title, description, projects) => (
