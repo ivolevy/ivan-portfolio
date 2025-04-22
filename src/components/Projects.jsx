@@ -7,8 +7,14 @@ import cencopay from '../assets/images/projects/cencopay.webp';
 import bellacenter from '../assets/images/projects/bellacenter.webp';
 import england from '../assets/images/projects/england.webp';
 
+// Optional: Add images for AI projects if available
+// import stockImg from '../assets/images/projects/stock.webp';
+// import travelImg from '../assets/images/projects/travel.webp';
+// import editorImg from '../assets/images/projects/editor.webp';
+// import humanVsIaImg from '../assets/images/projects/humanvsia.webp';
+
 export const Projects = () => {
-  const projects = [
+  const clientProjects = [
     { id: 1, title: "Law firm Etcheverry-Garcia", img: etcheverry, url: "https://etcheberry.devuocloud.com" },
     { id: 2, title: "Crujinola", img: crujinola, url: "https://crujinola.com" },
     { id: 3, title: "Premios +Digital", img: premios, url: "https://premiomasdigital.com" },
@@ -17,13 +23,18 @@ export const Projects = () => {
     { id: 6, title: "New England Oil", img: england, url: "https://newenglandoildelivered.com" },
   ];
 
-  return (
-    <section className="text-center py-20 px-6" id="projects">
-      <h2 className="text-3xl font-bold text-gray-800 mb-10">
-        <span className="border-b-4 border-black pb-1">Recent</span> Projects
-      </h2>
-      <p className="text-gray-600 mb-8">Feel free to click them, they won't bite!</p>
-      
+  const aiProjects = [
+    { id: 7, title: "Stock Project", description: "Stock management for construction company (Supabase integrated)", img: "", url: "#" },
+    { id: 8, title: "Travel Agency", description: "AI-powered travel agency prototype", img: "", url: "#" },
+    { id: 9, title: "Image Editor", description: "Centralized image editor with AI capabilities", img: "", url: "#" },
+    { id: 10, title: "Human vs AI (Student)", description: "AI detector in file uploads – student view", img: "", url: "#" },
+    { id: 11, title: "Human vs AI (Admin)", description: "AI detector in file uploads – admin view", img: "", url: "#" },
+  ];
+
+  const renderSection = (title, description, projects) => (
+    <div className="mb-20">
+      <h3 className="text-2xl font-bold text-gray-800 mb-4">{title}</h3>
+      <p className="text-gray-600 mb-8">{description}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <motion.article
@@ -35,21 +46,38 @@ export const Projects = () => {
             viewport={{ once: true, amount: 0.2 }}
           >
             <a href={project.url} target="_blank" rel="noopener noreferrer" className="block">
-              <div className="relative w-full h-52 overflow-hidden rounded-t-2xl">
-                <motion.img
-                  src={project.img}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition duration-300 hover:brightness-110 hover:opacity-90"
-                />
+              <div className="relative w-full h-52 overflow-hidden rounded-t-2xl bg-gray-100">
+                {project.img ? (
+                  <motion.img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition duration-300 hover:brightness-110 hover:opacity-90"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">No Image</div>
+                )}
               </div>
             </a>
 
             <div className="p-4 text-center">
-              <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
+              <h4 className="text-lg font-semibold text-gray-900">{project.title}</h4>
+              {project.description && <p className="text-sm text-gray-600 mt-1">{project.description}</p>}
             </div>
           </motion.article>
         ))}
       </div>
+    </div>
+  );
+
+  return (
+    <section className="text-center py-20 px-6" id="projects">
+      <h2 className="text-3xl font-bold text-gray-800 mb-10">
+        <span className="border-b-4 border-black pb-1">My</span> Projects
+      </h2>
+      <p className="text-gray-600 mb-8">Click on any project to view it live.</p>
+
+      {renderSection("Client Projects", "Websites and platforms built for real clients", clientProjects)}
+      {renderSection("AI Projects", "Experimental tools and MVPs using AI and Supabase", aiProjects)}
     </section>
   );
 };
