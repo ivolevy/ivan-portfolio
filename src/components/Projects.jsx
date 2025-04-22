@@ -6,12 +6,11 @@ import premios from '../assets/images/projects/premios.webp';
 import cencopay from '../assets/images/projects/cencopay.webp';
 import bellacenter from '../assets/images/projects/bellacenter.webp';
 import england from '../assets/images/projects/england.webp';
-
-// Optional: Add images for AI projects if available
-// import stockImg from '../assets/images/projects/stock.webp';
-// import travelImg from '../assets/images/projects/travel.webp';
-// import editorImg from '../assets/images/projects/editor.webp';
-// import humanVsIaImg from '../assets/images/projects/humanvsia.webp';
+import stock from '../assets/images/projects/stock.webp';
+import travel from '../assets/images/projects/travel.webp';
+import editor from '../assets/images/projects/editor.webp';
+import ia1 from '../assets/images/projects/ia1.webp';
+import ia2 from '../assets/images/projects/ia2.webp';
 
 export const Projects = () => {
   const clientProjects = [
@@ -24,11 +23,11 @@ export const Projects = () => {
   ];
 
   const aiProjects = [
-    { id: 7, title: "Stock Project", description: "Stock management for construction company (Supabase integrated)", img: "", url: "#" },
-    { id: 8, title: "Travel Agency", description: "AI-powered travel agency prototype", img: "", url: "#" },
-    { id: 9, title: "Image Editor", description: "Centralized image editor with AI capabilities", img: "", url: "#" },
-    { id: 10, title: "Human vs AI (Student)", description: "AI detector in file uploads – student view", img: "", url: "#" },
-    { id: 11, title: "Human vs AI (Admin)", description: "AI detector in file uploads – admin view", img: "", url: "#" },
+    { id: 7, title: "Stock Project", img: stock, description: "Stock management for construction company (Supabase integrated)", img: "", url: "https://v0-construction-management-site.vercel.app/" },
+    { id: 8, title: "Travel Agency", img:travel, description: "AI-powered travel agency prototype", img: "", url: "https://kzmgoqtm1oedtwx22hyn.lite.vusercontent.net/" },
+    { id: 9, title: "Image Editor", img:editor, description: "Centralized image editor with AI capabilities", img: "", url: "https://v0-centralized-image-editor.vercel.app/" },
+    { id: 10, title: "Human vs AI (Student)", image: ia1, description: "AI detector in file uploads – student view", img: "", url: "https://text-human-detector.lovable.app/" },
+    { id: 11, title: "Human vs AI (Admin)", image: ia2, description: "AI detector in file uploads – admin view", img: "", url: "https://text-truth-teller-ai.lovable.app/" },
   ];
 
   const renderSection = (title, description, projects) => (
