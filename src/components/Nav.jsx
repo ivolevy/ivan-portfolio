@@ -3,10 +3,13 @@ import "../assets/styles/nav.css";
 import "../assets/styles/contact.css";
 
 const menuItems = [
+  { id: "hero", label: "Inicio", title: "Inicio" },
+  { id: "about", label: "About", title: "About me" },
   { id: "skills", label: "Abilities", title: "What i can do" },
   { id: "projects", label: "Projects", title: "Recent projects" },
-  { id: "contact", label: "Let´s talk", title: "Let´s work together", className: "navButton" },
 ];
+
+const contactItem = { id: "contact", label: "Let´s talk", title: "Let´s work together", className: "navButton" };
 
 export const NavComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,9 +27,9 @@ export const NavComponent = () => {
 
   return (
     <nav>
-      <div className="logo">
-        <a href="#hero" title="Ivan Levy - portfolio">
-          <img src="icon.ico" alt="Ivan Levy - portfolio" />
+      <div className="contact-button mobile-only">
+        <a href={`#${contactItem.id}`} className={contactItem.className} title={contactItem.title} onClick={(e) => { e.preventDefault(); scrollToSection(contactItem.id); }}>
+          {contactItem.label}
         </a>
       </div>
 
@@ -39,6 +42,12 @@ export const NavComponent = () => {
           </li>
         ))}
       </ul>
+
+      <div className="contact-button desktop-only">
+        <a href={`#${contactItem.id}`} className={contactItem.className} title={contactItem.title} onClick={(e) => { e.preventDefault(); scrollToSection(contactItem.id); }}>
+          {contactItem.label}
+        </a>
+      </div>
 
       <button
         className={`hamburger ${isMenuOpen ? "hamburger-active" : ""}`}

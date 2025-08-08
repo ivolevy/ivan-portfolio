@@ -5,6 +5,7 @@ import '@fontsource/museomoderno';
 import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 
 import { Header } from './components/Header.jsx';
+import { About } from './components/About.jsx';
 import Services from './components/Services.jsx';
 import { Steps } from './components/Steps.jsx';
 import { Projects } from './components/Projects.jsx';
@@ -24,6 +25,7 @@ function Layout() {
       
       <Routes>
         <Route path="/" element={<>
+          <About />
           <Services />
           <Steps />
           <Projects />

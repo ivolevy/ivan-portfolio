@@ -24,7 +24,7 @@ export const Hero = () => {
           variants={containerVariants}
           transition={{ delay: 0.2 }}
         >
-          Ivan Levy <br /> Web <span className="underline">Developer</span>
+          Hi, I'm Ivan Levy <br /> Web <span className="underline">Developer</span>
         </motion.h1>
 
         {/* Subtítulo */}
@@ -33,7 +33,7 @@ export const Hero = () => {
           variants={containerVariants}
           transition={{ delay: 0.4 }}
         >
-          Studying business & systems - 4th year <br />working as a part-time front end web developer
+          Front end web developer & Power BI Analyst | Bachelor's degree student in Technology Management
         </motion.p>
 
         {/* Botones */}
@@ -51,14 +51,12 @@ export const Hero = () => {
             Contact me
           </a>
           <a
-            href="https://calendly.com/solutionsdota/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#projects"
             className="border border-black text-black font-light py-3 px-6 hover:bg-gray-100 transition-all navButton2"
-            aria-label="Agendar una llamada"
-            title="Book a call"
+            aria-label="Ver proyectos"
+            title="See projects"
           >
-            Book a call
+            See projects
           </a>
         </motion.div>
       </motion.div>
