@@ -6,7 +6,7 @@ export const Steps = () => {
     { id: 1, title: "Financial Accountant", description: "Jan 2022 - Apr 2022" },
     { id: 2, title: "CRM Specialist - UO Solutions", description: "May 2022 - Jul 2022" },
     { id: 3, title: "Front-End Web Developer & Designer - UO Solutions", description: "Aug 2022 - Present" },
-    { id: 4, title: "Líder de Desarrollo & Operaciones - Dota Solutions", description: "Jan 2025 - Present" },
+    { id: 4, title: "CTO & DevOps Lead - Dota Solutions", description: "Jan 2025 - Present" },
   ];
 
   return (
@@ -33,13 +33,7 @@ export const Steps = () => {
           </motion.div>
         ))}
       </div>
-      <p className="text-base mt-10 text-center pl-14 pr-14 stepsTitle">
-        Currently working on website development using <span className="text-pink-400">HTML, CSS, React, PHP</span>.  
-        Experienced in WordPress development with <span className="text-pink-400">Elementor, Divi</span>.  
-        Skilled in FTP management using <span className="text-pink-400">FileZilla</span> for the IAB news blog (news layout with <span className="text-pink-400">PHP</span>, general site maintenance).  
-        Proficient in site management for Interact via <span className="text-pink-500">cPanel</span>.
-        Also specialized in developing custom ERP and CRM systems using <span className="text-pink-400">Next.js</span>, <span className="text-pink-400">PostgreSQL</span>, and <span className="text-pink-400">Artificial Intelligence</span> to create efficient, optimized solutions.
-      </p>
+
     </section>
   );
 };

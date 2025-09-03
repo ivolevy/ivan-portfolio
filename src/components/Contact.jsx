@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { AiFillInstagram } from "react-icons/ai";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
@@ -33,9 +34,26 @@ export const Contact = () => {
 
   return (
     <>
-      <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">
-        <span className="border-b-4 border-black pb-1">Contact</span>
-      </h2>
+      <div className="text-center mb-12">
+                  <motion.span 
+            className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            CONTACT
+          </motion.span>
+        <motion.h2 
+          className="text-3xl font-bold text-gray-800 mb-3 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <span className="underline">Contact</span>
+        </motion.h2>
+      </div>
       <div className="flex flex-col items-center lg:flex-row mx-auto text-center contactContainer" id="contact">
         {/* Izquierda: Información + Redes Sociales */}
         <div className="lg:w-1/2 flex flex-col items-start justify-center text-left p-6 responsiveData">

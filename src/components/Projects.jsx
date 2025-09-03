@@ -1,61 +1,144 @@
 import { motion } from "framer-motion";
+import { ArrowRight, ArrowUpRight, ArrowDown } from 'lucide-react';
 import "../assets/styles/projects.css";
-import etcheverry from '../assets/images/projects/etcheverry.webp';
-import crujinola from '../assets/images/projects/crujinola.webp';
-import premios from '../assets/images/projects/premios.webp';
-import stock from '../assets/images/projects/stock.webp';
-import travel from '../assets/images/projects/travel.webp';
-import editor from '../assets/images/projects/editor.webp';
+import dota from "../assets/images/projects/dota.webp";
+import crujinola from "../assets/images/projects/crujinola.webp";
+import stock from "../assets/images/projects/stock.webp";
 
 export const Projects = () => {
-  const allProjects = [
-    { id: 1, title: "Law firm Etcheverry-Garcia", img: etcheverry, url: "https://etcheberry.devuocloud.com" },
-    { id: 2, title: "Crujinola", img: crujinola, url: "https://crujinola.com" },
-    { id: 3, title: "Premios +Digital", img: premios, url: "https://premiomasdigital.com" },
-    { id: 4, title: "Stock Project (MVP)", img: stock, description: "Stock management for construction company (Supabase integrated)", url: "https://v0-construction-management-site.vercel.app/" },
-    { id: 5, title: "Travel Agency (MVP)", img: travel, description: "AI-powered travel agency prototype", url: "https://kzmgoqtm1oedtwx22hyn.lite.vusercontent.net/" },
-    { id: 6, title: "Image Editor (MVP)", img: editor, description: "Centralized image editor with AI capabilities", url: "https://v0-centralized-image-editor.vercel.app/" },
+  const projects = [
+    {
+      id: 1,
+      title: "Dota Solutions",
+      description: "Agencia de servicios digitales creada por mí",
+      img: dota,
+      textColor: "text-black",
+      bgColor: "bg-[#F5F1E5]",
+      altText: "Imagen del proyecto Dota Solutions",
+      achievements: ["Agencia de servicios digitales", "Desarrollo web", "Marketing digital", "Consultoría IT"],
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "Crujinola",
+      description: "Sitio web de e-commerce",
+      img: crujinola,
+      textColor: "text-yellow-400",
+      bgColor: "bg-black",
+      altText: "Imagen del proyecto Crujinola",
+      achievements: ["E-commerce", "Diseño web", "Optimización SEO", "Integración de pagos"],
+      link: "https://crujinola.com",
+    },
+    {
+      id: 3,
+      title: "Stock Project (MVP)",
+      description: "Sistema de gestión de inventario para empresa de construcción",
+      img: stock,
+      textColor: "text-white",
+      bgColor: "bg-gray-900",
+      altText: "Dashboard del sistema de gestión de inventario",
+      achievements: ["Gestión de inventario", "Integración Supabase", "Dashboard analítico", "Reportes automáticos"],
+      link: "https://v0-construction-management-site.vercel.app/",
+    },
   ];
 
-  const renderProjects = (projects) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-      {projects.map((project) => (
+  return (
+    <section className="w-full py-16" id="projects" style={{ scrollMarginTop: '60px' }}>
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-12">
+          <motion.span 
+            className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            LATEST PROJECTS
+          </motion.span>
+          <motion.h1 
+            className="servicesTitle text-center mb-3"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <span className="underline">Some</span> Projects
+          </motion.h1>
+          <motion.p 
+            className="text-gray-600 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Descubre cómo ayudamos a clientes como vos a alcanzar sus objetivos (templates demostrativos)
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+        {projects.map((project, index) => (
         <motion.article
           key={project.id}
-          className="project-card overflow-hidden rounded-lg"
-          initial={{ opacity: 0, y: 50 }}
+            className="relative bg-white borderRadius p-4 md:p-6 shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true, amount: 0.3 }}
-          role="article"
-        >
-          <a href={project.url} target="_blank" rel="noopener noreferrer" className="block">
+            transition={{ 
+              duration: 0.5,
+              ease: "easeOut"
+            }}
+            viewport={{ once: true, amount: 0.03 }}
+          >
+            <div className="mb-4 md:mb-6">
             <img
               src={project.img}
-              alt={project.title}
-              className="w-full h-48 object-cover"
+                alt={`${project.title} - ${project.description}`}
+                className="w-full h-40 object-cover rounded-lg"
               loading="lazy"
             />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">{project.title}</h3>
-              {project.description && (
-                <p className="text-gray-600 text-sm">{project.description}</p>
-              )}
             </div>
-          </a>
+
+            <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-3 md:mb-4">{project.title}</h2>
+
+            <div className="space-y-3 mb-6">
+              {project.achievements.map(achievement => (
+                <div key={achievement} className="flex items-center text-gray-600">
+                  <ArrowRight size={16} className="text-pink-500 mr-2" />
+                  <span className="text-sm">{achievement}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+              <motion.a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-pink-400 hover:text-pink-500 font-medium"
+              >
+                Ver proyecto
+                <ArrowUpRight size={16} className="ml-2" />
+              </motion.a>
+            </div>
         </motion.article>
       ))}
     </div>
-  );
 
-  return (
-    <section className="text-center py-20 px-6" id="projects">
-      <h2 className="text-3xl font-bold text-gray-800 mb-10">
-        <span className="border-b-4 border-black pb-1">My</span> Projects
-      </h2>
-      <p className="text-gray-600 mb-8">Click on any project to view it live.</p>
-
-      {renderProjects(allProjects)}
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <a 
+            href="#contact" 
+            className="inline-flex items-center px-6 py-3 bg-black text-white borderRadius font-medium hover:bg-pink-600 transition-colors no-underline"
+          >
+            ¿Listo para tu proyecto?
+            <ArrowDown size={16} className="ml-2" />
+          </a>
+        </motion.div>
+      </div>
     </section>
   );
 };
