@@ -6,8 +6,7 @@ import {
   Cloud, 
   Brain, 
   Users, 
-  Globe, 
-  BookOpen,
+  Globe,
   Zap,
   Shield,
   TrendingUp,
@@ -17,10 +16,10 @@ import "../assets/styles/services.css";
 
 const SkillCard = ({ icon: Icon, title, skills, gradient, delay }) => (
   <motion.article
-    className={`relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100`}
-    initial={{ opacity: 0, y: 50 }}
+    className={`relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100`}
+    initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay }}
+    transition={{ duration: 0.3, delay }}
     viewport={{ once: true, amount: 0.3 }}
     role="article"
   >
@@ -30,17 +29,13 @@ const SkillCard = ({ icon: Icon, title, skills, gradient, delay }) => (
     
     <div className="space-y-3">
       {skills.map((skill, index) => (
-        <motion.div 
+        <div 
           key={index}
-          className="flex items-center text-gray-600 hover:text-gray-800 transition-colors"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3, delay: delay + (index * 0.1) }}
-          viewport={{ once: true }}
+          className="flex items-center text-gray-600"
         >
           <div className="w-2 h-2 bg-pink-400 rounded-full mr-3 flex-shrink-0"></div>
           <span className="text-sm">{skill}</span>
-        </motion.div>
+        </div>
       ))}
     </div>
   </motion.article>
@@ -108,18 +103,6 @@ export default function Skills() {
       gradient: "bg-gradient-to-br from-indigo-500 to-blue-600",
       delay: 0.5
     },
-    {
-      icon: BookOpen,
-      title: "Education",
-      skills: [
-        "IT Management - UADE",
-        "Full Stack Development",
-        "Google Ads & SEO Certified",
-        "Continuous Learning"
-      ],
-      gradient: "bg-gradient-to-br from-emerald-500 to-green-600",
-      delay: 0.6
-    }
   ];
 
   return (

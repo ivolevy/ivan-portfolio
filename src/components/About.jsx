@@ -81,7 +81,7 @@ export const About = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Educación Formal */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4 text-pink-600">Formal Education</h4>
+              <h4 className="text-lg font-semibold text-gray-800 mb-4 text-pink-400">Formal Education</h4>
               <div className="space-y-4">
                 <div className="border-l-4 border-pink-400 pl-4">
                   <h5 className="font-semibold text-gray-800">IT Management</h5>
@@ -103,7 +103,7 @@ export const About = () => {
 
             {/* Certificaciones */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-4 text-pink-600">Certifications</h4>
+              <h4 className="text-lg font-semibold text-gray-800 mb-4 text-pink-400">Certifications</h4>
               <div className="space-y-4">
                 <div className="border-l-4 border-pink-400 pl-4">
                   <h5 className="font-semibold text-gray-800">Google Display Certification</h5>
