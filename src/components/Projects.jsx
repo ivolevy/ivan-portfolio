@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight, ArrowDown } from 'lucide-react';
 import "../assets/styles/projects.css";
 import dota from "../assets/images/projects/dota.webp";
 import crujinola from "../assets/images/projects/crujinola.webp";
-import stock from "../assets/images/projects/stock.webp";
+import chronos from "../assets/images/projects/chronos.webp";
 
 export const Projects = () => {
   const projects = [
@@ -31,14 +31,14 @@ export const Projects = () => {
     },
     {
       id: 3,
-      title: "Stock Project (MVP)",
-      description: "Sistema de gestión de inventario para empresa de construcción",
-      img: stock,
+      title: "Chronos watches",
+      description: "Sitio web de relojes de lujo",
+      img: chronos,
       textColor: "text-white",
       bgColor: "bg-gray-900",
-      altText: "Dashboard del sistema de gestión de inventario",
-      achievements: ["Gestión de inventario", "Integración Supabase", "Dashboard analítico", "Reportes automáticos"],
-      link: "https://v0-construction-management-site.vercel.app/",
+      altText: "Sitio web de relojes de lujo Chronos",
+      achievements: ["Exclusive Collection", "Prestigious Brands", "Luxury Design", "Detail and Perfection"],
+      link: "https://chronosluxury.vercel.app/",
     },
   ];
 
