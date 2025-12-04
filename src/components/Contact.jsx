@@ -81,47 +81,49 @@ export const Contact = () => {
         </div>
 
         {/* Derecha: Formulario */}
-        <form ref={form} onSubmit={handleSubmit} className="lg:w-1/2 bg-[var(--gris-oscuro)] p-6 roundedForm responsiveForm shadow-md flex flex-col items-center text-center">
-          <div className="flex flex-col md:flex-row gap-4 mb-4 w-full">
+        <div className="lg:w-1/2 bg-[var(--gris-opaco)] p-6 roundedForm responsiveForm shadow-md">
+          <form ref={form} onSubmit={handleSubmit} className="flex flex-col items-center text-center">
+            <div className="flex flex-col md:flex-row gap-4 mb-4 w-full">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full md:w-1/2 p-3 bg-white text-black border border-gray-200 roundedForm focus:outline-none focus:border-[var(--rosa-principal)]"
+              />
+              <input
+                type="text"
+                name="company"
+                placeholder="Your Company"
+                required
+                className="w-full md:w-1/2 p-3 bg-white text-black border border-gray-200 roundedForm focus:outline-none focus:border-[var(--rosa-principal)]"
+              />
+            </div>
+
             <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
+              type="email"
+              name="email"
+              placeholder="Your Email"
               required
-              className="w-full md:w-1/2 p-3 border border-gray-300 roundedForm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 mb-4 bg-white text-black border border-gray-200 roundedForm focus:outline-none focus:border-[var(--rosa-principal)]"
             />
-            <input
-              type="text"
-              name="company"
-              placeholder="Your Company"
+
+            <textarea
+              name="message"
+              placeholder="Wanna work together?"
               required
-              className="w-full md:w-1/2 p-3 border border-gray-300 roundedForm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+              rows="4"
+              className="w-full p-3 bg-white text-black border border-gray-200 roundedForm focus:outline-none focus:border-[var(--rosa-principal)]"
+            ></textarea>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            className="w-full p-3 mb-4 border border-gray-300 roundedForm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+            <button type="submit" className="contactButton mt-3">
+              Send Message
+            </button>
 
-          <textarea
-            name="message"
-            placeholder="Wanna work together?"
-            required
-            rows="4"
-            className="w-full p-3 border border-gray-300 roundedForm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          ></textarea>
-
-          <button type="submit" className="contactButton mt-3">
-            Send Message
-          </button>
-
-          {/* Mensaje de estado */}
-          {status && <p className={`text-center mt-3 ${status.includes("Error") ? "text-red-600" : "text-green-600"}`}>{status}</p>}
-        </form>
+            {/* Mensaje de estado */}
+            {status && <p className={`text-center mt-3 ${status.includes("Error") ? "text-red-600" : "text-green-600"}`}>{status}</p>}
+          </form>
+        </div>
       </div>
     </>
   );

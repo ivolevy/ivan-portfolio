@@ -15,9 +15,9 @@ export const Hero = () => {
       initial="hidden"
       animate="visible"
       aria-labelledby="hero-title"
-      style={{ zIndex: 2 }}
+      style={{ zIndex: 1 }}
     >
-      <motion.div className="relative" style={{ zIndex: 2 }}>
+      <motion.div className="relative" style={{ zIndex: 1 }}>
         {/* Título principal */}
         <motion.h1
           id="hero-title"
