@@ -1,9 +1,11 @@
 .about-section {
-  background-color: #FAFAFA;
+  background-color: transparent;
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 0 50px;
+  position: relative;
+  z-index: 1;
 }
 
 .about-section .bg-white {

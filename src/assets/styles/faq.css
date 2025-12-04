@@ -5,7 +5,8 @@
 
 .faqs{
     border-radius: 35px;
-    background-color: #fff !important;
+    background-color: var(--gris-oscuro) !important;
+    color: #fff;
 }
 
 .faqCard{

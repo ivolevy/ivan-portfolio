@@ -12,13 +12,13 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--negro-mate); /* Fondo negro mate más oscuro */
   height: 65px;
   width: 100%;
   width: 50%;
   border-radius: 40px;
   margin-top: 10px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
@@ -41,7 +41,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #000 !important;
+  color: #fff !important;
   font-size: 0.83rem;
   font-weight: lighter;
   padding: 4px 8px;
@@ -49,7 +49,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #4b5563 !important;
+  color: var(--rosa-claro) !important;
 }
 
 .contact-button {
@@ -103,8 +103,8 @@ nav ul li a:hover {
 }
 
 .navButton2:hover{
-  border: 1px solid #ea9c9c !important;
-  box-shadow: 0 0 5px #ea9c9c !important;
+  border: 1px solid var(--rosa-principal) !important;
+  box-shadow: 0 0 10px rgba(255, 128, 191, 0.5) !important;
 }
 
 .hamburger {
@@ -115,7 +115,7 @@ nav ul li a:hover {
 .hamburger .line {
   width: 25px;
   height: 1px;
-  background-color: #000;
+  background-color: #fff;
   display: block;
   margin: 7px auto;
   transition: all 0.3s ease-in-out;
@@ -154,7 +154,7 @@ nav ul li a:hover {
   width: 60%;
   height: 100vh;
   padding: 20% 0;
-  background: #fff;
+  background: var(--negro-mate);
   transition: all 0.5s ease-in;
   z-index: 2;
 }
@@ -178,7 +178,7 @@ nav ul li a:hover {
 
 .menubar ul li a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-size: 1rem;
   font-weight: 400;
   padding: 5px 10px;
@@ -186,7 +186,7 @@ nav ul li a:hover {
 }
 
 .menubar ul li a:hover {
-  color: #4b5563 !important;
+  color: var(--rosa-claro) !important;
 }
 
 /* Modal */
@@ -212,14 +212,15 @@ nav ul li a:hover {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: var(--gris-oscuro);
   padding: 20px;
   border-radius: 35px;
   width: 60%;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
   border: none !important;
   transform: scale(0.8);  
-  transition: transform 0.5s ease; 
+  transition: transform 0.5s ease;
+  color: #fff;
 }
 
 .modal.show .modal-content {
@@ -306,11 +307,12 @@ form button {
     border-radius: 35px !important;
     padding: 12px 17px !important;
     transition: 0.5s;
-    background-color: var(--rosa);  
+    background: linear-gradient(to bottom, #ff80bf, #ea9c9c) !important;
     cursor: pointer;
   }
   .navButton:hover {
-    background-color: #000;
+    box-shadow: 0px 6px 20px rgba(255, 128, 191, 0.4);
+    transform: translateY(-2px);
   }
   .modal-content{
     width: 90%;

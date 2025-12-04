@@ -56,22 +56,22 @@ export const Projects = () => {
             LATEST PROJECTS
           </motion.span>
           <motion.h1 
-            className="servicesTitle text-center mb-3"
+            className="text-4xl md:text-5xl font-bold text-white text-center mb-3"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="underline">Some</span> Projects
+            Projects that make a <span className="underline">difference</span>
           </motion.h1>
           <motion.p 
-            className="text-gray-600 max-w-3xl mx-auto"
+            className="text-white text-center max-w-3xl mx-auto"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Descubre cómo ayudamos a clientes como vos a alcanzar sus objetivos (templates demostrativos)
+            See how we help businesses cut costs and increase revenue. Explore our demo templates below.
           </motion.p>
         </div>
 
@@ -79,7 +79,7 @@ export const Projects = () => {
         {projects.map((project, index) => (
         <motion.article
           key={project.id}
-            className="relative bg-white borderRadius p-4 md:p-6 shadow-lg"
+            className="project-card relative bg-[var(--negro-mate)] rounded-2xl p-6 shadow-lg"
             initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
             transition={{ 
@@ -88,35 +88,36 @@ export const Projects = () => {
             }}
             viewport={{ once: true, amount: 0.03 }}
           >
-            <div className="mb-4 md:mb-6">
+            <div className="mb-6">
             <img
               src={project.img}
                 alt={`${project.title} - ${project.description}`}
-                className="w-full h-40 object-cover rounded-lg"
+                className="w-full h-48 object-cover rounded-xl"
               loading="lazy"
             />
             </div>
 
-            <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-3 md:mb-4">{project.title}</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">{project.title}</h2>
 
             <div className="space-y-3 mb-6">
               {project.achievements.map(achievement => (
-                <div key={achievement} className="flex items-center text-gray-600">
-                  <ArrowRight size={16} className="text-pink-500 mr-2" />
+                <div key={achievement} className="flex items-center text-white">
+                  <ArrowRight size={16} className="text-[var(--rosa-principal)] mr-3 flex-shrink-0" />
                   <span className="text-sm">{achievement}</span>
                 </div>
               ))}
             </div>
 
-            <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+            <div className="pt-4 border-t border-gray-700">
               <motion.a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-pink-400 hover:text-pink-500 font-medium"
+                className="inline-flex items-center text-[var(--rosa-principal)] hover:text-[var(--rosa-claro)] font-medium transition-colors no-underline"
+                style={{ color: 'var(--rosa-principal)' }}
               >
                 Ver proyecto
-                <ArrowUpRight size={16} className="ml-2" />
+                <ArrowUpRight size={16} className="ml-2" style={{ color: 'var(--rosa-principal)' }} />
               </motion.a>
             </div>
         </motion.article>

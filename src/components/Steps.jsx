@@ -11,7 +11,7 @@ export const Steps = () => {
 
   return (
     <section className="flex flex-col items-center stepsSection py-20" aria-labelledby="steps-title">
-      <h2 id="steps-title" className="text-lg mb-5 text-center stepsTitle">
+      <h2 id="steps-title" className="text-lg mb-5 text-center stepsTitle text-white">
         Professional <span className="text-pink-400">Experience</span>
       </h2>
       <div className="relative flex flex-col items-center w-full max-w-3xl" role="list">
@@ -26,9 +26,9 @@ export const Steps = () => {
             viewport={{ once: true, amount: 0.3 }}
             role="listitem"
           >
-            <div className="w-1/2 flex flex-col items-center bg-white p-4 steps">
-              <h3 className="text-lg font-semibold mt-2 text-center stepsTitleSquare">{step.title}</h3>
-              <p className="text-gray-600 text-center">{step.description}</p>
+            <div className="w-1/2 flex flex-col items-center bg-[var(--gris-oscuro)] p-4 steps">
+              <h3 className="text-lg font-semibold mt-2 text-center stepsTitleSquare text-white">{step.title}</h3>
+              <p className="text-gray-300 text-center">{step.description}</p>
             </div>
           </motion.div>
         ))}

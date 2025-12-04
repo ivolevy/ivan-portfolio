@@ -9,18 +9,19 @@ const containerVariants = {
 export const Hero = () => {
   return (
     <motion.section
-      className="hero w-full h-screen flex flex-col items-center justify-center text-center bg-[#FAFAFA]"
+      className="hero w-full h-screen flex flex-col items-center justify-center text-center bg-transparent relative"
       id="hero"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
       aria-labelledby="hero-title"
+      style={{ zIndex: 2 }}
     >
-      <motion.div className="relative">
+      <motion.div className="relative" style={{ zIndex: 2 }}>
         {/* Título principal */}
         <motion.h1
           id="hero-title"
-          className="text-5xl md:text-6xl font-bold text-black leading-tight heroTitle"
+          className="text-5xl md:text-6xl font-bold text-white leading-tight heroTitle"
           variants={containerVariants}
           transition={{ delay: 0.2 }}
         >
@@ -29,7 +30,7 @@ export const Hero = () => {
 
         {/* Subtítulo */}
         <motion.p
-          className="heroText text-lg text-gray-600 mt-4 max-w-2xl mx-auto"
+          className="heroText text-lg text-gray-300 mt-4 max-w-2xl mx-auto"
           variants={containerVariants}
           transition={{ delay: 0.4 }}
         >
@@ -52,7 +53,7 @@ export const Hero = () => {
           </a>
           <a
             href="#projects"
-            className="border border-black text-black font-light py-3 px-6 hover:bg-gray-100 transition-all navButton2"
+            className="border border-white text-white font-light py-3 px-6 hover:bg-white hover:text-black transition-all navButton2"
             aria-label="Ver proyectos"
             title="See projects"
           >
@@ -63,7 +64,7 @@ export const Hero = () => {
 
       {/* Texto adicional */}
       <motion.p
-        className="mt-12 text-gray-500 text-sm"
+        className="mt-12 text-gray-400 text-sm"
         variants={containerVariants}
         transition={{ delay: 0.8 }}
       >

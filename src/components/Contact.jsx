@@ -45,7 +45,7 @@ export const Contact = () => {
             CONTACT
           </motion.span>
         <motion.h2 
-          className="text-3xl font-bold text-gray-800 mb-3 text-center"
+          className="text-3xl font-bold text-white mb-3 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -73,7 +73,7 @@ export const Contact = () => {
           </div>
 
           {/* Correo Electrónico */}
-          <p className="text-gray-600">
+          <p className="text-gray-300">
             <a href="mailto:ivo.levy03@gmail.com" className="text-white contactEmail">
               ivo.levy03@gmail.com
             </a>
@@ -81,7 +81,7 @@ export const Contact = () => {
         </div>
 
         {/* Derecha: Formulario */}
-        <form ref={form} onSubmit={handleSubmit} className="lg:w-1/2 bg-white p-6 roundedForm responsiveForm shadow-md flex flex-col items-center text-center">
+        <form ref={form} onSubmit={handleSubmit} className="lg:w-1/2 bg-[var(--gris-oscuro)] p-6 roundedForm responsiveForm shadow-md flex flex-col items-center text-center">
           <div className="flex flex-col md:flex-row gap-4 mb-4 w-full">
             <input
               type="text"

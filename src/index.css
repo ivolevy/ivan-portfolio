@@ -8,6 +8,21 @@ html, body {
     height: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    /*font-family: "MuseoModerno", sans-serif !important;*/
-    background-color: #fafafa  !important;
+    font-family: "MuseoModerno", sans-serif;
+    font-weight: 300;
+    background-color: #000000 !important;
+    color: #fff;
+}
+
+/* Títulos principales (h1) - Instrument Serif */
+h1 {
+    font-family: "Instrument Serif", serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Texto secundario y descripciones - Inter */
+.text-secondary {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
 }

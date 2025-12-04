@@ -27,8 +27,8 @@ input:focus, textarea:focus {
 
 .contactButton{
     background-color: transparent !important;
-    border: 1px solid black;
-    color: #000 !important;
+    border: 1px solid #fff;
+    color: #fff !important;
     border-radius: 35px;
     padding: 12px 17px;
     cursor: pointer;
@@ -37,8 +37,9 @@ input:focus, textarea:focus {
 }
 
 .contactButton:hover{
-    border: 1px solid #ea9c9c !important;
-    box-shadow: 0 0 5px #ea9c9c !important;
+    border: 1px solid var(--rosa-principal) !important;
+    box-shadow: 0 0 10px rgba(255, 128, 191, 0.5) !important;
+    background-color: rgba(255, 128, 191, 0.1) !important;
 }
 
 .contactIcon{

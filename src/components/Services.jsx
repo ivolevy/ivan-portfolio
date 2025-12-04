@@ -16,7 +16,7 @@ import "../assets/styles/services.css";
 
 const SkillCard = ({ icon: Icon, title, skills, gradient, delay }) => (
   <motion.article
-    className={`relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100`}
+    className={`relative bg-[var(--gris-oscuro)] rounded-2xl p-6 shadow-lg border border-gray-700`}
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.3, delay }}
@@ -25,13 +25,13 @@ const SkillCard = ({ icon: Icon, title, skills, gradient, delay }) => (
   >
 
     
-    <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">{title}</h3>
+    <h3 className="text-xl font-bold text-white mb-4 text-center">{title}</h3>
     
     <div className="space-y-3">
       {skills.map((skill, index) => (
         <div 
           key={index}
-          className="flex items-center text-gray-600"
+          className="flex items-center text-gray-300"
         >
           <div className="w-2 h-2 bg-pink-400 rounded-full mr-3 flex-shrink-0"></div>
           <span className="text-sm">{skill}</span>
@@ -118,7 +118,7 @@ export default function Skills() {
           SKILLS
         </motion.span>
         <motion.h2 
-          className="text-3xl font-bold text-gray-800 mb-3 text-center"
+          className="text-3xl font-bold text-white mb-3 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -127,7 +127,7 @@ export default function Skills() {
           My <span className="underline">Skills & Expertise</span>
         </motion.h2>
         <motion.p 
-          className="text-gray-600 max-w-2xl mx-auto"
+          className="text-gray-300 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
