@@ -10,8 +10,8 @@ export const Steps = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center stepsSection py-20" aria-labelledby="steps-title">
-      <h2 id="steps-title" className="text-lg mb-5 text-center stepsTitle text-white">
+    <section className="flex flex-col items-center stepsSection py-32 mb-16" aria-labelledby="steps-title" style={{ scrollMarginTop: '60px' }}>
+      <h2 id="steps-title" className="text-xl md:text-2xl mb-5 text-center stepsTitle text-white">
         Professional <span className="text-pink-400">Experience</span>
       </h2>
       <div className="relative flex flex-col items-center w-full max-w-3xl" role="list">

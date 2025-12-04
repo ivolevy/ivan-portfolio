@@ -106,7 +106,7 @@ export default function Skills() {
   ];
 
   return (
-    <section className="p-8 rounded-lg servicesSection pt-0 pb-20" id="skills" style={{ scrollMarginTop: '60px' }}>
+    <section className="p-8 rounded-lg servicesSection pt-0 pb-32 mb-16" id="skills" style={{ scrollMarginTop: '60px' }}>
       <div className="text-center mb-12">
         <motion.span 
           className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
@@ -118,7 +118,7 @@ export default function Skills() {
           SKILLS
         </motion.span>
         <motion.h2 
-          className="text-3xl font-bold text-white mb-3 text-center"
+          className="section-title text-4xl md:text-5xl font-bold text-white mb-3 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

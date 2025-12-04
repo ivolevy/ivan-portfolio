@@ -10,41 +10,41 @@ export const Projects = () => {
     {
       id: 1,
       title: "Dota Solutions",
-      description: "Agencia de servicios digitales creada por mí",
+      description: "Digital services agency created by me",
       img: dota,
       textColor: "text-black",
       bgColor: "bg-[#F5F1E5]",
-      altText: "Imagen del proyecto Dota Solutions",
-      achievements: ["Agencia de servicios digitales", "Desarrollo web", "Marketing digital", "Consultoría IT"],
+      altText: "Dota Solutions project image",
+      achievements: ["Digital services agency", "Web development", "Digital marketing", "IT consulting"],
       link: "#",
     },
     {
       id: 2,
       title: "Crujinola",
-      description: "Sitio web de e-commerce",
+      description: "Sales funnel for a product",
       img: crujinola,
       textColor: "text-yellow-400",
       bgColor: "bg-black",
-      altText: "Imagen del proyecto Crujinola",
-      achievements: ["E-commerce", "Diseño web", "Optimización SEO", "Integración de pagos"],
+      altText: "Crujinola project image",
+      achievements: ["Sales funnel", "Web design", "SEO optimization", "Payment integration"],
       link: "https://crujinola.com",
     },
     {
       id: 3,
       title: "Chronos watches",
-      description: "Sitio web de relojes de lujo",
+      description: "Luxury watches website",
       img: chronos,
       textColor: "text-white",
       bgColor: "bg-gray-900",
-      altText: "Sitio web de relojes de lujo Chronos",
+      altText: "Chronos luxury watches website",
       achievements: ["Exclusive Collection", "Prestigious Brands", "Luxury Design", "Detail and Perfection"],
       link: "https://chronosluxury.vercel.app/",
     },
   ];
 
   return (
-    <section className="w-full py-16" id="projects" style={{ scrollMarginTop: '60px' }}>
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="w-full py-32 mb-8" id="projects" style={{ scrollMarginTop: '60px' }}>
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
           <motion.span 
             className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
@@ -56,7 +56,7 @@ export const Projects = () => {
             LATEST PROJECTS
           </motion.span>
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-white text-center mb-3"
+            className="section-title text-4xl md:text-5xl font-bold text-white text-center mb-3"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -71,7 +71,7 @@ export const Projects = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            See how we help businesses cut costs and increase revenue. Explore our demo templates below.
+            See how i help a business cut costs and increase revenue. Explore some landings templates below.
           </motion.p>
         </div>
 
@@ -116,7 +116,7 @@ export const Projects = () => {
                 className="inline-flex items-center text-[var(--rosa-principal)] hover:text-[var(--rosa-claro)] font-medium transition-colors no-underline"
                 style={{ color: 'var(--rosa-principal)' }}
               >
-                Ver proyecto
+                View project
                 <ArrowUpRight size={16} className="ml-2" style={{ color: 'var(--rosa-principal)' }} />
               </motion.a>
             </div>
@@ -135,7 +135,7 @@ export const Projects = () => {
             href="#contact" 
             className="inline-flex items-center px-6 py-3 bg-black text-white borderRadius font-medium hover:bg-pink-600 transition-colors no-underline"
           >
-            ¿Listo para tu proyecto?
+            Ready for your project?
             <ArrowDown size={16} className="ml-2" />
           </a>
         </motion.div>

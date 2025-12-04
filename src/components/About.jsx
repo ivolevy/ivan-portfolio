@@ -3,8 +3,8 @@ import "../assets/styles/about.css";
 
 export const About = () => {
   return (
-    <section className="about-section py-20 px-6" id="about" style={{ scrollMarginTop: '60px' }}>
-      <div className="max-w-4xl mx-auto">
+    <section className="about-section py-32 px-6 mb-16" id="about" style={{ scrollMarginTop: '60px' }}>
+      <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <motion.span 
             className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
@@ -16,7 +16,7 @@ export const About = () => {
             GET TO KNOW ME
           </motion.span>
           <motion.h2 
-            className="text-3xl font-bold text-white mb-3 text-center"
+            className="section-title text-4xl md:text-5xl font-bold text-white mb-3 text-center"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}

@@ -17,13 +17,13 @@ export const Footer = () => {
         <div className="w-full md:w-1/3 flex flex-col items-center justify-center min-h-[150px] 
                         md:items-end md:justify-end text-white">
           <div className="flex space-x-5">
-            <a href="https://www.linkedin.com/in/ivan-levy/" target="_blank" className="text-2xl icon"><TbBrandLinkedinFilled /></a>
-            <a href="https://www.instagram.com/ivo.levy/" target="_blank" className="text-2xl icon"><AiFillInstagram /></a>
-            <a href="https://wa.me/1138240929" className="text-2xl icon"><FaWhatsapp /></a>
+            <a href="https://www.linkedin.com/in/ivan-levy/" target="_blank" rel="noopener noreferrer" className="text-2xl icon"><TbBrandLinkedinFilled /></a>
+            <a href="https://www.instagram.com/ivo.levy/" target="_blank" rel="noopener noreferrer" className="text-2xl icon"><AiFillInstagram /></a>
+            <a href="https://wa.me/1138240929" target="_blank" rel="noopener noreferrer" className="text-2xl icon"><FaWhatsapp /></a>
           </div>
           {/* Correo Electrónico */}
           <div className="mt-2 text-sm text-gray-300">
-            <a href="mailto:ivo.levy03@gmail.com" className="hover:underline email">ivo.levy03@gmail.com</a>
+            <a href="mailto:ivo.levy03@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:underline email">ivo.levy03@gmail.com</a>
           </div>
         </div>
       </div>

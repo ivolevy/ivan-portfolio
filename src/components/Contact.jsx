@@ -33,7 +33,7 @@ export const Contact = () => {
   };
 
   return (
-    <>
+    <section className="py-32 mb-16 pt-16" id="contact-section" style={{ scrollMarginTop: '60px' }}>
       <div className="text-center mb-12">
                   <motion.span 
             className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
@@ -45,7 +45,7 @@ export const Contact = () => {
             CONTACT
           </motion.span>
         <motion.h2 
-          className="text-3xl font-bold text-white mb-3 text-center"
+          className="section-title text-4xl md:text-5xl font-bold text-white mb-3 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -73,11 +73,22 @@ export const Contact = () => {
           </div>
 
           {/* Correo Electrónico */}
-          <p className="text-gray-300">
-            <a href="mailto:ivo.levy03@gmail.com" className="text-white contactEmail">
+          <p className="text-gray-300 mb-4">
+            <a href="mailto:ivo.levy03@gmail.com" target="_blank" rel="noopener noreferrer" className="text-white contactEmail">
               ivo.levy03@gmail.com
             </a>
           </p>
+
+          {/* WhatsApp */}
+          <a 
+            href="https://wa.me/1138240929" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center gap-2 text-green-500 hover:text-green-400 underline"
+          >
+            <FaWhatsapp className="text-xl" />
+            <span>Write us on WhatsApp</span>
+          </a>
         </div>
 
         {/* Derecha: Formulario */}
@@ -125,6 +136,6 @@ export const Contact = () => {
           </form>
         </div>
       </div>
-    </>
+    </section>
   );
 };

@@ -21,6 +21,15 @@ h1 {
     letter-spacing: -0.02em;
 }
 
+/* Títulos de secciones - Instrument Serif con -2% letter-spacing */
+h2.section-title,
+h1.section-title,
+.section-title {
+    font-family: "Instrument Serif", serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
 /* Texto secundario y descripciones - Inter */
 .text-secondary {
     font-family: "Inter", sans-serif;
