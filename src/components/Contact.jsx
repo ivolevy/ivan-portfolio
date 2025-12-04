@@ -87,7 +87,7 @@ export const Contact = () => {
             className="flex items-center gap-2 text-green-500 hover:text-green-400 underline"
           >
             <FaWhatsapp className="text-xl" />
-            <span>Write us on WhatsApp</span>
+            <span>Catch me up on WhatsApp</span>
           </a>
         </div>
 
