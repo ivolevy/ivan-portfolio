@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight, ArrowDown } from 'lucide-react';
 import "../assets/styles/projects.css";
 import dota from "../assets/images/projects/dota.webp";
 import crujinola from "../assets/images/projects/crujinola.webp";
-import chronos from "../assets/images/projects/chronos.webp";
+import spoty from "../assets/images/projects/spoty.png";
 
 export const Projects = () => {
   const projects = [
@@ -31,14 +31,19 @@ export const Projects = () => {
     },
     {
       id: 3,
-      title: "Chronos watches",
-      description: "Luxury watches website",
-      img: chronos,
+      title: "Spoty - Intelligent Playlisting",
+      description: "Smart playlisting powered by AI for record labels",
+      img: spoty,
       textColor: "text-white",
       bgColor: "bg-gray-900",
-      altText: "Chronos luxury watches website",
-      achievements: ["Exclusive Collection", "Prestigious Brands", "Luxury Design", "Detail and Perfection"],
-      link: "https://chronosluxury.vercel.app/",
+      altText: "Spoty AI-powered smart playlisting platform",
+      achievements: [
+        "Spotify & OpenAI API integrations",
+        "Supabase database",
+        "Custom design & development",
+        "Fine-tuned AI models"
+      ],
+      link: "#",
     },
   ];
 
