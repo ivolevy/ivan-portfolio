@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, ArrowDown } from 'lucide-react';
 import "../assets/styles/projects.css";
-import dota from "../assets/images/projects/dota.webp";
+import dota from "../assets/images/projects/dota.png";
 import crujinola from "../assets/images/projects/crujinola.webp";
 import spoty from "../assets/images/projects/spoty.png";
 
