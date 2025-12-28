@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight, ArrowDown } from 'lucide-react';
 import "../assets/styles/projects.css";
 import dota from "../assets/images/projects/dota.png";
 import crujinola from "../assets/images/projects/crujinola.webp";
-import spoty from "../assets/images/projects/spoty.png";
+import spoty from "../assets/images/projects/attorney-ai.png";
 
 export const Projects = () => {
   const projects = [
@@ -31,19 +31,19 @@ export const Projects = () => {
     },
     {
       id: 3,
-      title: "Spoty - Intelligent Playlisting",
-      description: "Smart playlisting powered by AI for record labels",
+      title: "Attorney AI",
+      description: "Speech to text focused on legal entities",
       img: spoty,
       textColor: "text-white",
       bgColor: "bg-gray-900",
-      altText: "Spoty AI-powered smart playlisting platform",
+      altText: "Attorney AI - Legal Speech to Text Platform",
       achievements: [
-        "Spotify & OpenAI API integrations",
-        "Supabase database",
-        "Custom design & development",
-        "Fine-tuned AI models"
+        "Speech to text for legal entities",
+        "AI App Integration",
+        "Increased productivity in writings",
+        "Automated transcription"
       ],
-      link: "#",
+      link: "https://attorneyai.vercel.app/",
     },
   ];
 
@@ -60,15 +60,15 @@ export const Projects = () => {
           >
             LATEST PROJECTS
           </motion.span>
-          <motion.h1 
-            className="section-title text-4xl md:text-5xl font-bold text-white text-center mb-3"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Projects that make a <span className="underline">difference</span>
-          </motion.h1>
+          <motion.h2 
+            className="section-title text-4xl md:text-5xl font-serif font-bold text-white mb-3 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          Featured <span className="italic text-pink-400">Projects</span>
+        </motion.h2>
           <motion.p 
             className="text-white text-center max-w-3xl mx-auto"
             initial={{ opacity: 0, y: -20 }}

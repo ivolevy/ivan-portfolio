@@ -1,4 +1,4 @@
-#contact{
+#contact {
     border-radius: 35px;
     padding: 25px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
@@ -7,37 +7,21 @@
     background-color: var(--negro-mate) !important;
 }
 
-.contactSpan{
+.contactSpan {
     margin-bottom: -5px;
 }
 
-.contactEmail{
+.contactEmail {
     text-decoration: none;
 }
 
-input, textarea {
-    background-color: #fff !important;
-    color: #000 !important;
-    border: 1px solid #e5e5e5 !important;
-}
+/* Removed conflicting input styles to use Tailwind classes */
 
-input::placeholder, textarea::placeholder {
-    color: #9ca3af !important;
-}
-
-input:focus, textarea:focus {
-    outline: none !important;
-    border-color: var(--rosa-principal) !important;
-    box-shadow: 0 0 0 2px rgba(255, 128, 191, 0.2) !important;
-    background-color: #fff !important;
-    color: #000 !important;
-}  
-
-.roundedForm{
+.roundedForm {
     border-radius: 35px;
 }
 
-.contactButton{
+.contactButton {
     background-color: var(--negro-mate) !important;
     border: 1px solid #fff !important;
     color: #fff !important;
@@ -48,49 +32,54 @@ input:focus, textarea:focus {
     transition: all 0.2s ease-in-out;
 }
 
-.contactButton:hover{
+.contactButton:hover {
     border: 1px solid var(--rosa-principal) !important;
     box-shadow: 0 0 10px rgba(255, 128, 191, 0.5) !important;
     background-color: rgba(255, 128, 191, 0.1) !important;
     color: #fff !important;
 }
 
-.contactIcon{
+.contactIcon {
     color: #fff !important;
 }
 
-@media (max-width: 1024px){
-    .responsiveData{
+@media (max-width: 1024px) {
+    .responsiveData {
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
     }
-    .responsiveForm{
+
+    .responsiveForm {
         width: 100% !important;
     }
-    .contactSubtitle{
+
+    .contactSubtitle {
         margin-bottom: 20px;
     }
-    .contactText{
+
+    .contactText {
         display: none;
     }
 }
 
-@media (max-width: 768px){
-    .contactContainer{
+@media (max-width: 768px) {
+    .contactContainer {
         width: 90% !important;
         padding-left: 15px !important;
         padding-right: 15px !important;
     }
-    .responsiveData{
+
+    .responsiveData {
         padding: 10px;
         margin-bottom: 20px;
     }
-    .contactSubtitle{
+
+    .contactSubtitle {
         font-size: 1.2rem;
         line-height: 1.2;
     }
-    .responsiveForm{
-    }
+
+    .responsiveForm {}
 }

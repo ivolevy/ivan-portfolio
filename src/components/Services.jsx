@@ -14,28 +14,25 @@ import {
 } from 'lucide-react';
 import "../assets/styles/services.css";
 
-const SkillCard = ({ icon: Icon, title, skills, gradient, delay }) => (
+const SkillCard = ({ icon: Icon, title, skills, delay }) => (
   <motion.article
-    className={`relative bg-[var(--gris-oscuro)] rounded-2xl p-6 shadow-lg border border-gray-700`}
+    className="group flex flex-col items-center text-center"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.3, delay }}
     viewport={{ once: true, amount: 0.3 }}
-    role="article"
   >
-
+    <div className="mb-4">
+      <Icon className="text-gray-400 w-8 h-8 group-hover:text-white transition-colors duration-300 stroke-[1.5]" />
+    </div>
     
-    <h3 className="text-xl font-bold text-white mb-4 text-center">{title}</h3>
+    <h3 className="text-lg font-medium text-white mb-4 border-b border-white/10 pb-2 inline-block">{title}</h3>
     
-    <div className="space-y-3">
+    <div className="">
       {skills.map((skill, index) => (
-        <div 
-          key={index}
-          className="flex items-center text-gray-300"
-        >
-          <div className="w-2 h-2 bg-pink-400 rounded-full mr-3 flex-shrink-0"></div>
-          <span className="text-sm">{skill}</span>
-        </div>
+        <p key={index} className="text-gray-400 font-light text-sm hover:text-gray-200 transition-colors cursor-default leading-tight">
+          {skill}
+        </p>
       ))}
     </div>
   </motion.article>
@@ -52,7 +49,6 @@ export default function Skills() {
         "WordPress, Tailwind CSS",
         "Git, Vercel, Supabase"
       ],
-      gradient: "bg-gradient-to-br from-blue-500 to-purple-600",
       delay: 0.1
     },
     {
@@ -118,13 +114,13 @@ export default function Skills() {
           SKILLS
         </motion.span>
         <motion.h2 
-          className="section-title text-4xl md:text-5xl font-bold text-white mb-3 text-center"
+          className="section-title text-4xl md:text-5xl font-serif font-bold text-white mb-3 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          My <span className="underline">Skills & Expertise</span>
+           My <span className="font-serif italic text-pink-400">Skills & Expertise</span>
         </motion.h2>
         <motion.p 
           className="text-gray-300 max-w-2xl mx-auto"
@@ -137,9 +133,16 @@ export default function Skills() {
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {skillCategories.map((category, index) => (
-          <SkillCard key={index} {...category} />
+          <div key={index} className="flex flex-col items-center">
+            <SkillCard 
+              icon={category.icon}
+              title={category.title}
+              skills={category.skills}
+              delay={category.delay}
+            />
+          </div>
         ))}
       </div>
     </section>

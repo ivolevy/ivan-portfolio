@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'r
 import { Header } from './components/Header.jsx';
 import { About } from './components/About.jsx';
 import Services from './components/Services.jsx';
-import { Steps } from './components/Steps.jsx';
+import { Experience } from './components/Experience.jsx';
 import { Projects } from './components/Projects.jsx';
 import { Contact } from './components/Contact.jsx';
 import { Footer } from './components/Footer.jsx';
@@ -26,8 +26,8 @@ function Layout() {
       <Routes>
         <Route path="/" element={<>
           <About />
+          <Experience />
           <Services />
-          <Steps />
           <Projects />
           <Contact />
         </>} />

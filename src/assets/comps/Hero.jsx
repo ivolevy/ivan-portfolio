@@ -20,12 +20,12 @@ export const Hero = () => {
       <motion.div className="relative" style={{ zIndex: 1 }}>
         {/* Título principal */}
         <motion.h1
-          id="hero-title"
-          className="text-5xl md:text-6xl font-bold text-white leading-tight heroTitle"
-          variants={containerVariants}
-          transition={{ delay: 0.2 }}
+          className="text-5xl md:text-7xl font-serif font-medium text-white mb-6 tracking-tight"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Hi, I'm Ivan Levy <br /> Web <span className="underline">Developer</span>
+          Hi, I'm <span className="italic text-pink-400">Ivan Levy</span>
         </motion.h1>
 
         {/* Subtítulo */}
@@ -34,7 +34,7 @@ export const Hero = () => {
           variants={containerVariants}
           transition={{ delay: 0.4 }}
         >
-          Front end web developer & Power BI Analyst | Bachelor's degree student in Technology Management
+          Full-Stack Developer | <span className="text-gray-400">Bachelor’s degree student in Technology Management</span>
         </motion.p>
 
         {/* Botones */}
@@ -44,18 +44,16 @@ export const Hero = () => {
           transition={{ delay: 0.6 }}
         >
           <a
-            className="border border-transparent font-light transition-all headerButton"
-            aria-label="Contactarnos"
-            title="Contact me"
             href="#contact"
+            className="group px-8 py-3 bg-white text-black font-serif italic tracking-wide rounded-full hover:bg-pink-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/25 hover:scale-105 active:scale-95"
+            aria-label="Contactarnos"
           >
             Contact me
           </a>
           <a
             href="#projects"
-            className="border border-white text-white font-light py-3 px-6 hover:bg-white hover:text-black transition-all navButton2"
+            className="px-8 py-3 bg-white/5 text-white font-serif tracking-wide rounded-full border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm hover:scale-105 active:scale-95"
             aria-label="Ver proyectos"
-            title="See projects"
           >
             See projects
           </a>

@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import { GraduationCap, Award } from 'lucide-react';
 import "../assets/styles/about.css";
 
 export const About = () => {
   return (
     <section className="about-section py-32 px-6 mb-16" id="about" style={{ scrollMarginTop: '60px' }}>
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
           <motion.span 
             className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
             initial={{ opacity: 0, y: -10 }}
@@ -16,109 +17,98 @@ export const About = () => {
             GET TO KNOW ME
           </motion.span>
           <motion.h2 
-            className="section-title text-4xl md:text-5xl font-bold text-white mb-3 text-center"
+            className="section-title text-4xl md:text-5xl font-bold text-white mb-6 text-center"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="underline">About</span> Me
+            <span className="underline decoration-pink-500/50">About</span> Me
           </motion.h2>
         </div>
 
-        <motion.div 
-          className="bg-[var(--gris-oscuro)] rounded-lg p-8 shadow-md"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Quien soy */}
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-4">Who I am</h3>
-              <p className="text-gray-300 leading-relaxed">
-                I'm 22 years old and I'm from Palermo, CABA. I'm passionate about technology and creating innovative solutions that make a difference.
+        <div className="flex flex-col gap-12 mb-16 text-center">
+           <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+              <p className="text-gray-300 leading-relaxed text-lg max-w-3xl mx-auto">
+                Looking ahead, my goal is to continue growing into managerial and financial roles, where strategic thinking and data-driven decision-making are key. I strongly believe data is the core of modern development and business: it enables measurement, continuous adjustment, optimization, and revenue maximization. For me, building technology today means designing systems that generate insights, support better decisions, and create sustainable growth.
               </p>
-            </div>
+          </motion.div>
 
-            {/* Donde estoy estudiando */}
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-4">Where I'm studying</h3>
-              <p className="text-gray-300 leading-relaxed">
-                At UADE, I'm studying IT Management, strengthening my strategic and technical skills.
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+              <p className="text-gray-300 leading-relaxed text-lg mb-6 max-w-3xl mx-auto">
+                I’m studying IT Management at UADE, learning how to connect business strategy with tech solutions that actually work in the real world.
               </p>
-            </div>
-
-            {/* DOTA SOLUTIONS */}
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-4">DOTA SOLUTIONS</h3>
-              <p className="text-gray-300 leading-relaxed">
-                I lead a SaaS startup with fellow students, creating custom ERP, CRM, and web solutions. We use AI, Vercel, Supabase, and cutting-edge tools to deliver faster, smarter, and scalable products.
-              </p>
-            </div>
-
-            {/* UO SOLUTIONS */}
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-4">UO SOLUTIONS</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Web developer building high-quality websites with HTML, CSS, React, PHP, and WordPress, and managing FTP operations for IAB's news blog.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+              <div className="flex items-center justify-center space-x-3 text-gray-400 text-sm">
+                  <GraduationCap className="text-pink-400" size={20}/>
+                  <span>Bachelor’s degree student in Technology Management</span>
+              </div>
+          </motion.div>
+        </div>
 
         {/* Sección de Educación */}
         <motion.div 
-          className="mt-12 mb-20 bg-[var(--gris-oscuro)] rounded-lg p-8 shadow-md"
+          className="glass-panel rounded-2xl p-8 md:p-12 shadow-2xl"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">Education & Certifications</h3>
+          <h3 className="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3">
+            <Award className="text-pink-400" />
+            Education & Certifications
+          </h3>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-12">
             {/* Educación Formal */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4 text-pink-400">Formal Education</h4>
-              <div className="space-y-4">
-                <div className="border-l-4 border-pink-400 pl-4">
-                  <h5 className="font-semibold text-white">IT Management</h5>
-                  <p className="text-gray-300 text-sm">UADE - Universidad Argentina de la Empresa</p>
-                  <p className="text-gray-400 text-sm">2022 - Present</p>
+              <h4 className="text-lg font-semibold text-pink-400 mb-6 uppercase tracking-wider">Formal Education</h4>
+              <div className="space-y-8">
+                <div className="relative pl-6 border-l-2 border-pink-500/30">
+                  <h5 className="font-bold text-white text-lg">IT Management</h5>
+                  <p className="text-gray-400">UADE - Universidad Argentina de la Empresa</p>
+                  <span className="text-xs text-pink-400 font-mono mt-1 block">2022 - Present</span>
                 </div>
-                <div className="border-l-4 border-pink-400 pl-4">
-                  <h5 className="font-semibold text-white">Full Stack Web Development</h5>
-                  <p className="text-gray-300 text-sm">Digital House</p>
-                  <p className="text-gray-400 text-sm">2021 - 2022</p>
+                <div className="relative pl-6 border-l-2 border-pink-500/30">
+                  <h5 className="font-bold text-white text-lg">Full Stack Web Development</h5>
+                  <p className="text-gray-400">Digital House</p>
+                  <span className="text-xs text-pink-400 font-mono mt-1 block">2021 - 2022</span>
                 </div>
-                <div className="border-l-4 border-pink-400 pl-4">
-                  <h5 className="font-semibold text-white">Bachelor's in Economics</h5>
-                  <p className="text-gray-300 text-sm">Scholem Aleijem High School</p>
-                  <p className="text-gray-400 text-sm">2016 - 2020</p>
+                <div className="relative pl-6 border-l-2 border-pink-500/30">
+                  <h5 className="font-bold text-white text-lg">Bachelor's in Economics</h5>
+                  <p className="text-gray-400">Scholem Aleijem High School</p>
+                  <span className="text-xs text-pink-400 font-mono mt-1 block">2016 - 2020</span>
                 </div>
               </div>
             </div>
 
             {/* Certificaciones */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4 text-pink-400">Certifications</h4>
-              <div className="space-y-4">
-                <div className="border-l-4 border-pink-400 pl-4">
-                  <h5 className="font-semibold text-white">Google Display Certification</h5>
-                  <p className="text-gray-300 text-sm">Google</p>
-                  <p className="text-gray-400 text-sm">ID: 225423675</p>
+              <h4 className="text-lg font-semibold text-pink-400 mb-6 uppercase tracking-wider">Certifications</h4>
+              <div className="space-y-8">
+                <div className="relative pl-6 border-l-2 border-pink-500/30">
+                  <h5 className="font-bold text-white text-lg">Google Display Certification</h5>
+                  <p className="text-gray-400">Google</p>
+                  <span className="text-xs text-pink-400 font-mono mt-1 block">ID: 225423675</span>
                 </div>
-                <div className="border-l-4 border-pink-400 pl-4">
-                  <h5 className="font-semibold text-white">Google SEO Certification</h5>
-                  <p className="text-gray-300 text-sm">Google</p>
-                  <p className="text-gray-400 text-sm">ID: 809120</p>
+                <div className="relative pl-6 border-l-2 border-pink-500/30">
+                  <h5 className="font-bold text-white text-lg">Google SEO Certification</h5>
+                  <p className="text-gray-400">Google</p>
+                  <span className="text-xs text-pink-400 font-mono mt-1 block">ID: 809120</span>
                 </div>
-                <div className="border-l-4 border-pink-400 pl-4">
-                  <h5 className="font-semibold text-white">Power BI Analyst</h5>
-                  <p className="text-gray-300 text-sm">Microsoft</p>
-                  <p className="text-gray-400 text-sm">Data Analysis & Visualization</p>
+                <div className="relative pl-6 border-l-2 border-pink-500/30">
+                  <h5 className="font-bold text-white text-lg">Power BI Analyst</h5>
+                  <p className="text-gray-400">Microsoft</p>
+                  <span className="text-xs text-pink-400 font-mono mt-1 block">Data Analysis & Visualization</span>
                 </div>
               </div>
             </div>

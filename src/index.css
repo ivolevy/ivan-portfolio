@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -14,10 +15,30 @@ html, body {
     color: #fff;
 }
 
-/* Títulos principales (h1) - Instrument Serif */
-h1 {
+/* Glassmorphism Utilities */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(10, 10, 10, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Instrument Serif", serif;
-    font-weight: 700;
+    font-weight: 400;
+    /* Re-applied lighter heading weight */
     letter-spacing: -0.02em;
 }
 
@@ -34,4 +55,22 @@ h1.section-title,
 .text-secondary {
     font-family: "Inter", sans-serif;
     font-weight: 300;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
 }
