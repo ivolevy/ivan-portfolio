@@ -1,4 +1,4 @@
-.footer{
+.footer {
     width: 98%;
     background-color: var(--negro-mate);
     border-radius: 35px 35px 0px 0px;
@@ -8,20 +8,20 @@
     margin: 0 auto;
     color: #fff;
     position: relative;
-    z-index: 1;
+    z-index: 50;
 }
 
-.email{
+.email {
     text-decoration: none;
     color: var(--gris-claro);
 }
 
-.icon{
+.icon {
     color: var(--rosa-principal);
     transition: color 0.3s ease;
 }
 
-.icon:hover{
+.icon:hover {
     color: var(--rosa-claro);
 }
 
@@ -35,18 +35,16 @@
 }
 
 
-@media screen and (min-width: 1025px) {
-    
-}
+@media screen and (min-width: 1025px) {}
 
 @media screen and (max-width: 1024px) {
-    .footer{
-      padding-right: 3%;
-      width: 90%;
-      padding-left: 3%;
+    .footer {
+        padding-right: 3%;
+        width: 90%;
+        padding-left: 3%;
     }
-    .footerImg{
+
+    .footerImg {
         width: 65px !important;
     }
-  }
-  
+}

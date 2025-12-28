@@ -11,15 +11,18 @@ import { Experience } from './components/Experience.jsx';
 import { Projects } from './components/Projects.jsx';
 import { Contact } from './components/Contact.jsx';
 import { Footer } from './components/Footer.jsx';
+import { TechStack } from './components/TechStack.jsx';
 
 /* 404 */
 import { NotFound } from './assets/comps/Notfound.jsx';
+import { CustomCursor } from './assets/comps/CustomCursor.jsx';
 
 function Layout() {
   const location = useLocation();
 
   return (
     <>
+      <CustomCursor />
       {/* Renderizamos el header solo si no estamos en la página 404 */}
       {location.pathname !== '/404' && <Header />}
       
@@ -28,6 +31,7 @@ function Layout() {
           <About />
           <Experience />
           <Services />
+          <TechStack />
           <Projects />
           <Contact />
         </>} />
