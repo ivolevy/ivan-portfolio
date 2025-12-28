@@ -1,4 +1,4 @@
-.nav{
+.nav {
   width: 100%;
   height: auto;
   position: fixed !important;
@@ -15,7 +15,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--negro-mate); /* Fondo negro mate más oscuro */
+  background-color: var(--negro-mate);
+  /* Fondo negro mate más oscuro */
   height: 65px;
   width: 100%;
   width: 50%;
@@ -30,7 +31,7 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -98,16 +99,17 @@ nav ul li a:hover {
 
 
 .navButton:hover {
-  color: #000 !important; /* Cambia a un color diferente */
+  color: #000 !important;
+  /* Cambia a un color diferente */
 }
 
-.navButton2{
+.navButton2 {
   background-color: transparent !important;
   border-radius: 35px;
   text-decoration: none;
 }
 
-.navButton2:hover{
+.navButton2:hover {
   border: 1px solid var(--rosa-principal) !important;
   box-shadow: 0 0 10px rgba(255, 128, 191, 0.5) !important;
 }
@@ -223,20 +225,20 @@ nav ul li a:hover {
   width: 60%;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
   border: none !important;
-  transform: scale(0.8);  
+  transform: scale(0.8);
   transition: transform 0.5s ease;
   color: #fff;
 }
 
 .modal.show .modal-content {
-  transform: scale(1); 
+  transform: scale(1);
 }
 
-.formButton{
+.formButton {
   transition: all 0.5s ease;
 }
 
-.formButton:hover{
+.formButton:hover {
   color: #767373 !important;
 }
 
@@ -282,32 +284,58 @@ form button {
     position: absolute;
     right: 3%;
   }
+
   nav ul {
     display: none;
   }
+
   .menubar {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--negro-mate);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+    padding-top: 80px;
+    /* Space for the header */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   }
+
+  .menubar.active {
+    transform: translateX(0);
+  }
+
   .menubar.active ul {
     display: flex;
   }
+
   nav {
     padding-right: 5%;
     width: 90%;
     padding-left: 5%;
   }
+
   .mobile-only {
     display: block;
     position: absolute;
     left: 3%;
   }
+
   .desktop-only {
     display: none;
   }
+
   .contact-button {
     position: absolute;
     left: 3%;
   }
+
   .navButton {
     border-radius: 35px !important;
     padding: 12px 17px !important;
@@ -315,13 +343,16 @@ form button {
     background: linear-gradient(to bottom, #ff80bf, #ea9c9c) !important;
     cursor: pointer;
   }
+
   .navButton:hover {
     box-shadow: 0px 6px 20px rgba(255, 128, 191, 0.4);
     transform: translateY(-2px);
   }
-  .modal-content{
+
+  .modal-content {
     width: 90%;
   }
+
   nav .logo img {
     height: 32px;
     width: auto;
