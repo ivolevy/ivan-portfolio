@@ -26,7 +26,7 @@ export const NowSection = () => {
         <div className="flex flex-col md:flex-row gap-12 items-start">
           <div className="md:w-1/3">
             <motion.span 
-              className="inline-block px-2 py-0.5 bg-pink-50 text-pink-400 rounded-full text-[7px] uppercase tracking-[0.2em] font-bold mb-4"
+              className="inline-block px-2 py-0.5 bg-pink-50 text-pink-400 rounded-full text-[6px] uppercase tracking-[0.2em] font-bold mb-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
