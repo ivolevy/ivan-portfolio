@@ -1,14 +1,16 @@
+
 import { motion } from "framer-motion";
 import { 
   SiNotion, 
   SiSlack, 
   SiLinear, 
   SiFigma, 
-  SiDiscord, 
   SiTrello,
   SiAsana,
   SiZoom,
-  SiGithub
+  SiGithub,
+  SiVercel,
+  SiDiscord
 } from "react-icons/si";
 
 const tools = [
@@ -16,7 +18,7 @@ const tools = [
   { name: "Slack", icon: SiSlack, category: "Communication" },
   { name: "Linear", icon: SiLinear, category: "Productivity" },
   { name: "github", icon: SiGithub, category: "versions" },
-  { name: "Figma", icon: SiFigma, category: "Design" },
+  { name: "Vercel", icon: SiVercel, category: "Deployment" },
   { name: "Discord", icon: SiDiscord, category: "Community" },
   { name: "Trello", icon: SiTrello, category: "Planning" },
 ];

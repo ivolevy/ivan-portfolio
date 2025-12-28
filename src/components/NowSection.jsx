@@ -26,7 +26,7 @@ export const NowSection = () => {
         <div className="flex flex-col md:flex-row gap-12 items-start">
           <div className="md:w-1/3">
             <motion.span 
-              className="inline-block px-2.5 py-0.5 bg-pink-50 text-pink-400 rounded-full text-[8px] uppercase tracking-[0.2em] font-bold mb-4"
+              className="inline-block px-2 py-0.5 bg-pink-50 text-pink-400 rounded-full text-[7px] uppercase tracking-[0.2em] font-bold mb-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -74,7 +74,7 @@ export const NowSection = () => {
                 <h3 className="text-white font-medium">AI-First Development</h3>
               </div>
               <p className="text-gray-400 font-light leading-relaxed">
-                Learning to work with data to maximize project utility and revenue. Experimenting with Cursor (and Antigravity vibes) to speed up delivery times and automate complex transcription tasks in the legal field.
+                Leveraging data-driven strategies and AI integration to maximize project utility and revenue. Building smarter, scalable solutions that automate complex tasks in the legal field.
               </p>
             </motion.div>
 
