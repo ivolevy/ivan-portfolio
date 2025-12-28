@@ -23,7 +23,7 @@ function Layout() {
 
   return (
     <>
-      <div className="grain-texture"></div>
+
       <CustomCursor />
       {/* Renderizamos el header solo si no estamos en la página 404 */}
       {location.pathname !== '/404' && <Header />}
