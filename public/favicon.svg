@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0a0a0a"/>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="serif" font-weight="bold" font-size="20" fill="white">IL</text>
+  <circle cx="26" cy="10" r="2.5" fill="#ff80bf">
+    <animate attributeName="cy" values="10;8;10" dur="3s" repeatCount="indefinite" />
+  </circle>
+</svg>
