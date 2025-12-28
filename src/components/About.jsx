@@ -48,9 +48,31 @@ export const About = () => {
               <p className="text-gray-300 leading-relaxed text-lg mb-6 max-w-3xl mx-auto">
                 I’m studying IT Management at UADE, learning how to connect business strategy with tech solutions that actually work in the real world.
               </p>
-              <div className="flex items-center justify-center space-x-3 text-gray-400 text-sm">
-                  <GraduationCap className="text-pink-400" size={20}/>
-                  <span>Bachelor’s degree student in Technology Management</span>
+              <div className="flex flex-col items-center gap-4">
+                <div className="flex items-center justify-center space-x-3 text-gray-400 text-sm">
+                    <GraduationCap className="text-pink-400" size={20}/>
+                    <span>Bachelor’s degree student in Technology Management</span>
+                </div>
+                
+                {/* CV Downloads */}
+                <div className="flex gap-4 items-center mt-2">
+                  <span className="text-gray-500 text-[9px] uppercase tracking-wider font-medium">Download my CV:</span>
+                  <a 
+                    href="/Ivan Levy - CV EN.pdf" 
+                    download="Ivan Levy - CV.pdf"
+                    className="text-pink-400/80 hover:text-pink-400 text-xs font-serif italic transition-colors hover:underline underline-offset-4"
+                  >
+                    English
+                  </a>
+                  <span className="text-gray-800">•</span>
+                  <a 
+                    href="/Ivan Levy - CV ES.pdf" 
+                    download="Ivan Levy - CV.pdf"
+                    className="text-pink-400/80 hover:text-pink-400 text-xs font-serif italic transition-colors hover:underline underline-offset-4"
+                  >
+                    Spanish
+                  </a>
+                </div>
               </div>
           </motion.div>
         </div>

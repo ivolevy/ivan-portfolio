@@ -7,15 +7,15 @@ import {
   SiDiscord, 
   SiTrello,
   SiAsana,
-  SiZoom
+  SiZoom,
+  SiGithub
 } from "react-icons/si";
-import { TbCursorText } from "react-icons/tb";
 
 const tools = [
   { name: "Notion", icon: SiNotion, category: "Organization" },
   { name: "Slack", icon: SiSlack, category: "Communication" },
   { name: "Linear", icon: SiLinear, category: "Productivity" },
-  { name: "Antigravity", icon: TbCursorText, category: "AI Coding" },
+  { name: "github", icon: SiGithub, category: "versions" },
   { name: "Figma", icon: SiFigma, category: "Design" },
   { name: "Discord", icon: SiDiscord, category: "Community" },
   { name: "Trello", icon: SiTrello, category: "Planning" },
@@ -23,8 +23,8 @@ const tools = [
 
 export const TechStack = () => {
   return (
-    <section className="py-24 px-6 mb-16" id="stack">
-      <div className="max-w-4xl mx-auto">
+    <section className="w-full py-16 bg-transparent relative overflow-hidden" id="abilities">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.span 
             className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
@@ -59,9 +59,20 @@ export const TechStack = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors duration-300 border border-white/5 group-hover:border-white/20">
+              <motion.div 
+                className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors duration-300 border border-white/5 group-hover:border-white/20"
+                animate={{ 
+                  y: [0, -5, 0],
+                }}
+                transition={{ 
+                  duration: 4, 
+                  repeat: Infinity, 
+                  ease: "easeInOut",
+                  delay: index * 0.2
+                }}
+              >
                 <tool.icon className="text-2xl text-gray-400 group-hover:text-pink-400 transition-colors duration-300" />
-              </div>
+              </motion.div>
               <div className="text-center">
                 <span className="block text-white text-xs font-medium tracking-wide">{tool.name}</span>
                 <span className="block text-gray-500 text-[8px] uppercase tracking-[0.3em] mt-1.5 opacity-30 transform scale-75 origin-center">{tool.category}</span>

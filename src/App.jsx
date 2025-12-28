@@ -12,6 +12,7 @@ import { Projects } from './components/Projects.jsx';
 import { Contact } from './components/Contact.jsx';
 import { Footer } from './components/Footer.jsx';
 import { TechStack } from './components/TechStack.jsx';
+import { NowSection } from './components/NowSection.jsx';
 
 /* 404 */
 import { NotFound } from './assets/comps/Notfound.jsx';
@@ -22,6 +23,7 @@ function Layout() {
 
   return (
     <>
+      <div className="grain-texture"></div>
       <CustomCursor />
       {/* Renderizamos el header solo si no estamos en la página 404 */}
       {location.pathname !== '/404' && <Header />}
@@ -32,6 +34,7 @@ function Layout() {
           <Experience />
           <Services />
           <TechStack />
+          <NowSection />
           <Projects />
           <Contact />
         </>} />

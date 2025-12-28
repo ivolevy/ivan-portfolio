@@ -11,28 +11,35 @@ export const Projects = () => {
       id: 1,
       title: "Dota Solutions",
       description: "Digital services agency created by me",
+      image: dota,
       img: dota,
       textColor: "text-black",
       bgColor: "bg-[#F5F1E5]",
       altText: "Dota Solutions project image",
       achievements: ["Digital services agency", "Web development", "Digital marketing", "IT consulting"],
-      link: "#",
+      tags: ["Business", "Strategy", "Full Stack"],
+      link: "https://dotasolutions.agency/",
+      demoUrl: "https://dotasolutions.agency/",
     },
     {
       id: 2,
       title: "Crujinola",
       description: "Sales funnel for a product",
+      image: crujinola,
       img: crujinola,
       textColor: "text-yellow-400",
       bgColor: "bg-black",
       altText: "Crujinola project image",
       achievements: ["Sales funnel", "Web design", "SEO optimization", "Payment integration"],
-      link: "https://crujinola.com",
+      tags: ["Sales", "E-commerce", "SEO"],
+      link: "https://www.crujinola.com/",
+      demoUrl: "https://www.crujinola.com/",
     },
     {
       id: 3,
       title: "Attorney AI",
       description: "Speech to text focused on legal entities",
+      image: spoty,
       img: spoty,
       textColor: "text-white",
       bgColor: "bg-gray-900",
@@ -43,7 +50,9 @@ export const Projects = () => {
         "Increased productivity in writings",
         "Automated transcription"
       ],
+      tags: ["AI", "LegalTech", "NextJS"],
       link: "https://attorneyai.vercel.app/",
+      demoUrl: "https://attorneyai.vercel.app/",
     },
   ];
 
@@ -70,13 +79,13 @@ export const Projects = () => {
           Featured <span className="italic text-pink-400">Projects</span>
         </motion.h2>
           <motion.p 
-            className="text-white text-center max-w-3xl mx-auto"
+            className="text-white text-center max-w-3xl mx-auto font-light"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            See how i help a business cut costs and increase revenue. Explore some landings templates below.
+            See how i help a business cut costs and increase revenue.
           </motion.p>
         </div>
 
@@ -84,47 +93,53 @@ export const Projects = () => {
         {projects.map((project, index) => (
         <motion.article
           key={project.id}
-            className="project-card relative bg-[var(--negro-mate)] rounded-2xl p-6 shadow-lg"
-            initial={{ opacity: 0, y: 20 }}
+          className="project-card h-full"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.5,
-              ease: "easeOut"
-            }}
-            viewport={{ once: true, amount: 0.03 }}
+          transition={{ 
+            duration: 0.5,
+            ease: "easeOut"
+          }}
+          viewport={{ once: true, amount: 0.03 }}
+        >
+          <a 
+            href={project.demoUrl || project.link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="block h-full bg-[var(--negro-mate)] rounded-2xl p-6 shadow-lg cursor-pointer group hover:bg-white/5 transition-all duration-300 border border-transparent hover:border-white/10"
           >
-            <div className="mb-6">
-            <img
-              src={project.img}
+            <div className="mb-6 relative overflow-hidden rounded-xl">
+              <img
+                src={project.img}
                 alt={`${project.title} - ${project.description}`}
-                className="w-full h-48 object-cover rounded-xl"
-              loading="lazy"
-            />
+                className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="px-4 py-2 bg-white text-black text-xs font-bold rounded-full transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  Visit Website
+                </span>
+              </div>
             </div>
 
-            <h2 className="text-xl font-semibold text-white mb-4">{project.title}</h2>
+            <h2 className="text-xl font-semibold text-white mb-4 group-hover:text-pink-400 transition-colors">{project.title}</h2>
 
             <div className="space-y-3 mb-6">
               {project.achievements.map(achievement => (
-                <div key={achievement} className="flex items-center text-white">
-                  <ArrowRight size={16} className="text-[var(--rosa-principal)] mr-3 flex-shrink-0" />
-                  <span className="text-sm">{achievement}</span>
+                <div key={achievement} className="flex items-center text-white/80 group-hover:text-white transition-colors">
+                  <ArrowRight size={14} className="text-[var(--rosa-principal)] mr-3 flex-shrink-0" />
+                  <span className="text-sm font-light">{achievement}</span>
                 </div>
               ))}
             </div>
 
-            <div className="pt-4 border-t border-gray-700">
-              <motion.a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-[var(--rosa-principal)] hover:text-[var(--rosa-claro)] font-medium transition-colors no-underline"
-                style={{ color: 'var(--rosa-principal)' }}
-              >
-                View project
-                <ArrowUpRight size={16} className="ml-2" style={{ color: 'var(--rosa-principal)' }} />
-              </motion.a>
+            <div className="pt-4 border-t border-white/5">
+              <span className="inline-flex items-center text-gray-500 group-hover:text-pink-400 text-xs font-medium transition-colors">
+                Visit Website
+                <ArrowUpRight size={14} className="ml-2" />
+              </span>
             </div>
+          </a>
         </motion.article>
       ))}
     </div>
@@ -138,7 +153,7 @@ export const Projects = () => {
         >
           <a 
             href="#contact" 
-            className="inline-flex items-center px-6 py-3 bg-black text-white borderRadius font-medium hover:bg-pink-600 transition-colors no-underline"
+            className="inline-flex items-center px-8 py-3 bg-white text-black rounded-full font-serif italic hover:bg-pink-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/25"
           >
             Ready for your project?
             <ArrowDown size={16} className="ml-2" />
