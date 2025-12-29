@@ -37,22 +37,22 @@ export const Projects = () => {
     },
     {
       id: 3,
-      title: "Attorney AI",
-      description: "Speech to text focused on legal entities",
+      title: "Asistente Jurídico",
+      description: "Speech to text focused on legal professionals",
       image: spoty,
       img: spoty,
       textColor: "text-white",
       bgColor: "bg-gray-900",
-      altText: "Attorney AI - Legal Speech to Text Platform",
+      altText: "Asistente Jurídico - Legal Speech to Text Platform",
       achievements: [
-        "Speech to text for legal entities",
+        "Speech to text for legal professionals",
         "AI App Integration",
         "Increased productivity in writings",
         "Automated transcription"
       ],
       tags: ["AI", "LegalTech", "NextJS"],
-      link: "https://attorneyai.vercel.app/",
-      demoUrl: "https://attorneyai.vercel.app/",
+      link: "https://asistentejuridico.online/",
+      demoUrl: "https://asistentejuridico.online/",
     },
   ];
 
