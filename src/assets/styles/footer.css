@@ -1,6 +1,11 @@
 .footer {
     width: 98%;
-    background-color: var(--negro-mate);
+    background: rgba(9, 9, 9, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: none;
+    /* No border for the bottom edge as it touches the screen end */
     border-radius: 35px 35px 0px 0px;
     height: auto;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);

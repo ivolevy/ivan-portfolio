@@ -3,13 +3,13 @@ import "../assets/styles/nav.css";
 import "../assets/styles/contact.css";
 
 const menuItems = [
-  { id: "hero", label: "Inicio", title: "Inicio" },
+  { id: "hero", label: "Home", title: "Home" },
   { id: "about", label: "About", title: "About me" },
-  { id: "skills", label: "Abilities", title: "What i can do" },
+  { id: "skills", label: "Skills", title: "What i can do" },
   { id: "projects", label: "Projects", title: "Recent projects" },
 ];
 
-const contactItem = { id: "contact", label: "Let´s talk", title: "Let´s work together", className: "navButton" };
+const contactItem = { id: "contact", label: "Let’s talk", title: "Let’s work together", className: "navButton" };
 
 export const NavComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

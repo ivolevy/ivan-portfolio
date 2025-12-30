@@ -28,14 +28,14 @@ export const About = () => {
         </div>
 
         <div className="flex flex-col gap-12 mb-16 text-center">
-           <motion.div 
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true, amount: 0.3 }}
           >
               <p className="text-gray-300 leading-relaxed text-lg max-w-3xl mx-auto">
-                Looking ahead, my goal is to continue growing into managerial and financial roles, where strategic thinking and data-driven decision-making are key. I strongly believe data is the core of modern development and business: it enables measurement, continuous adjustment, optimization, and revenue maximization. For me, building technology today means designing systems that generate insights, support better decisions, and create sustainable growth.
+                Looking ahead, the goal is to grow into managerial and financial roles where strategic thinking and data-driven decisions matter most. Data sits at the core of modern development and business — enabling measurement, continuous optimization, and revenue growth.
               </p>
           </motion.div>
 
@@ -46,7 +46,9 @@ export const About = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
               <p className="text-gray-300 leading-relaxed text-lg mb-6 max-w-3xl mx-auto">
-                I’m studying IT Management at UADE, learning how to connect business strategy with tech solutions that actually work in the real world.
+                Building technology today means designing systems that generate insights, support better decisions, and create sustainable value.
+                <br /><br />
+                I’m studying IT Management at UADE, learning how to connect business strategy with real-world tech solutions.
               </p>
               <div className="flex flex-col items-center gap-4">
                 <div className="flex items-center justify-center space-x-3 text-gray-400 text-sm">

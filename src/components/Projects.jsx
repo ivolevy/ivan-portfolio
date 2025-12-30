@@ -85,7 +85,7 @@ export const Projects = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            See how i help a business cut costs and increase revenue.
+            See how i help a businesses cut costs and increase revenue.
           </motion.p>
         </div>
 

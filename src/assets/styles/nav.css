@@ -15,7 +15,10 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--negro-mate);
+  background: rgba(9, 9, 9, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   /* Fondo negro mate más oscuro */
   height: 65px;
   width: 100%;
@@ -161,7 +164,9 @@ nav ul li a:hover {
   width: 60%;
   height: 100vh;
   padding: 20% 0;
-  background: var(--negro-mate);
+  background: rgba(9, 9, 9, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   transition: all 0.5s ease-in;
   z-index: 2;
 }
