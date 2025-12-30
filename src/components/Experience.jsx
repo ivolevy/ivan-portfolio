@@ -29,7 +29,7 @@ export const Experience = () => {
       title: "CTO & DevOps Lead",
       company: "Dota Solutions",
       period: "Jan 2025 - Present",
-      description: "I lead a collaborative project: a SaaS startup dedicated to building custom digital systems that streamline processes, automate operations, and help businesses increase revenue. I’m responsible for the overall business management and lead the entire technological development, including the design and development of the startup’s website. I also drive the strategic use of artificial intelligence to deliver faster, more efficient, and highly optimized solutions—maximizing value for both the company and our clients."
+      description: "I lead a collaborative project, a SaaS startup dedicated to building custom digital systems that streamline processes, automate operations, and help businesses increase revenue. I’m responsible for the overall business management and lead the entire technological development, including the design and development of the startup’s website. I also drive the strategic use of artificial intelligence to deliver faster, more efficient, and highly optimized solutions—maximizing value for both the company and our clients."
     }
   ];
 
@@ -61,7 +61,7 @@ export const Experience = () => {
               {/* Dot with cut effect */}
               <span className="absolute -left-[4.5px] top-2 h-2.5 w-2.5 rounded-full bg-white ring-[6px] ring-[#0a0a0a]"></span>
               
-              <div className="group" style={{ marginLeft: '120px' }}>
+              <div className="group ml-8 md:ml-[120px]">
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-3">
                   <h3 className="text-xl font-medium text-white group-hover:text-pink-200 transition-colors duration-300">
                     {exp.title}

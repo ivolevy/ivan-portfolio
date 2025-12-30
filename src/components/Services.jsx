@@ -16,7 +16,7 @@ import "../assets/styles/services.css";
 
 const SkillCard = ({ icon: Icon, title, skills, delay }) => (
   <motion.article
-    className="group flex flex-col items-center text-center"
+    className="group flex flex-col items-center text-center glass-card p-6 rounded-2xl w-full h-full hover:bg-white/5 transition-all duration-300"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.3, delay }}

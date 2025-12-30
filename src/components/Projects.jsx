@@ -10,7 +10,7 @@ export const Projects = () => {
     {
       id: 1,
       title: "Dota Solutions",
-      description: "Digital services agency created by me",
+      description: "Founder & Lead Developer. A full-service digital agency delivering high-performance web solutions and marketing strategies.",
       image: dota,
       img: dota,
       textColor: "text-black",
@@ -24,7 +24,7 @@ export const Projects = () => {
     {
       id: 2,
       title: "Crujinola",
-      description: "Sales funnel for a product",
+      description: "High-Conversion Sales Funnel. Optimized e-commerce flow designed to maximize conversion rates and user retention.",
       image: crujinola,
       img: crujinola,
       textColor: "text-yellow-400",
@@ -85,7 +85,7 @@ export const Projects = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            See how i help a businesses cut costs and increase revenue.
+            See how I help businesses cut costs and increase revenue.
           </motion.p>
         </div>
 
@@ -106,12 +106,12 @@ export const Projects = () => {
             href={project.demoUrl || project.link} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="block h-full bg-[var(--negro-mate)] rounded-2xl p-6 shadow-lg cursor-pointer group hover:bg-white/5 transition-all duration-300 border border-transparent hover:border-white/10"
+            className="block h-full glass-card rounded-2xl p-6 shadow-lg cursor-pointer group hover:bg-white/5 transition-all duration-300 border border-transparent hover:border-white/10"
           >
             <div className="mb-6 relative overflow-hidden rounded-xl">
               <img
                 src={project.img}
-                alt={`${project.title} - ${project.description}`}
+                alt={project.altText}
                 className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />

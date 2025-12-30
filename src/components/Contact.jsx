@@ -57,7 +57,7 @@ export const Contact = () => {
       <div className="flex flex-col lg:flex-row mx-auto justify-between gap-12 text-center contactContainer max-w-6xl" id="contact">
         {/* Izquierda: Información + Redes Sociales */}
         <motion.div 
-          className="lg:w-1/2 flex flex-col items-start justify-center text-left pt-8 lg:pt-0"
+          className="lg:w-1/2 flex flex-col items-center lg:items-start justify-center text-center lg:text-left pt-8 lg:pt-0"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}

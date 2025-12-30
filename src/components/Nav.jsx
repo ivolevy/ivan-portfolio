@@ -5,7 +5,7 @@ import "../assets/styles/contact.css";
 const menuItems = [
   { id: "hero", label: "Home", title: "Home" },
   { id: "about", label: "About", title: "About me" },
-  { id: "skills", label: "Skills", title: "What i can do" },
+  { id: "skills", label: "Skills", title: "What I can do" },
   { id: "projects", label: "Projects", title: "Recent projects" },
 ];
 
