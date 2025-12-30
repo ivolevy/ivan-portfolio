@@ -81,7 +81,7 @@ export const About = () => {
 
         {/* Sección de Educación */}
         <motion.div 
-          className="glass-panel rounded-2xl p-6 md:p-12 shadow-2xl"
+          className="glass-card rounded-2xl p-6 md:p-12 shadow-2xl"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}

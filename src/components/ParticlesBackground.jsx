@@ -43,7 +43,7 @@ export const ParticlesBackground = () => {
     ];
 
     // Calcular número de partículas según el tamaño del canvas
-    const particleCount = Math.floor((canvas.width * canvas.height) / 8000);
+    const particleCount = Math.floor((canvas.width * canvas.height) / 10000); // Reduced density for performance
 
     particlesRef.current = Array.from({ length: particleCount }, () => {
       const colorSet = colorSets[Math.floor(Math.random() * colorSets.length)];
@@ -108,15 +108,17 @@ export const ParticlesBackground = () => {
           const otherParticle = particles[j];
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (Math.abs(dx) < 120 && Math.abs(dy) < 120) { // Optimization: pre-check axis distance
+            const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 128, 191, ${(1 - distance / 120) * 0.1})`;
-            ctx.lineWidth = 0.5;
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.stroke();
+            if (distance < 120) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(255, 128, 191, ${(1 - distance / 120) * 0.1})`;
+              ctx.lineWidth = 0.5;
+              ctx.moveTo(particle.x, particle.y);
+              ctx.lineTo(otherParticle.x, otherParticle.y);
+              ctx.stroke();
+            }
           }
         }
       }
