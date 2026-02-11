@@ -6,7 +6,7 @@ export const Experience = () => {
     {
       id: 1,
       title: "Financial Accounting Assistant",
-      company: "Estudio Matlin", 
+      company: "Estudio Matlin",
       period: "Jan 2022 - Apr 2022",
       description: "Management of administrative and accounting operations, including invoice control, processing of financial transactions, handling of checks, and preparation of both corporate and personal balance sheets."
     },
@@ -29,7 +29,7 @@ export const Experience = () => {
       title: "CTO & DevOps Lead",
       company: "Dota Solutions",
       period: "Jan 2025 - Present",
-      description: "I lead a collaborative project, a SaaS startup dedicated to building custom digital systems that streamline processes, automate operations, and help businesses increase revenue. I’m responsible for the overall business management and lead the entire technological development, including the design and development of the startup’s website. I also drive the strategic use of artificial intelligence to deliver faster, more efficient, and highly optimized solutions—maximizing value for both the company and our clients."
+      description: "I lead a collaborative university project, a SaaS startup simulation focused on building custom digital systems to streamline processes, automate operations, and improve business outcomes. I am responsible for overall project management and lead the entire technological development, utilizing TypeScript, Python, and SQL to create scalable and efficient solutions. This includes designing and developing the project’s website and backend systems. Additionally, I integrate artificial intelligence strategically to optimize performance and deliver highly effective results, maximizing value within the academic context."
     }
   ];
 
@@ -37,7 +37,7 @@ export const Experience = () => {
     <section className="py-32 relative" id="experience" style={{ scrollMarginTop: '60px' }}>
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-20">
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-normal text-white mb-2 font-serif"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,9 +50,9 @@ export const Experience = () => {
 
         <div className="relative border-l border-white/20 ml-3 md:ml-0 space-y-16">
           {experiences.map((exp, index) => (
-            <motion.div 
+            <motion.div
               key={exp.id}
-              className="relative" 
+              className="relative"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -60,7 +60,7 @@ export const Experience = () => {
             >
               {/* Dot with cut effect */}
               <span className="absolute -left-[4.5px] top-2 h-2.5 w-2.5 rounded-full bg-white ring-[6px] ring-[#0a0a0a]"></span>
-              
+
               <div className="group ml-8 md:ml-[120px]">
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-3">
                   <h3 className="text-xl font-medium text-white group-hover:text-pink-200 transition-colors duration-300">
@@ -70,7 +70,7 @@ export const Experience = () => {
                     {exp.period}
                   </span>
                 </div>
-                
+
                 <div className="mb-4">
                   <span className="text-pink-400 font-bold tracking-wide uppercase text-sm">{exp.company}</span> {/* Bold and standard pink for visibility */}
                 </div>

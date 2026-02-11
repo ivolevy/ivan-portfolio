@@ -35,16 +35,16 @@ export const Contact = () => {
   return (
     <section className="py-32 mb-16 pt-16" id="contact-section" style={{ scrollMarginTop: '60px' }}>
       <div className="text-center mb-12">
-                  <motion.span 
-            className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
-          >
-            CONTACT
-          </motion.span>
-        <motion.h2 
+        <motion.span
+          className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          viewport={{ once: true }}
+        >
+          CONTACT
+        </motion.span>
+        <motion.h2
           className="section-title text-4xl md:text-5xl font-bold text-white mb-3 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,14 +56,14 @@ export const Contact = () => {
       </div>
       <div className="flex flex-col lg:flex-row mx-auto justify-between gap-12 text-center contactContainer max-w-6xl" id="contact">
         {/* Izquierda: Información + Redes Sociales */}
-        <motion.div 
-          className="lg:w-1/2 flex flex-col items-center lg:items-start justify-center text-center lg:text-left pt-8 lg:pt-0"
+        <motion.div
+          className="lg:w-1/2 flex flex-col items-start justify-center text-left pt-8 lg:pt-0"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
           <h3 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
-            Don't be shy, <br /> 
+            Don't be shy, <br />
             <span className="italic text-pink-400">let's talk!</span>
           </h3>
 
@@ -72,21 +72,21 @@ export const Contact = () => {
           </p>
 
           <div className="space-y-6 mb-8">
-             {/* Email */}
-             <a href="mailto:ivo.levy03@gmail.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-pink-500 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </div>
-                <span className="text-lg">ivo.levy03@gmail.com</span>
-             </a>
+            {/* Email */}
+            <a href="mailto:ivo.levy03@gmail.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-pink-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+              </div>
+              <span className="text-lg">ivo.levy03@gmail.com</span>
+            </a>
 
-             {/* WhatsApp */}
-             <a href="https://wa.me/1138240929" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-green-500 transition-colors">
-                  <FaWhatsapp className="text-xl" />
-                </div>
-                <span className="text-lg">Chat on WhatsApp</span>
-             </a>
+            {/* WhatsApp */}
+            <a href="https://wa.me/1138240929" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-green-500 transition-colors">
+                <FaWhatsapp className="text-xl" />
+              </div>
+              <span className="text-lg">Chat on WhatsApp</span>
+            </a>
           </div>
 
           <div className="flex gap-4">
@@ -101,7 +101,7 @@ export const Contact = () => {
         </motion.div>
 
         {/* Derecha: Formulario */}
-        <motion.div 
+        <motion.div
           className="lg:w-1/2 glass-panel p-8 md:p-10 rounded-3xl shadow-2xl"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}

@@ -1,40 +1,39 @@
 import { motion } from "framer-motion";
-import { 
-  Code, 
-  Palette, 
-  Database, 
-  Cloud, 
-  Brain, 
-  Users, 
+import {
+  Code,
+  Database,
+  Brain,
+  Users,
   Globe,
-  Zap,
-  Shield,
-  TrendingUp,
-  Target
 } from 'lucide-react';
 import "../assets/styles/services.css";
 
-const SkillCard = ({ icon: Icon, title, skills, delay }) => (
+const SkillCardPremium = ({ icon: Icon, title, skills, delay, gridClass }) => (
   <motion.article
-    className="group flex flex-col items-center text-center glass-card p-6 rounded-2xl w-full h-full hover:bg-white/5 transition-all duration-300"
-    initial={{ opacity: 0, y: 20 }}
+    className={`skill-card-premium ${gridClass}`}
+    initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3, delay }}
-    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.6, delay, ease: [0.23, 1, 0.32, 1] }}
+    viewport={{ once: true, amount: 0.2 }}
   >
-    <div className="mb-4">
-      <Icon className="text-gray-400 w-8 h-8 group-hover:text-white transition-colors duration-300 stroke-[1.5]" />
+    <div className="skill-glow" />
+
+    <div className="skill-icon-container">
+      <Icon className="text-white w-6 h-6 stroke-[1.5]" />
     </div>
-    
-    <h3 className="text-lg font-medium text-white mb-4 border-b border-white/10 pb-2 inline-block">{title}</h3>
-    
-    <div className="">
-      {skills.map((skill, index) => (
-        <p key={index} className="text-gray-400 font-light text-sm hover:text-gray-200 transition-colors cursor-default leading-tight">
-          {skill}
-        </p>
-      ))}
+
+    <div className="relative z-10 flex flex-col h-full w-full">
+      <h3 className="text-xl font-medium text-white mb-6 font-serif">{title}</h3>
+
+      <div className="flex flex-wrap -ml-1 mt-auto">
+        {skills.map((skill, index) => (
+          <span key={index} className="skill-tag">
+            {skill}
+          </span>
+        ))}
+      </div>
     </div>
+
   </motion.article>
 );
 
@@ -42,49 +41,53 @@ export default function Skills() {
   const skillCategories = [
     {
       icon: Code,
-      title: "Development",
+      title: "Core Development",
       skills: [
-        "HTML, CSS, JavaScript, React",
-        "Next.js, TypeScript, PHP",
-        "WordPress, Tailwind CSS",
-        "Git, Vercel, Supabase"
+        "React & Next.js",
+        "TypeScript",
+        "Modern CSS/Tailwind",
+        "WordPress Advanced",
+        "PHP & Performance",
+        "Responsive Architecture"
       ],
+      gridClass: "md:col-span-2",
       delay: 0.1
     },
     {
       icon: Database,
-      title: "Backend & Data",
+      title: "Backend & Systems",
       skills: [
-        "SQL, SQL Server, PostgreSQL",
-        "API Development & Integration",
-        "Database Design & Optimization",
-        "RESTful APIs, GraphQL"
+        "PostgreSQL",
+        "Supabase",
+        "API Design",
+        "Database Architecture",
+        "SQL Optimization"
       ],
-      gradient: "bg-gradient-to-br from-green-500 to-teal-600",
+      gridClass: "md:col-span-1",
       delay: 0.2
     },
     {
       icon: Brain,
-      title: "AI & Innovation",
+      title: "AI Integration",
       skills: [
-        "AI/ML Integration",
-        "Machine Learning for Web",
-        "AI-powered Solutions",
-        "Innovation & AI Strategy"
+        "LLM Implementation",
+        "Custom AI Agents",
+        "Prompt Engineering",
+        "Automation Workflows"
       ],
-      gradient: "bg-gradient-to-br from-purple-500 to-pink-600",
+      gridClass: "md:col-span-1",
       delay: 0.3
     },
     {
       icon: Users,
-      title: "Soft Skills",
+      title: "Leadership",
       skills: [
-        "Leadership & Team Management",
-        "Problem-Solving & Creativity",
+        "Team Management",
         "Strategic Planning",
-        "Client Relationship Management"
+        "Agile Methodology",
+        "Client Success"
       ],
-      gradient: "bg-gradient-to-br from-orange-500 to-red-600",
+      gridClass: "md:col-span-1",
       delay: 0.4
     },
     {
@@ -93,57 +96,63 @@ export default function Skills() {
       skills: [
         "Spanish (Native)",
         "English (Advanced)",
-        "Hebrew (Basic)",
-        "Cross-cultural Communication"
+        "Cross-Cultural Ops"
       ],
-      gradient: "bg-gradient-to-br from-indigo-500 to-blue-600",
+      gridClass: "md:col-span-1",
       delay: 0.5
     },
   ];
 
   return (
-    <section className="p-8 rounded-lg servicesSection pt-0 pb-32 mb-16" id="skills" style={{ scrollMarginTop: '60px' }}>
-      <div className="text-center mb-12">
-        <motion.span 
-          className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          viewport={{ once: true }}
-        >
-          SKILLS
-        </motion.span>
-        <motion.h2 
-          className="section-title text-4xl md:text-5xl font-serif font-bold text-white mb-3 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-           My <span className="font-serif italic text-pink-400">Skills & Expertise</span>
-        </motion.h2>
-        <motion.p 
-          className="text-gray-300 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: true }}
-        >
-          A comprehensive overview of my technical abilities, soft skills, and continuous learning journey
-        </motion.p>
-      </div>
+    <section className="servicesSection pt-0 pb-32 mb-16" id="skills" style={{ scrollMarginTop: '100px' }}>
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-20 relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-[100px] -z-10" />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {skillCategories.map((category, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <SkillCard 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <span className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 text-pink-400 rounded-full text-[10px] tracking-[0.3em] font-bold uppercase mb-6 backdrop-blur-sm">
+              Capabilities
+            </span>
+          </motion.div>
+
+          <motion.h2
+            className="text-5xl md:text-7xl font-serif font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Skills <span className="italic text-pink-400">&</span> Expertise
+          </motion.h2>
+
+          <motion.p
+            className="text-gray-400 max-w-2xl mx-auto font-light text-lg leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            A bridge between technical precision and strategic vision, focusing on high-impact digital solutions.
+          </motion.p>
+        </div>
+
+        <div className="bento-grid max-w-6xl mx-auto">
+          {skillCategories.map((category, index) => (
+            <SkillCardPremium
+              key={index}
               icon={category.icon}
               title={category.title}
               skills={category.skills}
               delay={category.delay}
+              gridClass={category.gridClass}
             />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

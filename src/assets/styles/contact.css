@@ -46,9 +46,10 @@
 @media (max-width: 1024px) {
     .responsiveData {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .responsiveForm {
@@ -81,5 +82,4 @@
         line-height: 1.2;
     }
 
-    .responsiveForm {}
 }

@@ -1,16 +1,13 @@
 
 import { motion } from "framer-motion";
-import { 
-  SiNotion, 
-  SiSlack, 
-  SiLinear, 
-  SiFigma, 
-  SiTrello,
-  SiAsana,
-  SiZoom,
+import {
+  SiNotion,
+  SiSlack,
+  SiLinear,
   SiGithub,
+  SiTrello,
   SiVercel,
-  SiDiscord
+  SiOpenai,
 } from "react-icons/si";
 
 const tools = [
@@ -19,7 +16,7 @@ const tools = [
   { name: "Linear", icon: SiLinear, category: "Productivity" },
   { name: "github", icon: SiGithub, category: "versions" },
   { name: "Vercel", icon: SiVercel, category: "Deployment" },
-  { name: "Discord", icon: SiDiscord, category: "Community" },
+  { name: "ChatGPT", icon: SiOpenai, category: "Agentic AI" },
   { name: "Trello", icon: SiTrello, category: "Planning" },
 ];
 
@@ -28,7 +25,7 @@ export const TechStack = () => {
     <section className="w-full py-16 bg-transparent relative overflow-hidden" id="abilities">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <motion.span 
+          <motion.span
             className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +34,7 @@ export const TechStack = () => {
           >
             MANAGEMENT & PRODUCTIVITY
           </motion.span>
-          <motion.h2 
+          <motion.h2
             className="section-title text-4xl md:text-5xl font-serif font-bold text-white mb-6 text-center"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -61,14 +58,14 @@ export const TechStack = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <motion.div 
+              <motion.div
                 className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors duration-300 border border-white/5 group-hover:border-white/20"
-                animate={{ 
+                animate={{
                   y: [0, -5, 0],
                 }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
                   ease: "easeInOut",
                   delay: index * 0.2
                 }}
