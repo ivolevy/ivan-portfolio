@@ -8,47 +8,56 @@ export const Experience = () => {
       title: "Financial Accounting Assistant",
       company: "Estudio Matlin",
       period: "Jan 2022 - Apr 2022",
-      description: "Management of administrative and accounting operations, including invoice control, processing of financial transactions, handling of checks, and preparation of both corporate and personal balance sheets."
+      description: "Managed administrative operations, invoice control, financial transactions, and corporate balance sheets."
     },
     {
       id: 2,
       title: "CRM Specialist",
       company: "UO Solutions",
       period: "May 2022 - Jul 2022",
-      description: "Email campaign execution for Banco Santander using Adobe’s CMS platform – Responsible for implementing layout adjustments and updates to email templates using HTML and CSS, ensuring responsive design and brand consistency across devices."
+      description: "Executed responsive email campaigns for Banco Santander, implementing HTML/CSS layouts within Adobe's CMS."
     },
     {
       id: 3,
-      title: "Front-End Web Developer & Designer",
+      title: "Front-End Web Developer",
       company: "UO Solutions",
-      period: "Aug 2022 - Present",
-      description: "Full-stack website development with HTML, CSS, JavaScript, React, and PHP. Advanced WordPress development (Elementor, Divi, WooCommerce) including plugin customization and e-commerce integrations. Skilled in FTP management with FileZilla, content publishing, and news/blog layouts using PHP. Proficient in website administration through cPanel, covering domain/DNS configuration, database management (MySQL, phpMyAdmin), backups, security hardening, and performance optimization (caching, CDN, SEO). Experienced in CRM-based workflows, analytics tools (Google Analytics, Search Console), email marketing integrations (Mailchimp, HubSpot), and content management processes. Knowledge of version control (Git/GitHub) and cloud services (Vercel, Supabase) for scalable web solutions. Projects developed and maintained for leading companies and organizations worldwide, ensuring high standards of quality, performance, and scalability."
-    },
-    {
-      id: 4,
-      title: "CTO & DevOps Lead",
-      company: "Dota Solutions",
-      period: "Jan 2025 - Present",
-      description: "I lead a collaborative university project, a SaaS startup simulation focused on building custom digital systems to streamline processes, automate operations, and improve business outcomes. I am responsible for overall project management and lead the entire technological development, utilizing TypeScript, Python, and SQL to create scalable and efficient solutions. This includes designing and developing the project’s website and backend systems. Additionally, I integrate artificial intelligence strategically to optimize performance and deliver highly effective results, maximizing value within the academic context."
+      period: "Jul 2022 - Present",
+      description: [
+        "Develop high-performance websites and custom plugins using React, TypeScript, PHP, and WordPress.",
+        "Manage cloud infrastructure, databases (MySQL), and technical SEO using Google Analytics, SEMrush, and Ahrefs.",
+        "Build business automation workflows and integrate AI features using Vercel, Supabase, and REST APIs.",
+        "Implement robust version control (Git) and deployment pipelines (Vercel, FTP, XAMPP) for staging and production."
+      ]
     }
   ];
 
   return (
     <section className="py-32 relative" id="experience" style={{ scrollMarginTop: '60px' }}>
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <motion.h2
-            className="text-4xl md:text-5xl font-normal text-white mb-2 font-serif"
+      <div className="max-w-6xl mx-auto px-6">
+        
+        {/* Header Block */}
+        <div className="mb-20 max-w-3xl">
+          <motion.span 
+            className="inline-block text-xs uppercase tracking-[0.3em] text-[#89b3d6] mb-3 font-semibold"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            CAREER PATH
+          </motion.span>
+          <motion.h2 
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-gray-900 leading-[1.05] tracking-tight"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="font-serif">Professional</span> <span className="font-serif italic text-pink-400">Experience</span>
+            Professional <span className="italic text-[#89b3d6]">experience</span>.
           </motion.h2>
         </div>
 
-        <div className="relative border-l border-white/20 ml-3 md:ml-0 space-y-16">
+        <div className="max-w-4xl mx-auto relative border-l border-gray-200 ml-3 md:ml-6 space-y-16">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.id}
@@ -59,25 +68,36 @@ export const Experience = () => {
               viewport={{ once: true, amount: 0.2 }}
             >
               {/* Dot with cut effect */}
-              <span className="absolute -left-[4.5px] top-2 h-2.5 w-2.5 rounded-full bg-white ring-[6px] ring-[#0a0a0a]"></span>
+              <span className="absolute -left-[5.5px] top-2 h-3 w-3 rounded-full bg-celeste ring-[6px] ring-[#F7F5F0]"></span>
 
               <div className="group ml-8 md:ml-[120px]">
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-3">
-                  <h3 className="text-xl font-medium text-white group-hover:text-pink-200 transition-colors duration-300">
+                  <h3 className="text-lg font-medium text-gray-900 group-hover:text-[#89b3d6] transition-colors duration-300">
                     {exp.title}
                   </h3>
-                  <span className="text-sm font-medium text-gray-300 font-mono mt-1 sm:mt-0"> {/* Lighter gray for date */}
+                  <span className="text-xs font-medium text-gray-500 font-mono mt-1 sm:mt-0">
                     {exp.period}
                   </span>
                 </div>
 
                 <div className="mb-4">
-                  <span className="text-pink-400 font-bold tracking-wide uppercase text-sm">{exp.company}</span> {/* Bold and standard pink for visibility */}
+                  <span className="text-[#89b3d6] font-bold tracking-wide uppercase text-xs">{exp.company}</span>
                 </div>
 
-                <p className="text-gray-300 font-light leading-relaxed text-base"> {/* Lighter gray for description */}
-                  {exp.description}
-                </p>
+                {Array.isArray(exp.description) ? (
+                  <ul className="space-y-3.5 text-gray-700 font-light leading-relaxed text-sm mt-2">
+                    {exp.description.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#89b3d6] shadow-[0_0_8px_rgba(137,179,214,0.5)]"></span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-700 font-light leading-relaxed text-sm">
+                    {exp.description}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}

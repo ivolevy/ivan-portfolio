@@ -35,25 +35,25 @@ export const ParticlesBackground = () => {
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseleave", handleMouseLeave);
 
-    // Colores de las partículas (en RGB)
+    // Colores de las partículas (en RGB) - Ajustados a negro puro y escala oscura
     const colorSets = [
-      { r: 255, g: 128, b: 191 }, // rosa principal
-      { r: 255, g: 167, b: 196 }, // rosa claro
-      { r: 234, g: 156, b: 156 }, // rosa salmón
+      { r: 0, g: 0, b: 0 },       // negro puro
+      { r: 26, g: 26, b: 26 },    // gris muy oscuro
+      { r: 55, g: 65, b: 81 },    // gris oscuro (slate-700)
     ];
 
-    // Calcular número de partículas según el tamaño del canvas
-    const particleCount = Math.floor((canvas.width * canvas.height) / 10000); // Reduced density for performance
+    // Calcular número de partículas según el tamaño del canvas (reducido para un efecto sutil y limpio)
+    const particleCount = Math.floor((canvas.width * canvas.height) / 7500);
 
     particlesRef.current = Array.from({ length: particleCount }, () => {
       const colorSet = colorSets[Math.floor(Math.random() * colorSets.length)];
       return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.2,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        size: Math.random() * 2.5 + 1.0,
+        opacity: Math.random() * 0.35 + 0.25,
         r: colorSet.r,
         g: colorSet.g,
         b: colorSet.b,
@@ -113,8 +113,9 @@ export const ParticlesBackground = () => {
 
             if (distance < 120) {
               ctx.beginPath();
-              ctx.strokeStyle = `rgba(255, 128, 191, ${(1 - distance / 120) * 0.1})`;
-              ctx.lineWidth = 0.5;
+              // Líneas oscuras translúcidas
+              ctx.strokeStyle = `rgba(0, 0, 0, ${(1 - distance / 120) * 0.08})`;
+              ctx.lineWidth = 0.55;
               ctx.moveTo(particle.x, particle.y);
               ctx.lineTo(otherParticle.x, otherParticle.y);
               ctx.stroke();

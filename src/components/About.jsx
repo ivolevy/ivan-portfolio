@@ -1,143 +1,197 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, Globe, FileText } from 'lucide-react';
 import "../assets/styles/about.css";
 
 export const About = () => {
   return (
-    <section className="about-section py-32 px-6 mb-16" id="about" style={{ scrollMarginTop: '60px' }}>
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
+    <section className="about-section py-32 px-6 mb-16 relative" id="about" style={{ scrollMarginTop: '60px' }}>
+      <div className="max-w-6xl mx-auto relative z-10">
+        
+        {/* Header Block */}
+        <div className="mb-16 max-w-3xl">
           <motion.span 
-            className="inline-block px-3 py-1 bg-pink-50 text-pink-400 rounded-full text-xs font-medium mb-3"
+            className="inline-block text-xs uppercase tracking-[0.3em] text-[#89b3d6] mb-3 font-semibold"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
-            GET TO KNOW ME
+            ABOUT ME
           </motion.span>
           <motion.h2 
-            className="section-title text-4xl md:text-5xl font-bold text-white mb-6 text-center"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-gray-900 leading-[1.05] tracking-tight"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="underline decoration-pink-500/50">About</span> Me
+            Background, education and <span className="italic text-[#89b3d6]">vision</span>.
           </motion.h2>
         </div>
 
-        <div className="flex flex-col gap-12 mb-16 text-center">
+        {/* Main Grid: Bio and Education */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
+          
+          {/* Bio Column */}
+          <div className="lg:col-span-7 space-y-6">
+            <motion.div 
+              className="text-gray-700 leading-relaxed text-sm sm:text-[14px] space-y-5 font-light"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <p>
+                At UO Solutions, I develop and maintain high-performance websites using HTML, CSS, React, TypeScript, PHP, and WordPress (Elementor, Divi, WooCommerce). I also build AI-powered web applications and business automation solutions using TypeScript, Vercel, and Supabase, helping streamline workflows and improve operational efficiency.
+              </p>
+              <p>
+                My work includes designing web graphic assets, building data dashboards for performance analysis, and implementing semantic and technical SEO strategies using tools such as Google Analytics, SEMrush, and Ahrefs to optimize visibility and results.
+              </p>
+              <p>
+                I’m studying IT Management at Universidad Argentina de la Empresa (UADE), where I’m learning how to connect business strategy with technology solutions that work in the real world.
+              </p>
+              <p>
+                Looking ahead, my goal is to keep expanding my skill set and working on projects that combine technology, data, and business thinking. I’m interested in understanding how different areas of a company connect, from product and development to strategy and operations, and contributing wherever technology and analytical thinking can create meaningful improvements.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Education Column */}
           <motion.div 
+            className="lg:col-span-5 h-full rounded-3xl border border-gray-200 bg-white/70 backdrop-blur-xl p-8 sm:p-10 shadow-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
           >
-              <p className="text-gray-300 leading-relaxed text-lg max-w-3xl mx-auto">
-                Looking ahead, the goal is to grow into managerial and financial roles where strategic thinking and data-driven decisions matter most. Data sits at the core of modern development and business — enabling measurement, continuous optimization, and revenue growth.
-              </p>
+            <div className="flex items-center gap-2 mb-8 border-b border-gray-200 pb-4">
+              <GraduationCap className="text-[#89b3d6] w-5 h-5" />
+              <h3 className="text-xs uppercase tracking-[0.3em] text-gray-800 font-semibold">Education</h3>
+            </div>
+            
+            <ul className="space-y-8">
+              <li className="border-l border-sky-200/50 pl-6 relative">
+                <span className="absolute -left-[4px] top-1.5 h-2 w-2 rounded-full bg-[#89b3d6]"></span>
+                <div>
+                  <h4 className="font-serif text-base tracking-tight text-gray-900 sm:text-lg">IT Management</h4>
+                  <span className="mt-1 block font-mono text-[9px] uppercase tracking-widest text-[#89b3d6]">2022 – Present</span>
+                </div>
+                <p className="mt-2 text-xs text-gray-600">UADE - Universidad Argentina de la Empresa</p>
+              </li>
+              
+              <li className="border-l border-sky-200/50 pl-6 relative">
+                <span className="absolute -left-[4px] top-1.5 h-2 w-2 rounded-full bg-[#89b3d6]"></span>
+                <div>
+                  <h4 className="font-serif text-base tracking-tight text-gray-900 sm:text-lg">Full Stack Web Development</h4>
+                  <span className="mt-1 block font-mono text-[9px] uppercase tracking-widest text-[#89b3d6]">2021 – 2022</span>
+                </div>
+                <p className="mt-2 text-xs text-gray-600">Digital House</p>
+              </li>
+
+              <li className="border-l border-sky-200/50 pl-6 relative">
+                <span className="absolute -left-[4px] top-1.5 h-2 w-2 rounded-full bg-[#89b3d6]"></span>
+                <div>
+                  <h4 className="font-serif text-base tracking-tight text-gray-900 sm:text-lg">Bachelor's in Economics</h4>
+                  <span className="mt-1 block font-mono text-[9px] uppercase tracking-widest text-[#89b3d6]">2016 – 2020</span>
+                </div>
+                <p className="mt-2 text-xs text-gray-600">Scholem Aleijem High School</p>
+              </li>
+            </ul>
           </motion.div>
 
+        </div>
+
+        {/* Secondary Grid: Certifications, Languages & CV */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          
+          {/* Certifications Card */}
           <motion.div 
+            className="lg:col-span-7 rounded-3xl border border-gray-200 bg-white/70 backdrop-blur-xl p-8 sm:p-10 flex flex-col justify-between shadow-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
           >
-              <p className="text-gray-300 leading-relaxed text-lg mb-6 max-w-3xl mx-auto">
-                Building technology today means designing systems that generate insights, support better decisions, and create sustainable value.
-                <br /><br />
-                I’m studying IT Management at UADE, learning how to connect business strategy with real-world tech solutions.
-              </p>
-              <div className="flex flex-col items-center gap-4">
-                <div className="flex items-center justify-center space-x-3 text-gray-400 text-sm">
-                    <GraduationCap className="text-pink-400" size={20}/>
-                    <span>Bachelor’s degree student in Technology Management</span>
+            <div>
+              <div className="flex items-center gap-2 mb-8 border-b border-gray-200 pb-4">
+                <Award className="text-[#89b3d6] w-5 h-5" />
+                <h3 className="text-xs uppercase tracking-[0.3em] text-gray-800 font-semibold">Certifications</h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <h4 className="font-serif text-lg text-gray-900">Google Display Certification</h4>
+                  <p className="text-xs text-gray-600 mt-1">Google</p>
+                  <span className="text-[10px] font-mono text-[#89b3d6] mt-1 block">ID: 225423675</span>
                 </div>
-                
-                {/* CV Downloads */}
-                <div className="flex gap-4 items-center mt-2">
-                  <span className="text-gray-500 text-[9px] uppercase tracking-wider font-medium">Download my CV:</span>
-                  <a 
-                    href="/Ivan Levy - CV EN.pdf" 
-                    download="Ivan Levy - CV.pdf"
-                    className="text-pink-400/80 hover:text-pink-400 text-xs font-serif italic transition-colors hover:underline underline-offset-4"
-                  >
-                    English
-                  </a>
-                  <span className="text-gray-800">•</span>
-                  <a 
-                    href="/Ivan Levy - CV ES.pdf" 
-                    download="Ivan Levy - CV.pdf"
-                    className="text-pink-400/80 hover:text-pink-400 text-xs font-serif italic transition-colors hover:underline underline-offset-4"
-                  >
-                    Spanish
-                  </a>
+                <div>
+                  <h4 className="font-serif text-lg text-gray-900">Google SEO Certification</h4>
+                  <p className="text-xs text-gray-600 mt-1">Google</p>
+                  <span className="text-[10px] font-mono text-[#89b3d6] mt-1 block">ID: 809120</span>
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg text-gray-900">Power BI Analyst</h4>
+                  <p className="text-xs text-gray-600 mt-1">Microsoft</p>
+                  <span className="text-[10px] font-mono text-[#89b3d6] mt-1 block">Data Analysis & Viz</span>
                 </div>
               </div>
+            </div>
           </motion.div>
+
+          {/* Languages & CV Card */}
+          <motion.div 
+            className="lg:col-span-5 rounded-3xl border border-gray-200 bg-white/70 backdrop-blur-xl p-8 sm:p-10 flex flex-col justify-between shadow-sm"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div>
+              <div className="flex items-center gap-2 mb-6 border-b border-gray-200 pb-4">
+                <Globe className="text-[#89b3d6] w-5 h-5" />
+                <h3 className="text-xs uppercase tracking-[0.3em] text-gray-800 font-semibold">Languages & CV</h3>
+              </div>
+
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-baseline justify-between border-b border-gray-200 pb-2 last:border-0">
+                  <span className="font-serif text-lg text-gray-900">Spanish</span>
+                  <span className="text-xs font-mono text-[#89b3d6] uppercase font-semibold">Native</span>
+                </li>
+                <li className="flex items-baseline justify-between border-b border-gray-200 pb-2 last:border-0">
+                  <span className="font-serif text-lg text-gray-900">English</span>
+                  <span className="text-xs font-mono text-[#89b3d6] uppercase font-semibold">Advanced</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Downloads */}
+            <div className="pt-4 border-t border-gray-200">
+              <span className="text-[9px] uppercase tracking-widest text-gray-500 block mb-3 font-semibold">DOWNLOAD CV:</span>
+              <div className="flex gap-6 items-center">
+                <a 
+                  href="/Ivan Levy - CV English.pdf" 
+                  download="Ivan Levy - CV English.pdf"
+                  className="flex items-center gap-2 text-[#89b3d6] hover:text-sky-600 text-sm font-serif italic transition-all hover:underline underline-offset-4"
+                >
+                  <FileText className="w-4 h-4" />
+                  English
+                </a>
+                <span className="text-gray-300">•</span>
+                <a 
+                  href="/Ivan Levy - CV.pdf" 
+                  download="Ivan Levy - CV.pdf"
+                  className="flex items-center gap-2 text-[#89b3d6] hover:text-sky-600 text-sm font-serif italic transition-all hover:underline underline-offset-4"
+                >
+                  <FileText className="w-4 h-4" />
+                  Spanish
+                </a>
+              </div>
+            </div>
+
+          </motion.div>
+
         </div>
 
-        {/* Sección de Educación */}
-        <motion.div 
-          className="glass-card rounded-2xl p-6 md:p-12 shadow-2xl"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <h3 className="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3">
-            <Award className="text-pink-400" />
-            Education & Certifications
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Educación Formal */}
-            <div>
-              <h4 className="text-lg font-semibold text-pink-400 mb-6 uppercase tracking-wider">Formal Education</h4>
-              <div className="space-y-8">
-                <div className="relative pl-6 border-l-2 border-pink-500/30">
-                  <h5 className="font-bold text-white text-lg">IT Management</h5>
-                  <p className="text-gray-400">UADE - Universidad Argentina de la Empresa</p>
-                  <span className="text-xs text-pink-400 font-mono mt-1 block">2022 - Present</span>
-                </div>
-                <div className="relative pl-6 border-l-2 border-pink-500/30">
-                  <h5 className="font-bold text-white text-lg">Full Stack Web Development</h5>
-                  <p className="text-gray-400">Digital House</p>
-                  <span className="text-xs text-pink-400 font-mono mt-1 block">2021 - 2022</span>
-                </div>
-                <div className="relative pl-6 border-l-2 border-pink-500/30">
-                  <h5 className="font-bold text-white text-lg">Bachelor's in Economics</h5>
-                  <p className="text-gray-400">Scholem Aleijem High School</p>
-                  <span className="text-xs text-pink-400 font-mono mt-1 block">2016 - 2020</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Certificaciones */}
-            <div>
-              <h4 className="text-lg font-semibold text-pink-400 mb-6 uppercase tracking-wider">Certifications</h4>
-              <div className="space-y-8">
-                <div className="relative pl-6 border-l-2 border-pink-500/30">
-                  <h5 className="font-bold text-white text-lg">Google Display Certification</h5>
-                  <p className="text-gray-400">Google</p>
-                  <span className="text-xs text-pink-400 font-mono mt-1 block">ID: 225423675</span>
-                </div>
-                <div className="relative pl-6 border-l-2 border-pink-500/30">
-                  <h5 className="font-bold text-white text-lg">Google SEO Certification</h5>
-                  <p className="text-gray-400">Google</p>
-                  <span className="text-xs text-pink-400 font-mono mt-1 block">ID: 809120</span>
-                </div>
-                <div className="relative pl-6 border-l-2 border-pink-500/30">
-                  <h5 className="font-bold text-white text-lg">Power BI Analyst</h5>
-                  <p className="text-gray-400">Microsoft</p>
-                  <span className="text-xs text-pink-400 font-mono mt-1 block">Data Analysis & Visualization</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

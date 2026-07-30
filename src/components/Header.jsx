@@ -8,9 +8,6 @@ export const Header = () => {
     <>
       <header className="header" id="header">
         <ParticlesBackground />
-        <div className="nav">
-          <NavComponent />
-        </div>
         <Hero />
       </header>
     </>

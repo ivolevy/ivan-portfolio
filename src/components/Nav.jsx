@@ -7,17 +7,19 @@ const menuItems = [
   { id: "about", label: "About", title: "About me" },
   { id: "skills", label: "Skills", title: "What I can do" },
   { id: "projects", label: "Projects", title: "Recent projects" },
+  { id: "contact-section", label: "Contact", title: "Let’s work together" },
 ];
-
-const contactItem = { id: "contact", label: "Let’s talk", title: "Let’s work together", className: "navButton" };
 
 export const NavComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleNav = () => setIsMenuOpen((prev) => !prev);
 
-  // Función para hacer scroll suave
   const scrollToSection = (id) => {
+    if (window.location.pathname !== '/') {
+      window.location.href = '/#' + id;
+      return;
+    }
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -27,12 +29,21 @@ export const NavComponent = () => {
 
   return (
     <nav>
-      <div className="contact-button mobile-only">
-        <a href={`#${contactItem.id}`} className={contactItem.className} title={contactItem.title} onClick={(e) => { e.preventDefault(); scrollToSection(contactItem.id); }}>
-          {contactItem.label}
-        </a>
-      </div>
+      {/* Brand logo left aligned */}
+      <a
+        href="/"
+        className="nav-brand font-serif italic text-lg"
+        onClick={(e) => {
+          if (window.location.pathname === '/') {
+            e.preventDefault();
+            scrollToSection("hero");
+          }
+        }}
+      >
+        Ivan.
+      </a>
 
+      {/* Navigation menu right aligned */}
       <ul className="desktop-menu">
         {menuItems.map(({ id, label, className, title }) => (
           <li key={id}>
@@ -42,12 +53,6 @@ export const NavComponent = () => {
           </li>
         ))}
       </ul>
-
-      <div className="contact-button desktop-only">
-        <a href={`#${contactItem.id}`} className={contactItem.className} title={contactItem.title} onClick={(e) => { e.preventDefault(); scrollToSection(contactItem.id); }}>
-          {contactItem.label}
-        </a>
-      </div>
 
       <button
         className={`hamburger ${isMenuOpen ? "hamburger-active" : ""}`}

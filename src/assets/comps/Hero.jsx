@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 import "../styles/header.css";
 
 const containerVariants = {
@@ -71,79 +72,45 @@ export const Hero = () => {
       >
         {/* Título principal */}
         <motion.h1
-          className="text-5xl md:text-7xl font-serif font-medium text-white mb-6 tracking-tight"
+          className="text-5xl md:text-7xl font-serif font-medium text-gray-900 mb-6 tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           whileHover={{ scale: 1.02 }}
         >
-          Hi, I'm <span className="italic text-pink-400">Ivan Levy</span>
+          Hi, I'm <span className="italic text-celeste">Ivan Levy</span>
         </motion.h1>
 
         {/* Subtítulo */}
         <motion.p
-          className="heroText text-lg text-gray-300 mt-4 max-w-2xl mx-auto font-light"
+          className="heroText text-sm text-gray-700 mt-4 max-w-2xl mx-auto font-light"
           variants={containerVariants}
           transition={{ delay: 0.4 }}
         >
-          Full-Stack Developer | <span className="text-gray-400">Bachelor’s degree student in Technology Management</span>
+          Full-Stack Developer | <span className="text-gray-500">Bachelor’s degree student in Technology Management</span>
         </motion.p>
 
-        {/* Botones */}
+        {/* Scroll Callout */}
         <motion.div
-          className="mt-6 flex flex-col items-center"
+          className="mt-16 flex flex-col items-center gap-3.5 cursor-pointer"
           variants={containerVariants}
           transition={{ delay: 0.6 }}
+          onClick={() => {
+            const aboutSection = document.getElementById("about");
+            if (aboutSection) aboutSection.scrollIntoView({ behavior: "smooth" });
+          }}
         >
-          <div className="flex gap-4 justify-center mb-16"> {/* Increased gap from buttons */}
-            <a
-              href="#contact"
-              className="group px-8 py-3 bg-white text-black font-serif italic tracking-wide rounded-full hover:bg-pink-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/25 hover:scale-105 active:scale-95"
-              aria-label="Contact me"
-            >
-              Contact me
-            </a>
-            <a
-              href="#projects"
-              className="px-8 py-3 bg-white/5 text-white font-serif tracking-wide rounded-full border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm hover:scale-105 active:scale-95"
-              aria-label="See projects"
-            >
-              See projects
-            </a>
-          </div>
-
-          {/* CV Downloads */}
-          <div className="flex gap-2.5 items-center mb-0"> {/* No bottom margin, let paragraph handle it */}
-            <span className="text-gray-500 text-[10px] uppercase tracking-[0.2em] font-medium">Download my CV</span>
-            <div className="flex gap-2"> {/* Even tighter language spacing */}
-              <a 
-                href="/Ivan Levy - CV EN.pdf" 
-                download="Ivan Levy - CV.pdf"
-                className="text-gray-400 hover:text-white text-xs font-serif italic transition-colors hover:underline decoration-pink-500/30 underline-offset-4"
-              >
-                English
-              </a>
-              <div className="w-[1px] h-3 bg-white/10 mt-1"></div>
-              <a 
-                href="/Ivan Levy - CV ES.pdf" 
-                download="Ivan Levy - CV.pdf"
-                className="text-gray-400 hover:text-white text-xs font-serif italic transition-colors hover:underline decoration-pink-500/30 underline-offset-4"
-              >
-                Spanish
-              </a>
-            </div>
-          </div>
+          <span className="text-gray-500 text-xs uppercase tracking-[0.25em] font-semibold hover:text-celeste transition-colors">
+            Get to know me
+          </span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ArrowDown className="text-celeste w-4 h-4" />
+          </motion.div>
         </motion.div>
       </motion.div>
-
-      {/* Texto adicional */}
-      <motion.p
-        className="mt-4 text-gray-400 text-sm" // Reduced from mt-12
-        variants={containerVariants}
-        transition={{ delay: 0.8 }}
-      >
-        From Argentina to the world!
-      </motion.p>
     </motion.section>
   );
 };

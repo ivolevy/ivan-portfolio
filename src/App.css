@@ -18,14 +18,14 @@
 }
 
 :root {
-  /* Rosa principal (usado en botones, acentos) */
-  --rosa-principal: #ff80bf;        /* rgb(255, 128, 191) */
+  /* Celeste principal (usado en botones, acentos) */
+  --rosa-principal: #89b3d6;        /* Celeste pastel */
   
-  /* Rosa claro */
-  --rosa-claro: #FFA7C4;            /* rgb(255, 167, 196) */
+  /* Celeste claro */
+  --rosa-claro: #b0cfe8;            
   
-  /* Rosa salmón (usado en gradientes) */
-  --rosa-salmon: #ea9c9c;           /* rgb(234, 156, 156) */
+  /* Celeste grisáceo (usado en gradientes) */
+  --rosa-salmon: #a5c8e4;           
   
   /* Grises */
   --gris-claro: #D7D6CE;
@@ -37,7 +37,7 @@
   --negro: #000000;
   
   /* Mantener compatibilidad con nombre anterior */
-  --rosa: #FFA7C4;
+  --rosa: #b0cfe8;
 }
 
 html {
