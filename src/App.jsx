@@ -32,8 +32,10 @@ function Layout() {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 150);
       }
+    } else {
+      window.scrollTo(0, 0);
     }
-  }, [location]);
+  }, [location.pathname, location.hash]);
 
   return (
     <>

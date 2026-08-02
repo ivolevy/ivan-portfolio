@@ -9,12 +9,12 @@ const projectsData = {
   "spotify-ai-playlisting": {
     title: "Spotify AI Playlisting",
     category: "AI AUTOMATION · MUSIC TECH",
-    year: "2024",
+    year: "2025",
     role: "Lead Developer",
     techStack: ["Next.js", "Vite", "Node.js", "OpenAI API", "Spotify API"],
-    description: "An AI-powered playlisting system built specifically for record labels and music distribution companies. The system completely automates the workflow of generating massive, thematic playlists of label artists based on metadata, target demographics, and sonic characteristics.",
+    description: "An AI-powered playlisting system built during a hackathon (where we secured 3rd place) specifically for record labels and music distribution companies. The system completely automates the workflow of generating massive, thematic playlists of label artists based on metadata, target demographics, and sonic characteristics.",
     challenge: "Record labels manually spent up to 8-10 hours weekly per artist catalog matching new releases with appropriate promotional playlists and compiling thematic collections. This manual task was highly prone to delays, inconsistencies, and distribution gaps.",
-    solution: "By building a smart GPT-4 prompted engine integrated directly with the Spotify Web API, we created a dashboard where labels can input a single text prompt describing a mood, theme, or marketing campaign. In less than 2 minutes, the platform audits the catalog, structures a cohesive playlist flow, generates premium cover assets, and publishes the list directly to Spotify.",
+    solution: "By building a smart GPT-4 prompted engine integrated directly with the Spotify Web API, we created a dashboard where labels can input a single text prompt describing a mood, theme, or marketing campaign. Created during a hackathon and winning 3rd place, the platform audits the catalog, structures a cohesive playlist flow, generates premium cover assets, and publishes the list directly to Spotify in less than 2 minutes.",
     img: spotify,
     link: "https://spoty-bydota.vercel.app",
     nextSlug: "beeyond-media"
@@ -22,12 +22,12 @@ const projectsData = {
   "beeyond-media": {
     title: "Beeyond Media",
     category: "DOOH ADVERTISING · MARTECH",
-    year: "2025",
-    role: "Full-Stack Developer",
+    year: "2026",
+    role: "Lead Developer",
     techStack: ["React", "Vite", "Node.js", "GraphQL", "Tailwind CSS"],
-    description: "A premium Digital Out-Of-Home (DOOH) advertising platform that simplifies the process of buying, managing, and optimizing digital billboard campaigns globally.",
+    description: "A premium Digital Out-Of-Home (DOOH) advertising platform that simplifies the process of buying, managing, and optimizing digital billboard campaigns globally. I led and drove this project as part of my work at UO Solutions.",
     challenge: "Advertisers historically struggled to access, book, and monitor outdoor digital displays dynamically due to fragmented network operators and opaque pricing models.",
-    solution: "We built an intuitive, unified DOOH marketplace linking global display networks, enabling real-time campaign scheduling, audience targeting, and traffic auditing in a single dashboard.",
+    solution: "I personally led and executed the design and development of an intuitive, unified DOOH marketplace linking global display networks, enabling real-time campaign scheduling, audience targeting, and traffic auditing in a single dashboard as part of my work at UO Solutions.",
     img: beeyond,
     link: "https://beeyondmedia.com",
     nextSlug: "spotify-ai-playlisting"

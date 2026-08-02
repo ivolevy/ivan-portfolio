@@ -1,7 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0a0a0a"/>
-  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="serif" font-weight="bold" font-size="20" fill="white">IL</text>
-  <circle cx="26" cy="10" r="2.5" fill="#ff80bf">
-    <animate attributeName="cy" values="10;8;10" dur="3s" repeatCount="indefinite" />
-  </circle>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&amp;display=swap');
+      .fav-text {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#ffffff"/>
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="fav-text" font-size="28" fill="#89b3d6">i</text>
 </svg>
