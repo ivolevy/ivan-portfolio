@@ -50,7 +50,7 @@ export default function Skills() {
     {
       icon: Code,
       title: "Frontend & Design",
-      tags: ["React", "Next.js", "TypeScript", "WordPress", "Tailwind CSS", "UCD Design"],
+      tags: ["React", "Next.js", "TypeScript", "WordPress", "Tailwind CSS", "UCD Design", "HTML", "CSS"],
       description: "Developing fast, clean, responsive interfaces and intuitive web environments with strict attention to layout aesthetics and UX.",
       gridClass: "md:col-span-1",
       delay: 0.1
@@ -58,7 +58,7 @@ export default function Skills() {
     {
       icon: Database,
       title: "Back-End & Data",
-      tags: ["SQL Server", "PostgreSQL", "REST APIs", "PHP", "Supabase"],
+      tags: ["SQL Server", "PostgreSQL", "NoSQL", "Redis", "Neo4j", "REST APIs", "PHP", "Supabase", "Node.js"],
       description: "Designing scalable database architectures, technical integrations, and business logic pipelines to link frontends with backend resources.",
       gridClass: "md:col-span-1",
       delay: 0.2
@@ -66,7 +66,7 @@ export default function Skills() {
     {
       icon: Cloud,
       title: "DevOps & Cloud",
-      tags: ["Git & GitHub", "Vercel", "AWS Operations", "CI/CD Pipelines", "Local Servers"],
+      tags: ["Git & GitHub", "Vercel", "AWS Operations", "CI/CD Pipelines", "cPanel", "FileZilla", "XAMPP"],
       description: "Deploying secure, modern application bundles, configuring cloud resources, and organizing version control pipelines.",
       gridClass: "md:col-span-1",
       delay: 0.3
@@ -74,8 +74,8 @@ export default function Skills() {
     {
       icon: Sparkles,
       title: "Growth & Optimization",
-      tags: ["Google SEO", "Analytics", "Semrush / Ahrefs", "Google Ads", "Applied AI Automation"],
-      description: "Tracking acquisition metrics, managing technical SEO, executing target campaigns, and leveraging LLMs to optimize business workflows.",
+      tags: ["Claude Code", "Google SEO", "Analytics", "Semrush / Ahrefs", "Google Ads", "AI Workflows"],
+      description: "Tracking acquisition metrics, managing technical SEO, executing target campaigns, and leveraging LLMs and AI tools to optimize business workflows.",
       gridClass: "md:col-span-1",
       delay: 0.4
     }

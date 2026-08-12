@@ -29,7 +29,7 @@ function Layout() {
       const element = document.getElementById(id);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: 'auto' });
         }, 150);
       }
     } else {

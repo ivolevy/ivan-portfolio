@@ -5,28 +5,31 @@ export const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: "Financial Accounting Assistant",
+      title: "Accounting Clerk",
       company: "Estudio Matlin",
       period: "Jan 2022 - Apr 2022",
-      description: "Managed administrative operations, invoice control, financial transactions, and corporate balance sheets."
+      description: "Management of administrative and accounting operations, financial transaction processing, and balance sheet control using Google Workspace."
     },
     {
       id: 2,
-      title: "CRM Specialist",
+      title: "CMS Specialist",
       company: "UO Solutions",
       period: "May 2022 - Jul 2022",
-      description: "Executed responsive email campaigns for Banco Santander, implementing HTML/CSS layouts within Adobe's CMS."
+      description: [
+        "Management of technical email marketing campaigns using Adobe Experience CMS; advanced layout adjustments via HTML and CSS.",
+        "Operation of CRM systems and technical workflows for the automation of lead integrations."
+      ]
     },
     {
       id: 3,
-      title: "Front-End Web Developer",
+      title: "Software Engineer",
       company: "UO Solutions",
       period: "Jul 2022 - Present",
       description: [
-        "Develop high-performance websites and custom plugins using React, TypeScript, PHP, and WordPress.",
-        "Manage cloud infrastructure, databases (MySQL), and technical SEO using Google Analytics, SEMrush, and Ahrefs.",
-        "Build business automation workflows and integrate AI features using Vercel, Supabase, and REST APIs.",
-        "Implement robust version control (Git) and deployment pipelines (Vercel, FTP, XAMPP) for staging and production."
+        "Development of scalable web applications using React, TypeScript, PHP, and WordPress, prioritizing service-oriented architecture and high performance.",
+        "Implementation of business automation and AI integration using Node.js, Vercel, Supabase, and REST APIs, optimizing critical workflows.",
+        "Infrastructure and DevOps management: administration of cPanel, MySQL, Git, FileZilla, and XAMPP, ensuring security, backups, and efficient deployments.",
+        "Technical SEO and analytics strategy: implementation of Google Analytics, SEMrush, and Ahrefs for organic optimization and data dashboards."
       ]
     }
   ];

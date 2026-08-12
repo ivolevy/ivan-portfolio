@@ -87,7 +87,7 @@ export const Hero = () => {
           variants={containerVariants}
           transition={{ delay: 0.4 }}
         >
-          Full-Stack Developer | <span className="text-gray-500">Bachelor’s degree student in Technology Management</span>
+          Software Engineer | <span className="text-gray-500">Bachelor’s degree student in Technology Management</span>
         </motion.p>
 
         {/* Scroll Callout */}

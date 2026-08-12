@@ -169,8 +169,8 @@ export const About = () => {
               <span className="text-[9px] uppercase tracking-widest text-gray-500 block mb-3 font-semibold">DOWNLOAD CV:</span>
               <div className="flex gap-6 items-center">
                 <a 
-                  href="/Ivan Levy - CV English.pdf" 
-                  download="Ivan Levy - CV English.pdf"
+                  href="/IVAN LEVY - CV (EN).pdf" 
+                  download="IVAN LEVY - CV (EN).pdf"
                   className="flex items-center gap-2 text-[#89b3d6] hover:text-sky-600 text-sm font-serif italic transition-all hover:underline underline-offset-4"
                 >
                   <FileText className="w-4 h-4" />
@@ -178,8 +178,8 @@ export const About = () => {
                 </a>
                 <span className="text-gray-300">•</span>
                 <a 
-                  href="/Ivan Levy - CV.pdf" 
-                  download="Ivan Levy - CV.pdf"
+                  href="/IVAN LEVY - CV (ES).pdf" 
+                  download="IVAN LEVY - CV (ES).pdf"
                   className="flex items-center gap-2 text-[#89b3d6] hover:text-sky-600 text-sm font-serif italic transition-all hover:underline underline-offset-4"
                 >
                   <FileText className="w-4 h-4" />
