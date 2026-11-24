@@ -1,108 +1,41 @@
-import { motion } from "framer-motion";
-import { Briefcase, Calendar } from 'lucide-react';
+import { experiences } from "../data/portfolioData";
 
 export const Experience = () => {
-  const experiences = [
-    {
-      id: 1,
-      title: "Accounting Clerk",
-      company: "Estudio Matlin",
-      period: "Jan 2022 - Apr 2022",
-      description: "Management of administrative and accounting operations, financial transaction processing, and balance sheet control using Google Workspace."
-    },
-    {
-      id: 2,
-      title: "CMS Specialist",
-      company: "UO Solutions",
-      period: "May 2022 - Jul 2022",
-      description: [
-        "Management of technical email marketing campaigns using Adobe Experience CMS; advanced layout adjustments via HTML and CSS.",
-        "Operation of CRM systems and technical workflows for the automation of lead integrations."
-      ]
-    },
-    {
-      id: 3,
-      title: "Software Engineer",
-      company: "UO Solutions",
-      period: "Jul 2022 - Present",
-      description: [
-        "Development of scalable web applications using React, TypeScript, PHP, and WordPress, prioritizing service-oriented architecture and high performance.",
-        "Implementation of business automation and AI integration using Node.js, Vercel, Supabase, and REST APIs, optimizing critical workflows.",
-        "Infrastructure and DevOps management: administration of cPanel, MySQL, Git, FileZilla, and XAMPP, ensuring security, backups, and efficient deployments.",
-        "Technical SEO and analytics strategy: implementation of Google Analytics, SEMrush, and Ahrefs for organic optimization and data dashboards."
-      ]
-    }
-  ];
-
   return (
-    <section className="py-32 relative" id="experience" style={{ scrollMarginTop: '60px' }}>
-      <div className="max-w-6xl mx-auto px-6">
-        
-        {/* Header Block */}
-        <div className="mb-20 max-w-3xl">
-          <motion.span 
-            className="inline-block text-xs uppercase tracking-[0.3em] text-[#89b3d6] mb-3 font-semibold"
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
-          >
-            CAREER PATH
-          </motion.span>
-          <motion.h2 
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-gray-900 leading-[1.05] tracking-tight"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Professional <span className="italic text-[#89b3d6]">experience</span>.
-          </motion.h2>
+    <section id="experience" className="py-20 sm:py-28 border-b border-line scroll-mt-16">
+      <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+          <h2 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-ink">
+            Experience
+          </h2>
+          <p className="max-w-sm text-sm text-muted leading-relaxed font-light">
+            Four-plus years delivering web platforms, MarTech products, and AI automation in production.
+          </p>
         </div>
 
-        <div className="max-w-4xl mx-auto relative border-l border-gray-200 ml-3 md:ml-6 space-y-16">
-          {experiences.map((exp, index) => (
-            <motion.div
+        <div className="divide-y divide-line border-t border-b border-line">
+          {experiences.map((exp) => (
+            <article
               key={exp.id}
-              className="relative"
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, amount: 0.2 }}
+              className="scroll-reveal py-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10"
             >
-              {/* Dot with cut effect */}
-              <span className="absolute -left-[5.5px] top-2 h-3 w-3 rounded-full bg-celeste ring-[6px] ring-[#F7F5F0]"></span>
-
-              <div className="group ml-8 md:ml-[120px]">
-                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-3">
-                  <h3 className="text-lg font-medium text-gray-900 group-hover:text-[#89b3d6] transition-colors duration-300">
-                    {exp.title}
-                  </h3>
-                  <span className="text-xs font-medium text-gray-500 font-mono mt-1 sm:mt-0">
-                    {exp.period}
-                  </span>
-                </div>
-
-                <div className="mb-4">
-                  <span className="text-[#89b3d6] font-bold tracking-wide uppercase text-xs">{exp.company}</span>
-                </div>
-
-                {Array.isArray(exp.description) ? (
-                  <ul className="space-y-3.5 text-gray-700 font-light leading-relaxed text-sm mt-2">
-                    {exp.description.map((point, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#89b3d6] shadow-[0_0_8px_rgba(137,179,214,0.5)]"></span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-700 font-light leading-relaxed text-sm">
-                    {exp.description}
-                  </p>
-                )}
+              <div className="md:col-span-4 min-w-0 space-y-1">
+                <div className="font-mono text-xs text-muted">{exp.period}</div>
+                <h3 className="text-lg font-medium text-ink pt-1">{exp.company}</h3>
+                <div className="text-sm text-accent">{exp.role}</div>
               </div>
-            </motion.div>
+
+              <div className="md:col-span-8 min-w-0">
+                <ul className="space-y-3.5 list-none p-0 m-0">
+                  {exp.bullets.map((bullet, i) => (
+                    <li key={i} className="text-sm sm:text-[15px] text-muted leading-relaxed font-light">
+                      <span className="font-medium text-ink">{bullet.lead}</span>{" "}
+                      {bullet.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
           ))}
         </div>
       </div>

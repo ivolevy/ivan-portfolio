@@ -1,165 +1,192 @@
-import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, ArrowDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import "../assets/styles/projects.css";
-import spotify from "../assets/images/projects/Screen Shot 2026-07-30 at 09.56.05.png";
-import beeyond from "../assets/images/projects/Screen Shot 2026-07-30 at 11.03.57.png";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { projects } from "../data/portfolioData";
 
 export const Projects = () => {
-  const projects = [
-    {
-      id: 2,
-      slug: "spotify-ai-playlisting",
-      title: "Spotify AI Playlisting",
-      category: "AI AUTOMATION · MUSIC TECH",
-      date: "2025",
-      description: "An AI-powered playlisting system built during a hackathon (securing 3rd place) that allows record labels to automatically generate massive artist playlists with a simple prompt in 2 minutes, saving up to 8 hours of marketing work per week.",
-      img: spotify,
-      altText: "Spotify AI Playlisting dashboard",
-      achievements: [
-        "3rd Place Hackathon",
-        "Automated Playlists",
-        "AI Prompting Engine",
-        "Saves 8 hours weekly"
-      ],
-      link: "https://spoty-bydota.vercel.app",
-    },
-    {
-      id: 3,
-      slug: "beeyond-media",
-      title: "Beeyond Media",
-      category: "DOOH ADVERTISING · MARTECH",
-      date: "2026",
-      description: "A premium Digital Out-Of-Home (DOOH) advertising platform simplifying the process of buying, managing, and optimizing digital billboard campaigns globally. Led and driven by me as part of my work at UO Solutions.",
-      img: beeyond,
-      altText: "Beeyond Media billboard dashboard",
-      achievements: [
-        "Led at UO Solutions",
-        "Global DOOH Network",
-        "Real-time Booking",
-        "Audited Analytics"
-      ],
-      link: "https://beeyondmedia.com",
-    },
-  ];
+  const visualProjects = projects.filter((p) => p.img);
+  const engineeringSystems = projects.filter((p) => !p.img);
+  const [expandedSlug, setExpandedSlug] = useState(engineeringSystems[0]?.slug || null);
 
   return (
-    <section className="w-full py-32 mb-8" id="projects" style={{ scrollMarginTop: '60px' }}>
-      <div className="container mx-auto px-6 max-w-6xl">
-        
-        {/* Header Block in two columns on desktop */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 pb-8 border-b border-gray-200">
-          <div className="max-w-xl">
-            <motion.span 
-              className="inline-block text-xs uppercase tracking-[0.2em] text-celeste font-semibold mb-3"
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: true }}
-            >
-              SELECTED PROJECTS
-            </motion.span>
-            <motion.h2 
-              className="section-title text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-gray-900"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              A glimpse of what I've <span className="italic text-celeste">built</span>.
-            </motion.h2>
-          </div>
-          
-          <motion.div 
-            className="lg:max-w-md text-gray-650 font-light leading-relaxed text-sm lg:text-base lg:text-right"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-            viewport={{ once: true }}
-          >
-            A selection of projects where I managed everything from initial design and core architecture to speed and search engine optimization.
-          </motion.div>
+    <section id="projects" className="py-20 sm:py-28 border-b border-line scroll-mt-16">
+      <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+          <h2 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-ink">
+            Selected Work
+          </h2>
+          <p className="max-w-sm text-sm text-muted leading-relaxed font-light">
+            Products, MarTech platforms, and AI automation pipelines built from concept to production.
+          </p>
         </div>
 
-        {/* Projects Layout with Horizontal Alternating Cards */}
-        <div className="space-y-12">
-          {projects.map((project, index) => (
-            <motion.article
+        {/* Visual Featured Work (large editorial showcase, no card clutter) */}
+        <div className="space-y-20 mb-24">
+          {visualProjects.map((project, index) => (
+            <article
               key={project.id}
-              className={`flex flex-col lg:flex-row ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
-              } bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 border border-gray-100 min-h-[350px]`}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.1 }}
+              className="scroll-reveal grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
             >
-              {/* Image Side */}
-              <div className="w-full lg:w-1/2 relative min-h-[260px] sm:min-h-[320px] overflow-hidden bg-gray-50 group">
-                <img
-                  src={project.img}
-                  alt={project.altText}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  loading="lazy"
-                />
-              </div>
+              <Link
+                to={`/projects/${project.slug}`}
+                className={`block min-w-0 lg:col-span-7 overflow-hidden rounded-xl border border-line bg-surface group ${
+                  index % 2 === 1 ? "lg:order-2" : ""
+                }`}
+              >
+                <div className="aspect-[16/10] w-full overflow-hidden">
+                  <img
+                    src={project.img}
+                    alt={project.altText}
+                    width={960}
+                    height={600}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-left-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  />
+                </div>
+              </Link>
 
-              {/* Text Side */}
-              <div className="w-full lg:w-1/2 p-8 sm:p-12 lg:p-14 flex flex-col justify-between group">
-                <div>
-                  <span className="block text-[10px] font-mono tracking-widest text-celeste uppercase mb-3">
-                    {project.category}
-                  </span>
-                  
-                  <h3 className="text-2xl sm:text-3xl font-serif font-medium text-gray-900 mb-4 group-hover:text-celeste transition-colors duration-300">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-gray-650 font-light text-xs leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-
-                  {/* Quick stats/achievements list */}
-                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
-                    {project.achievements.map((achievement) => (
-                      <li key={achievement} className="flex items-center text-[11px] font-light text-gray-500">
-                        <span className="w-1 h-1 rounded-full bg-celeste mr-2"></span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
+              <div className={`min-w-0 lg:col-span-5 space-y-4 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                <div className="flex items-center gap-3 text-xs text-muted">
+                  <span>{project.year}</span>
+                  <span>·</span>
+                  <span>{project.organization}</span>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center">
+                <h3 className="font-serif text-3xl sm:text-4xl font-normal text-ink tracking-tight">
                   <Link
                     to={`/projects/${project.slug}`}
-                    className="inline-flex items-center text-[10px] font-semibold text-gray-700 hover:text-celeste tracking-wider uppercase transition-colors gap-1.5 hover:translate-x-1 duration-300"
+                    className="no-underline text-ink hover:text-accent transition-colors"
                   >
-                    View Project Detail
-                    <ArrowUpRight size={14} />
+                    {project.title}
                   </Link>
+                </h3>
+
+                <p className="text-sm sm:text-[15px] text-muted leading-relaxed font-light">
+                  {project.summary}
+                </p>
+
+                <p className="text-xs font-medium text-accent">
+                  {project.metric}
+                </p>
+
+                <div className="pt-2 flex flex-wrap items-center gap-5 text-xs font-medium">
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="inline-flex min-h-[36px] items-center gap-1 text-ink hover:text-accent no-underline transition-colors"
+                  >
+                    <span>Read Case Study</span>
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </Link>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-[36px] items-center gap-1 text-muted hover:text-ink no-underline transition-colors"
+                    >
+                      <span>Visit Site</span>
+                      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    </a>
+                  )}
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
 
-        {/* Bottom Contact Callout */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <a 
-            href="#contact-section" 
-            className="inline-flex items-center px-8 py-3 bg-gray-900 text-white rounded-full font-serif italic hover:bg-celeste transition-all duration-300 shadow-lg hover:shadow-sky-500/25 text-sm hover-bg-celeste"
-          >
-            Ready for your project?
-            <ArrowDown size={16} className="ml-2 animate-bounce" />
-          </a>
-        </motion.div>
+        {/* Systems & Engineering Index (clean editorial rows, zero boxy cards) */}
+        <div>
+          <div className="flex items-baseline justify-between gap-4 pb-4 border-b border-line">
+            <h3 className="font-serif text-2xl sm:text-3xl font-normal text-ink">
+              AI Workflows &amp; Systems Architecture
+            </h3>
+            <span className="text-xs text-muted hidden sm:inline">
+              Select a row to inspect details
+            </span>
+          </div>
+
+          <div className="divide-y divide-line border-b border-line">
+            {engineeringSystems.map((sys) => {
+              const isOpen = expandedSlug === sys.slug;
+              return (
+                <div key={sys.id} className="py-5">
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    onClick={() => setExpandedSlug(isOpen ? null : sys.slug)}
+                    className="w-full text-left grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 items-baseline group"
+                  >
+                    <span className="sm:col-span-2 font-mono text-xs text-muted">
+                      {sys.year}
+                    </span>
+                    <span className="sm:col-span-5 text-base sm:text-lg font-medium text-ink group-hover:text-accent transition-colors">
+                      {sys.title}
+                    </span>
+                    <span className="sm:col-span-4 text-xs sm:text-sm text-muted">
+                      {sys.metric}
+                    </span>
+                    <span className="sm:col-span-1 flex sm:justify-end text-muted">
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          isOpen ? "rotate-180 text-ink" : ""
+                        }`}
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div className="mt-4 sm:grid sm:grid-cols-12 sm:gap-4">
+                      <div className="sm:col-start-3 sm:col-span-10 space-y-4 pt-2">
+                        <p className="text-sm text-muted leading-relaxed font-light max-w-2xl">
+                          {sys.description}
+                        </p>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
+                          {sys.techStack.map((tech) => (
+                            <span key={tech} className="text-ink/80">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="flex flex-wrap items-center gap-5 pt-1 text-xs font-medium">
+                          <Link
+                            to={`/projects/${sys.slug}`}
+                            className="inline-flex min-h-[34px] items-center gap-1 text-accent hover:underline no-underline"
+                          >
+                            <span>Full Case Study</span>
+                            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                          </Link>
+                          {sys.link && (
+                            <a
+                              href={sys.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex min-h-[34px] items-center gap-1 text-muted hover:text-ink no-underline"
+                            >
+                              <span>Live App</span>
+                              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                            </a>
+                          )}
+                          {sys.repoUrl && (
+                            <a
+                              href={sys.repoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex min-h-[34px] items-center gap-1 text-muted hover:text-ink no-underline"
+                            >
+                              <span>GitHub</span>
+                              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

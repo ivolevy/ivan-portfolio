@@ -4,57 +4,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <script>
+    try {
+      var savedScheme = localStorage.getItem("color-scheme");
+      document.querySelector('meta[name="color-scheme"]').content = savedScheme || "light dark";
+    } catch (e) {}
+  </script>
 
-  <title>Ivan Levy | Full-Stack Developer & Tech Professional</title>
+  <title>Ivan Levy — Software Engineer</title>
   <meta name="description"
-    content="Portfolio of Ivan Levy, a Full-Stack Developer and Technology Management professional specialized in building high-performance digital solutions and AI-powered systems.">
+    content="Portfolio of Ivan Levy, Software Engineer building web products, MarTech platforms, and practical AI automation systems.">
   <meta name="keywords"
-    content="Ivan Levy, Full-Stack Developer, Technology Management, React, Node.js, AI Systems, Portfolio">
+    content="Ivan Levy, Software Engineer, Full-Stack Developer, AI Automation, React, TypeScript, Next.js, Python, Portfolio">
   <meta name="author" content="Ivan Levy">
   <meta name="robots" content="index, follow">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://ivanlevyportfolio.vercel.app">
 
-  <!-- Open Graph (SEO para redes sociales) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ivanlevyportfolio.vercel.app">
-  <meta property="og:title" content="Ivan Levy | Full-Stack Developer & Tech Management Professional">
+  <meta property="og:title" content="Ivan Levy — Software Engineer">
   <meta property="og:description"
-    content="Explore my professional journey, technical expertise, and featured projects in software development and tech management.">
+    content="Software Engineer building scalable web products, MarTech platforms, and AI-powered workflows.">
   <meta property="og:image" content="https://ivanlevyportfolio.vercel.app/og-image.jpg">
 
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://ivanlevyportfolio.vercel.app">
-  <meta property="twitter:title" content="Ivan Levy | Full-Stack Developer">
+  <meta property="twitter:title" content="Ivan Levy — Software Engineer">
   <meta property="twitter:description"
-    content="Full-Stack Developer & Technology Management student focused on strategic tech solutions.">
+    content="Software Engineer building scalable web products, MarTech platforms, and AI-powered workflows.">
   <meta property="twitter:image" content="https://ivanlevyportfolio.vercel.app/og-image.jpg">
 
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&family=MuseoModerno:wght@100..900&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
-
-  <!-- Titles: Instrument Serif -->
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-
-  <!-- Preload Fonts -->
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&family=MuseoModerno:wght@100..900&family=Inter:wght@300;400;500;600&display=swap">
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
-
-  <!-- Google Search Console -->
-
 </head>
 
 <body>

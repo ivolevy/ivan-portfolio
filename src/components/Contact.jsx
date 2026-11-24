@@ -1,154 +1,185 @@
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { AiFillInstagram } from "react-icons/ai";
-import { TbBrandLinkedinFilled } from "react-icons/tb";
-import { FaWhatsapp } from "react-icons/fa";
-import "../assets/styles/contact.css";
+import { ArrowUpRight } from "lucide-react";
+import { profile } from "../data/portfolioData";
 
 export const Contact = () => {
-  const form = useRef();
-  const [status, setStatus] = useState("");
+  const formRef = useRef(null);
+  const [status, setStatus] = useState({ type: "", text: "" });
+  const [sending, setSending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formRef.current || sending) return;
+
+    setSending(true);
+    setStatus({ type: "", text: "" });
 
     emailjs
       .sendForm(
-        "service_3hpiy2n", // Reemplaza con tu Service ID
-        "template_gvukjc5", // Reemplaza con tu Template ID
-        form.current,
-        "E4xuiiz13SZoQSqQf" // Reemplaza con tu Public Key
+        "service_3hpiy2n",
+        "template_gvukjc5",
+        formRef.current,
+        "E4xuiiz13SZoQSqQf"
       )
       .then(
         () => {
-          setStatus("Message sent successfully!");
-          form.current.reset(); // Limpia el formulario después de enviar
+          setStatus({ type: "success", text: "Message sent. I will get back to you shortly." });
+          formRef.current.reset();
+          setSending(false);
         },
-        (error) => {
-          setStatus("Error sending message, please try again.");
-          console.error("Error:", error);
+        () => {
+          setStatus({
+            type: "error",
+            text: "Delivery failed. Please write directly to ivo.levy03@gmail.com.",
+          });
+          setSending(false);
         }
       );
   };
 
   return (
-    <section className="pt-32 pb-0 mb-0" id="contact-section" style={{ scrollMarginTop: '60px' }}>
-      <div className="text-center mb-12">
-        <motion.span
-          className="inline-block px-3 py-1 bg-sky-50 text-celeste rounded-full text-xs font-semibold mb-3"
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          viewport={{ once: true }}
-        >
-          CONTACT
-        </motion.span>
-        <motion.h2
-          className="section-title text-4xl md:text-5xl font-bold text-neutral-900 mb-3 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <span className="underline decoration-celeste/50">Contact</span>
-        </motion.h2>
-      </div>
-      <div className="flex flex-col lg:flex-row mx-auto justify-between gap-12 text-center contactContainer max-w-6xl" id="contact">
-        {/* Izquierda: Información + Redes Sociales */}
-        <motion.div
-          className="lg:w-1/2 flex flex-col items-start justify-center text-left pt-8 lg:pt-0"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-4xl md:text-5xl font-serif text-neutral-900 mb-6 leading-tight">
-            Don't be shy, <br />
-            <span className="italic text-celeste">let's talk!</span>
-          </h3>
+    <section id="contact-section" className="py-20 sm:py-28 scroll-mt-16">
+      <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
+          <div className="md:col-span-5 min-w-0 space-y-6">
+            <h2 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-ink leading-tight">
+              Let&apos;s work together.
+            </h2>
+            <p className="text-sm sm:text-[15px] text-muted leading-relaxed font-light">
+              Available for Full-Stack &amp; AI Software Engineering roles, product engineering, and automation architecture.
+            </p>
 
-          <p className="text-gray-600 mb-8 max-w-md text-sm font-light leading-relaxed">
-            I'm always open to discussing new projects, creative ideas or opportunities to collaborate.
-          </p>
-
-          <div className="space-y-6 mb-8">
-            {/* Email */}
-            <a href="mailto:ivo.levy03@gmail.com" className="flex items-center gap-4 text-gray-700 hover:text-gray-950 transition-colors group">
-              <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center group-hover:bg-celeste group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
-              </div>
-              <span className="text-sm">ivo.levy03@gmail.com</span>
-            </a>
-
-            {/* WhatsApp */}
-            <a href="https://wa.me/1138240929" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-700 hover:text-gray-950 transition-colors group">
-              <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-colors">
-                <FaWhatsapp className="text-xl" />
-              </div>
-              <span className="text-sm">+54 11 3824 0929</span>
-            </a>
+            <ul className="divide-y divide-line border-t border-b border-line list-none p-0 m-0 text-sm">
+              <li>
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="flex min-h-[46px] items-center justify-between text-ink hover:text-accent no-underline transition-colors"
+                >
+                  <span>{profile.email}</span>
+                  <ArrowUpRight className="h-4 w-4 text-muted" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={profile.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-[46px] items-center justify-between text-ink hover:text-accent no-underline transition-colors"
+                >
+                  <span>WhatsApp · {profile.phone}</span>
+                  <ArrowUpRight className="h-4 w-4 text-muted" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={profile.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-[46px] items-center justify-between text-ink hover:text-accent no-underline transition-colors"
+                >
+                  <span>LinkedIn</span>
+                  <ArrowUpRight className="h-4 w-4 text-muted" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={profile.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-[46px] items-center justify-between text-ink hover:text-accent no-underline transition-colors"
+                >
+                  <span>GitHub</span>
+                  <ArrowUpRight className="h-4 w-4 text-muted" aria-hidden="true" />
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <div className="flex gap-4">
-            <a href="https://www.instagram.com/ivo.levy" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 hover:text-white hover:border-transparent transition-all duration-300">
-              <AiFillInstagram size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/ivan-levy" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-[#0077b5] hover:text-white hover:border-transparent transition-all duration-300">
-              <TbBrandLinkedinFilled size={20} />
-            </a>
+          <div className="md:col-span-7 min-w-0">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="contact-name" className="block text-xs text-muted mb-2">
+                    Name
+                  </label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    required
+                    placeholder="Your name"
+                    className="w-full min-h-[44px] border-b border-line bg-transparent py-2 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-company" className="block text-xs text-muted mb-2">
+                    Company
+                  </label>
+                  <input
+                    id="contact-company"
+                    type="text"
+                    name="company"
+                    autoComplete="organization"
+                    required
+                    placeholder="Company or team"
+                    className="w-full min-h-[44px] border-b border-line bg-transparent py-2 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="contact-email" className="block text-xs text-muted mb-2">
+                  Email
+                </label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  required
+                  placeholder="you@company.com"
+                  className="w-full min-h-[44px] border-b border-line bg-transparent py-2 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none transition-colors"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="contact-message" className="block text-xs text-muted mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  required
+                  rows={4}
+                  placeholder="Tell me about the role or project..."
+                  className="w-full border-b border-line bg-transparent py-2 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none transition-colors resize-y"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={sending}
+                className="inline-flex min-h-[44px] items-center rounded-full bg-ink px-7 py-2.5 text-xs font-medium text-canvas hover:opacity-85 transition-opacity disabled:opacity-60"
+              >
+                {sending ? "Sending..." : "Send Message"}
+              </button>
+
+              {status.text && (
+                <p
+                  role="status"
+                  aria-live="polite"
+                  className={`text-sm ${
+                    status.type === "error" ? "text-red-500" : "text-accent"
+                  }`}
+                >
+                  {status.text}
+                </p>
+              )}
+            </form>
           </div>
-
-        </motion.div>
-
-        {/* Derecha: Formulario */}
-        <motion.div
-          className="lg:w-1/2 glass-panel p-8 md:p-10 rounded-3xl shadow-lg border border-black/5"
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="flex flex-col md:flex-row gap-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                className="w-full md:w-1/2 p-3 bg-black/[0.02] text-gray-900 placeholder-gray-450 border border-black/10 rounded-lg focus:outline-none focus:border-celeste focus:bg-black/[0.04] transition-all font-light text-xs"
-              />
-              <input
-                type="text"
-                name="company"
-                placeholder="Company Name"
-                required
-                className="w-full md:w-1/2 p-3 bg-black/[0.02] text-gray-900 placeholder-gray-450 border border-black/10 rounded-lg focus:outline-none focus:border-celeste focus:bg-black/[0.04] transition-all font-light text-xs"
-              />
-            </div>
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-              className="w-full p-3 bg-black/[0.02] text-gray-900 placeholder-gray-450 border border-black/10 rounded-lg focus:outline-none focus:border-celeste focus:bg-black/[0.04] transition-all font-light text-xs"
-            />
-
-            <textarea
-              name="message"
-              placeholder="Tell me about your project..."
-              required
-              rows="4"
-              className="w-full p-3 bg-black/[0.02] text-gray-900 placeholder-gray-450 border border-black/10 rounded-lg focus:outline-none focus:border-celeste focus:bg-black/[0.04] transition-all font-light resize-none text-xs"
-            ></textarea>
-
-            <button type="submit" className="self-start px-10 py-3 bg-gray-900 text-white font-serif italic tracking-wide rounded-full hover:!bg-celeste hover:!text-white transition-all duration-300 mt-2 text-sm shadow-md hover:shadow-sky-500/25 hover:scale-105 active:scale-95 border border-transparent">
-              Send Message
-            </button>
-
-            {/* Mensaje de estado */}
-            {status && <p className={`text-center mt-2 text-sm ${status.includes("Error") ? "text-red-600" : "text-green-600"}`}>{status}</p>}
-          </form>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

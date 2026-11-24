@@ -1,16 +1,24 @@
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['"Instrument Serif"', "Georgia", "serif"],
+        sans: ['"Inter"', "system-ui", "-apple-system", "sans-serif"],
+        mono: ['"JetBrains Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
+      },
       colors: {
-        'negro-mate': 'var(--negro-mate)',
-        'rosa': "var(--rosa)",
-        "gris-claro": "var(--gris-claro)",
-        "gris-oscuro": "var(--gris-oscuro)",
-        'gris-fondo': '#fafafa',
+        canvas: "var(--bg-canvas)",
+        surface: "var(--bg-surface)",
+        elevated: "var(--bg-elevated)",
+        ink: "var(--text-primary)",
+        muted: "var(--text-muted)",
+        accent: "var(--accent)",
+        "accent-ink": "var(--accent-ink)",
+        line: "var(--border-subtle)",
       },
     },
   },
-  plugins: [
-  ],
+  plugins: [],
 };
