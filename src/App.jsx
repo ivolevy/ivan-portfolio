@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import { ThemeProvider } from "./context/ThemeContext";
+import { LanguageProvider } from "./context/LanguageContext";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
@@ -60,9 +61,11 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <ThemeProvider>
-        <Router>
-          <Layout />
-        </Router>
+        <LanguageProvider>
+          <Router>
+            <Layout />
+          </Router>
+        </LanguageProvider>
       </ThemeProvider>
     </MotionConfig>
   );

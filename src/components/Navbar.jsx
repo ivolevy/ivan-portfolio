@@ -2,20 +2,23 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "../context/useTheme";
-import { profile } from "../data/portfolioData";
-
-const navItems = [
-  { id: "projects", label: "Work" },
-  { id: "experience", label: "Experience" },
-  { id: "skills", label: "Capabilities" },
-  { id: "contact-section", label: "Contact" },
-];
+import { useLanguage } from "../context/useLanguage";
+import { profile, translations } from "../data/portfolioData";
 
 export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { renderedTheme, toggleTheme } = useTheme();
+  const { lang, setLang } = useLanguage();
+  const t = translations[lang].nav;
   const location = useLocation();
   const navigate = useNavigate();
+
+  const navItems = [
+    { id: "projects", label: t.work },
+    { id: "experience", label: t.experience },
+    { id: "skills", label: t.skills },
+    { id: "contact-section", label: t.contact },
+  ];
 
   const handleNavClick = (id) => {
     setMobileOpen(false);
@@ -32,12 +35,12 @@ export const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-md">
       <a href="#main-content" className="skip-link visually-hidden">
-        Skip to main content
+        {t.skip}
       </a>
 
       <nav
         aria-label="Primary"
-        className="mx-auto flex max-w-5xl items-center justify-between gap-6 px-5 sm:px-8 h-16"
+        className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 sm:px-8 h-16"
       >
         <a
           href="/"
@@ -47,13 +50,13 @@ export const Navbar = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
-          className="font-serif text-2xl tracking-tight text-ink no-underline hover:text-accent transition-colors"
+          className="font-serif text-2xl tracking-tight text-ink no-underline hover:text-accent transition-colors shrink-0"
         >
           {profile.name}
         </a>
 
-        <div className="flex items-center gap-6">
-          <ul className="hidden md:flex items-center gap-7 list-none m-0 p-0">
+        <div className="flex items-center gap-3 sm:gap-5">
+          <ul className="hidden md:flex items-center gap-7 list-none m-0 p-0 mr-2">
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
@@ -70,10 +73,41 @@ export const Navbar = () => {
             ))}
           </ul>
 
+          {/* ES | EN language switcher */}
+          <div
+            role="group"
+            aria-label={t.langGroup}
+            className="inline-flex h-9 items-center rounded-full border border-line px-1.5 text-[11px] font-medium"
+          >
+            <button
+              type="button"
+              onClick={() => setLang("es")}
+              aria-pressed={lang === "es"}
+              className={`min-h-[28px] px-2 rounded-full transition-colors ${
+                lang === "es" ? "text-ink font-semibold" : "text-muted hover:text-ink"
+              }`}
+            >
+              ES
+            </button>
+            <span className="text-line select-none" aria-hidden="true">
+              |
+            </span>
+            <button
+              type="button"
+              onClick={() => setLang("en")}
+              aria-pressed={lang === "en"}
+              className={`min-h-[28px] px-2 rounded-full transition-colors ${
+                lang === "en" ? "text-ink font-semibold" : "text-muted hover:text-ink"
+              }`}
+            >
+              EN
+            </button>
+          </div>
+
           <button
             type="button"
             onClick={toggleTheme}
-            aria-label={`Switch to ${renderedTheme === "dark" ? "light" : "dark"} theme`}
+            aria-label={renderedTheme === "dark" ? t.switchToLight : t.switchToDark}
             className="inline-flex min-h-[36px] min-w-[36px] items-center justify-center rounded-full border border-line text-muted transition-colors hover:text-ink hover:border-ink/30"
           >
             <span className="theme-icon-sun" aria-hidden="true">
@@ -87,7 +121,7 @@ export const Navbar = () => {
           <button
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
-            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={mobileOpen ? t.closeMenu : t.openMenu}
             aria-expanded={mobileOpen}
             className="inline-flex md:hidden min-h-[36px] min-w-[36px] items-center justify-center rounded-full border border-line text-ink"
           >

@@ -1,20 +1,25 @@
-import { experiences } from "../data/portfolioData";
+import { useLanguage } from "../context/useLanguage";
+import { translations } from "../data/portfolioData";
 
 export const Experience = () => {
+  const { lang } = useLanguage();
+  const data = translations[lang];
+  const t = data.experienceSection;
+
   return (
     <section id="experience" className="py-20 sm:py-28 border-b border-line scroll-mt-16">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
           <h2 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-ink">
-            Experience
+            {t.title}
           </h2>
           <p className="max-w-sm text-sm text-muted leading-relaxed font-light">
-            Four-plus years delivering web platforms, MarTech products, and AI automation in production.
+            {t.subtitle}
           </p>
         </div>
 
         <div className="divide-y divide-line border-t border-b border-line">
-          {experiences.map((exp) => (
+          {data.experiences.map((exp) => (
             <article
               key={exp.id}
               className="scroll-reveal py-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10"

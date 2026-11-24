@@ -1,40 +1,44 @@
 import { ArrowUpRight } from "lucide-react";
-import { profile } from "../data/portfolioData";
+import { useLanguage } from "../context/useLanguage";
+import { profile, translations } from "../data/portfolioData";
 
 export const Hero = () => {
+  const { lang } = useLanguage();
+  const t = translations[lang].hero;
+
   return (
     <section id="hero" className="pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-line">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <p className="text-sm text-muted mb-6">
-          Software Engineer · Buenos Aires, Argentina
+          {t.eyebrow}
         </p>
 
         <h1 className="font-serif text-[2.75rem] sm:text-6xl lg:text-[4.75rem] font-normal tracking-[-0.025em] text-ink leading-[1.03] max-w-4xl">
-          Building web products, scalable platforms, and practical AI systems.
+          {t.headline}
         </h1>
 
         <div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 pt-10 border-t border-line">
           <div className="md:col-span-7 min-w-0 space-y-4">
             <p className="text-base sm:text-[17px] text-ink/90 leading-relaxed font-light">
-              Over four years at UO Solutions shipping full-stack applications across TypeScript, React, Next.js, Node.js, and Python—from global MarTech marketplaces like Beeyond Media to autonomous production workflows.
+              {t.bio1}
             </p>
             <p className="text-sm sm:text-[15px] text-muted leading-relaxed font-light">
-              Final-year Information Technology Management student at UADE (graduating Dec 2026), bridging clean software architecture with product strategy and business outcomes.
+              {t.bio2}
             </p>
           </div>
 
           <div className="md:col-span-5 min-w-0 flex flex-col justify-between gap-6">
             <dl className="space-y-3 text-sm m-0">
               <div className="flex items-baseline justify-between gap-4 border-b border-line pb-2.5">
-                <dt className="text-muted">Currently</dt>
-                <dd className="text-ink font-medium m-0">UO Solutions</dd>
+                <dt className="text-muted">{t.currentlyLabel}</dt>
+                <dd className="text-ink font-medium m-0">{t.currentlyValue}</dd>
               </div>
               <div className="flex items-baseline justify-between gap-4 border-b border-line pb-2.5">
-                <dt className="text-muted">Degree</dt>
-                <dd className="text-ink font-medium m-0">IT Management · Dec 2026</dd>
+                <dt className="text-muted">{t.degreeLabel}</dt>
+                <dd className="text-ink font-medium m-0">{t.degreeValue}</dd>
               </div>
               <div className="flex items-baseline justify-between gap-4 border-b border-line pb-2.5">
-                <dt className="text-muted">Resume</dt>
+                <dt className="text-muted">{t.resumeLabel}</dt>
                 <dd className="flex items-center gap-3 m-0">
                   <a
                     href={profile.cvEnUrl}
@@ -64,7 +68,7 @@ export const Hero = () => {
                 }}
                 className="inline-flex min-h-[40px] items-center rounded-full bg-ink px-5 py-2 text-xs font-medium text-canvas hover:opacity-85 transition-opacity no-underline"
               >
-                Selected Work
+                {t.ctaWork}
               </a>
               <a
                 href={profile.githubUrl}

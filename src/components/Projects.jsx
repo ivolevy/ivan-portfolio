@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
-import { projects } from "../data/portfolioData";
+import { useLanguage } from "../context/useLanguage";
+import { translations } from "../data/portfolioData";
 
 export const Projects = () => {
-  const visualProjects = projects.filter((p) => p.img);
-  const engineeringSystems = projects.filter((p) => !p.img);
+  const { lang } = useLanguage();
+  const data = translations[lang];
+  const t = data.projectsSection;
+
+  const visualProjects = data.projects.filter((p) => p.img);
+  const engineeringSystems = data.projects.filter((p) => !p.img);
   const [expandedSlug, setExpandedSlug] = useState(engineeringSystems[0]?.slug || null);
 
   return (
@@ -13,14 +18,14 @@ export const Projects = () => {
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
           <h2 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-ink">
-            Selected Work
+            {t.title}
           </h2>
           <p className="max-w-sm text-sm text-muted leading-relaxed font-light">
-            Products, MarTech platforms, and AI automation pipelines built from concept to production.
+            {t.subtitle}
           </p>
         </div>
 
-        {/* Visual Featured Work (large editorial showcase, no card clutter) */}
+        {/* Visual Featured Work */}
         <div className="space-y-20 mb-24">
           {visualProjects.map((project, index) => (
             <article
@@ -74,7 +79,7 @@ export const Projects = () => {
                     to={`/projects/${project.slug}`}
                     className="inline-flex min-h-[36px] items-center gap-1 text-ink hover:text-accent no-underline transition-colors"
                   >
-                    <span>Read Case Study</span>
+                    <span>{t.readCase}</span>
                     <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                   </Link>
                   {project.link && (
@@ -84,7 +89,7 @@ export const Projects = () => {
                       rel="noopener noreferrer"
                       className="inline-flex min-h-[36px] items-center gap-1 text-muted hover:text-ink no-underline transition-colors"
                     >
-                      <span>Visit Site</span>
+                      <span>{t.visitSite}</span>
                       <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                     </a>
                   )}
@@ -94,14 +99,14 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* Systems & Engineering Index (clean editorial rows, zero boxy cards) */}
+        {/* Systems & Engineering Index */}
         <div>
           <div className="flex items-baseline justify-between gap-4 pb-4 border-b border-line">
             <h3 className="font-serif text-2xl sm:text-3xl font-normal text-ink">
-              AI Workflows &amp; Systems Architecture
+              {t.systemsTitle}
             </h3>
             <span className="text-xs text-muted hidden sm:inline">
-              Select a row to inspect details
+              {t.systemsHint}
             </span>
           </div>
 
@@ -153,7 +158,7 @@ export const Projects = () => {
                             to={`/projects/${sys.slug}`}
                             className="inline-flex min-h-[34px] items-center gap-1 text-accent hover:underline no-underline"
                           >
-                            <span>Full Case Study</span>
+                            <span>{t.fullCase}</span>
                             <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                           </Link>
                           {sys.link && (
@@ -163,7 +168,7 @@ export const Projects = () => {
                               rel="noopener noreferrer"
                               className="inline-flex min-h-[34px] items-center gap-1 text-muted hover:text-ink no-underline"
                             >
-                              <span>Live App</span>
+                              <span>{t.liveApp}</span>
                               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                             </a>
                           )}
@@ -174,7 +179,7 @@ export const Projects = () => {
                               rel="noopener noreferrer"
                               className="inline-flex min-h-[34px] items-center gap-1 text-muted hover:text-ink no-underline"
                             >
-                              <span>GitHub</span>
+                              <span>{t.github}</span>
                               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                             </a>
                           )}

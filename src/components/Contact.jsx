@@ -1,12 +1,15 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ArrowUpRight } from "lucide-react";
-import { profile } from "../data/portfolioData";
+import { useLanguage } from "../context/useLanguage";
+import { profile, translations } from "../data/portfolioData";
 
 export const Contact = () => {
   const formRef = useRef(null);
   const [status, setStatus] = useState({ type: "", text: "" });
   const [sending, setSending] = useState(false);
+  const { lang } = useLanguage();
+  const t = translations[lang].contactSection;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,15 +27,12 @@ export const Contact = () => {
       )
       .then(
         () => {
-          setStatus({ type: "success", text: "Message sent. I will get back to you shortly." });
+          setStatus({ type: "success", text: t.sentOk });
           formRef.current.reset();
           setSending(false);
         },
         () => {
-          setStatus({
-            type: "error",
-            text: "Delivery failed. Please write directly to ivo.levy03@gmail.com.",
-          });
+          setStatus({ type: "error", text: t.sentErr });
           setSending(false);
         }
       );
@@ -44,10 +44,10 @@ export const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
           <div className="md:col-span-5 min-w-0 space-y-6">
             <h2 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-ink leading-tight">
-              Let&apos;s work together.
+              {t.title}
             </h2>
             <p className="text-sm sm:text-[15px] text-muted leading-relaxed font-light">
-              Available for Full-Stack &amp; AI Software Engineering roles, product engineering, and automation architecture.
+              {t.subtitle}
             </p>
 
             <ul className="divide-y divide-line border-t border-b border-line list-none p-0 m-0 text-sm">
@@ -101,7 +101,7 @@ export const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="contact-name" className="block text-xs text-muted mb-2">
-                    Name
+                    {t.nameLabel}
                   </label>
                   <input
                     id="contact-name"
@@ -109,13 +109,13 @@ export const Contact = () => {
                     name="name"
                     autoComplete="name"
                     required
-                    placeholder="Your name"
+                    placeholder={t.namePlaceholder}
                     className="w-full min-h-[44px] border-b border-line bg-transparent py-2 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
                   <label htmlFor="contact-company" className="block text-xs text-muted mb-2">
-                    Company
+                    {t.companyLabel}
                   </label>
                   <input
                     id="contact-company"
@@ -123,7 +123,7 @@ export const Contact = () => {
                     name="company"
                     autoComplete="organization"
                     required
-                    placeholder="Company or team"
+                    placeholder={t.companyPlaceholder}
                     className="w-full min-h-[44px] border-b border-line bg-transparent py-2 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none transition-colors"
                   />
                 </div>
@@ -131,7 +131,7 @@ export const Contact = () => {
 
               <div>
                 <label htmlFor="contact-email" className="block text-xs text-muted mb-2">
-                  Email
+                  {t.emailLabel}
                 </label>
                 <input
                   id="contact-email"
@@ -139,21 +139,21 @@ export const Contact = () => {
                   name="email"
                   autoComplete="email"
                   required
-                  placeholder="you@company.com"
+                  placeholder={t.emailPlaceholder}
                   className="w-full min-h-[44px] border-b border-line bg-transparent py-2 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none transition-colors"
                 />
               </div>
 
               <div>
                 <label htmlFor="contact-message" className="block text-xs text-muted mb-2">
-                  Message
+                  {t.messageLabel}
                 </label>
                 <textarea
                   id="contact-message"
                   name="message"
                   required
                   rows={4}
-                  placeholder="Tell me about the role or project..."
+                  placeholder={t.messagePlaceholder}
                   className="w-full border-b border-line bg-transparent py-2 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none transition-colors resize-y"
                 />
               </div>
@@ -163,7 +163,7 @@ export const Contact = () => {
                 disabled={sending}
                 className="inline-flex min-h-[44px] items-center rounded-full bg-ink px-7 py-2.5 text-xs font-medium text-canvas hover:opacity-85 transition-opacity disabled:opacity-60"
               >
-                {sending ? "Sending..." : "Send Message"}
+                {sending ? t.sending : t.send}
               </button>
 
               {status.text && (

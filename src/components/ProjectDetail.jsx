@@ -1,13 +1,18 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight, ChevronRight } from "lucide-react";
-import { projects } from "../data/portfolioData";
+import { useLanguage } from "../context/useLanguage";
+import { translations } from "../data/portfolioData";
 
 export const ProjectDetail = () => {
   const { slug } = useParams();
-  const projectIndex = projects.findIndex((p) => p.slug === slug);
-  const project = projects[projectIndex];
-  const nextProject = projects[(projectIndex + 1) % projects.length];
+  const { lang } = useLanguage();
+  const data = translations[lang];
+  const t = data.projectDetail;
+
+  const projectIndex = data.projects.findIndex((p) => p.slug === slug);
+  const project = data.projects[projectIndex];
+  const nextProject = data.projects[(projectIndex + 1) % data.projects.length];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -15,16 +20,16 @@ export const ProjectDetail = () => {
       document.title = `${project.title} — Ivan Levy`;
     }
     return () => {
-      document.title = "Ivan Levy — Software Engineer";
+      document.title = data.metaTitle;
     };
-  }, [slug, project]);
+  }, [slug, project, data.metaTitle]);
 
   if (!project) {
     return (
       <main id="main-content" className="min-h-[80dvh] flex flex-col items-center justify-center px-6 text-center">
-        <h1 className="font-serif text-4xl text-ink mb-3">Case study not found</h1>
+        <h1 className="font-serif text-4xl text-ink mb-3">{t.notFound}</h1>
         <Link to="/#projects" className="text-sm text-accent hover:underline">
-          Back to Work
+          {t.backWork}
         </Link>
       </main>
     );
@@ -39,7 +44,7 @@ export const ProjectDetail = () => {
             className="inline-flex min-h-[36px] items-center gap-2 text-xs text-muted hover:text-ink no-underline transition-colors"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            <span>Back to Selected Work</span>
+            <span>{t.backSelected}</span>
           </Link>
         </div>
 
@@ -58,19 +63,19 @@ export const ProjectDetail = () => {
 
           <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-6 border-t border-b border-line text-sm m-0">
             <div>
-              <dt className="text-xs text-muted mb-1">Role</dt>
+              <dt className="text-xs text-muted mb-1">{t.role}</dt>
               <dd className="font-medium text-ink m-0">{project.role}</dd>
             </div>
             <div>
-              <dt className="text-xs text-muted mb-1">Timeline</dt>
+              <dt className="text-xs text-muted mb-1">{t.timeline}</dt>
               <dd className="font-medium text-ink m-0">{project.year}</dd>
             </div>
             <div>
-              <dt className="text-xs text-muted mb-1">Outcome</dt>
+              <dt className="text-xs text-muted mb-1">{t.outcome}</dt>
               <dd className="font-medium text-accent m-0">{project.metric}</dd>
             </div>
             <div>
-              <dt className="text-xs text-muted mb-1">Link</dt>
+              <dt className="text-xs text-muted mb-1">{t.link}</dt>
               <dd className="m-0">
                 {project.link ? (
                   <a
@@ -79,11 +84,11 @@ export const ProjectDetail = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 font-medium text-ink hover:text-accent no-underline"
                   >
-                    <span>Visit Site</span>
+                    <span>{t.visitSite}</span>
                     <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                   </a>
                 ) : (
-                  <span className="text-muted">Internal System</span>
+                  <span className="text-muted">{t.internal}</span>
                 )}
               </dd>
             </div>
@@ -104,7 +109,7 @@ export const ProjectDetail = () => {
           <div className="md:col-span-4 space-y-8">
             <div>
               <h2 className="text-xs uppercase tracking-wider text-muted mb-3">
-                Technologies
+                {t.technologies}
               </h2>
               <p className="text-sm text-ink leading-relaxed">
                 {project.techStack.join(" · ")}
@@ -113,7 +118,7 @@ export const ProjectDetail = () => {
 
             <div>
               <h2 className="text-xs uppercase tracking-wider text-muted mb-3">
-                Highlights
+                {t.highlights}
               </h2>
               <ul className="space-y-2 list-none p-0 m-0 text-sm text-muted font-light">
                 {project.highlights.map((item) => (
@@ -125,15 +130,15 @@ export const ProjectDetail = () => {
 
           <div className="md:col-span-8 space-y-8 text-sm sm:text-base text-muted leading-relaxed font-light">
             <div>
-              <h2 className="font-serif text-2xl font-normal text-ink mb-2">Overview</h2>
+              <h2 className="font-serif text-2xl font-normal text-ink mb-2">{t.overview}</h2>
               <p>{project.description}</p>
             </div>
             <div>
-              <h2 className="font-serif text-2xl font-normal text-ink mb-2">The Challenge</h2>
+              <h2 className="font-serif text-2xl font-normal text-ink mb-2">{t.challenge}</h2>
               <p>{project.challenge}</p>
             </div>
             <div>
-              <h2 className="font-serif text-2xl font-normal text-ink mb-2">The Solution</h2>
+              <h2 className="font-serif text-2xl font-normal text-ink mb-2">{t.solution}</h2>
               <p>{project.solution}</p>
             </div>
           </div>
@@ -148,7 +153,7 @@ export const ProjectDetail = () => {
             className="inline-flex min-h-[40px] items-center gap-2 text-muted hover:text-ink no-underline"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            <span>All Work</span>
+            <span>{t.allWork}</span>
           </Link>
 
           {nextProject && (
@@ -156,7 +161,7 @@ export const ProjectDetail = () => {
               to={`/projects/${nextProject.slug}`}
               className="inline-flex min-h-[40px] items-center gap-1.5 text-ink hover:text-accent no-underline"
             >
-              <span>Next: {nextProject.title}</span>
+              <span>{t.next}: {nextProject.title}</span>
               <ChevronRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           )}
